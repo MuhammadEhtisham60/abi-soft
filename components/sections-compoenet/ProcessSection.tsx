@@ -274,7 +274,9 @@ export default function ProcessSection({
           <span className="proc-pill-dot" />
           <span>{upgradeBusinessData.badge}</span>
         </div>
-        <h2>{upgradeBusinessData.heading}</h2>
+        <h2>
+          How We <span className="proc-title-blue">Work</span>
+        </h2>
       </div>
 
       <div className="proc-container">
@@ -285,7 +287,7 @@ export default function ProcessSection({
             preserveAspectRatio="none"
             style={{ position: "absolute", inset: 0, height: "100%", width: "100%" }}
             fill="none"
-            stroke="rgba(209, 213, 219, 0.5)"
+            stroke="rgba(2, 132, 199, 0.2)"
             strokeWidth="1.5"
             strokeLinecap="round"
           >
@@ -336,6 +338,13 @@ export default function ProcessSection({
               />
             ))}
           </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="proc-cta-wrap">
+          <a href={ctaHref} className="proc-cta-button">
+            Get a Free Quote
+          </a>
         </div>
       </div>
     </section>

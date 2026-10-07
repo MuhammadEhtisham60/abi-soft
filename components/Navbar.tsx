@@ -156,8 +156,8 @@ export default function Navbar({
                 </div>
 
                 <div className="sv-dropdown-footer">
-                  <Link href="/#services" className="sv-dropdown-viewall" onClick={() => setDropdownOpen(false)}>
-                    <span>Explore all services on overview</span>
+                  <Link href="/services" className="sv-dropdown-viewall" onClick={() => setDropdownOpen(false)}>
+                    <span>View All Services Directory</span>
                     <Arrow />
                   </Link>
                 </div>
@@ -279,11 +279,11 @@ export default function Navbar({
                       </Link>
                     ))}
                     <Link
-                      href="/#services"
+                      href="/services"
                       className="sv-mobile-sublink sv-mobile-sublink-all"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span>Explore all services overview →</span>
+                      <span>Explore all services directory →</span>
                     </Link>
                   </div>
                 )}
