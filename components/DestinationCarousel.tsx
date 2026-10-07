@@ -36,8 +36,8 @@ interface DestinationCarouselProps {
 
 const DestinationCarousel = ({
   destinations = defaultServiceSlides,
-  title = "Explore Our Technology Solutions",
-  badge = "Featured Showcase",
+  title = "Everything Your Business Needs to Go Digital",
+  badge = "Our Services",
   autoPlay = true,
   interval = 4000,
 }: DestinationCarouselProps) => {

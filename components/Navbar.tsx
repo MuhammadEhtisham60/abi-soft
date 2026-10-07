@@ -23,8 +23,18 @@ export default function Navbar({
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMouseEnter = () => {
     if (hoverTimeoutRef.current) {
@@ -82,7 +92,7 @@ export default function Navbar({
   return (
     <>
       <div className="sv-nav-sticky-container">
-        <header className={`sv-nav-light ${className}`} aria-label="Main Navigation">
+        <header className={`sv-nav-light ${isScrolled ? "sv-nav-scrolled" : ""} ${className}`} aria-label="Main Navigation">
         {/* Logo */}
         <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -231,9 +231,9 @@ export default function Sections() {
 
   return (
     <div className="light" ref={containerRef}>
-      <ServicesSection />
-      <AboutSection />
+      {/* <ServicesSection /> */}
       <DestinationCarousel />
+      <AboutSection />
       <ProcessSection />
       <FaqSection />
       <ContactCtaSection />
