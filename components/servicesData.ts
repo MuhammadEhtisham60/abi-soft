@@ -85,7 +85,7 @@ export const services: Service[] = [
     p: "Smarter Technology. Better Tomorrow.",
     big: true,
     category: "Artificial Intelligence & Autonomous Systems",
-    image: "/images/ai-brain.jpg",
+    image: "/images/ai-ser.jpg",
     desc: "We build intelligent AI solutions that automate processes, enhance decision-making and create new opportunities for your business.",
     features: [
       "AI Chatbots & Autonomous Assistants",
