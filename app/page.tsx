@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Sections from "@/components/Sections";
-import { Arrow } from "@/components/Icons";
+import { Arrow, GlobeNetworkIcon } from "@/components/Icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -109,7 +109,15 @@ export default function Home() {
             <p className="hero-desc">
               AI-powered solutions, scalable software, and modern digital experiences engineered to help businesses grow, operate, and compete globally.
             </p>
-
+            <div className="about-feat-item" style={{ marginBottom: 28, maxWidth: 460 }}>
+              <div className="about-feat-icon">
+                <GlobeNetworkIcon />
+              </div>
+              <div className="about-feat-text">
+                <b>Serving clients worldwide</b>
+                <small>Remote-first delivery across every time zone</small>
+              </div>
+            </div>
             <div className="hero-actions">
               <a href="#services" className="hero-btn-primary">
                 Explore Our Solutions
