@@ -20,18 +20,13 @@ export default function Home() {
       // Hero Entrance Timeline
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".sv-nav-light, .hero-nav", {
-        y: -30,
+      tl.from(".hero-badge", {
+        scale: 0.85,
         opacity: 0,
-        duration: 0.8,
+        y: 15,
+        duration: 0.6,
+        ease: "back.out(1.7)",
       })
-        .from(".hero-badge", {
-          scale: 0.85,
-          opacity: 0,
-          y: 15,
-          duration: 0.6,
-          ease: "back.out(1.7)",
-        }, "-=0.4")
         .from(".hero-title-line", {
           y: 35,
           opacity: 0,
@@ -48,10 +43,9 @@ export default function Home() {
           opacity: 0,
           duration: 0.6,
         }, "-=0.4")
-        .from(".hero-actions > *", {
+        .from(".hero-actions", {
           y: 20,
           opacity: 0,
-          stagger: 0.1,
           duration: 0.6,
         }, "-=0.3");
     }, stageRef);

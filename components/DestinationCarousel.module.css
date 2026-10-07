@@ -119,12 +119,8 @@
 
 .item:nth-child(1)::before,
 .item:nth-child(2)::before {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.97) 0%,
-    rgba(255, 255, 255, 0.90) 45%,
-    rgba(255, 255, 255, 0.45) 100%
-  );
+  background:
+  linear-gradient(90deg, rgb(255 255 255 / 78%) 0%, rgb(255 255 255 / 20%) 45%, rgb(255 255 255 / 27%) 100%);
 }
 
 /* Queue Thumbnails (Gray Overlay) */
