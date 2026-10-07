@@ -127,7 +127,7 @@
 .item:nth-child(n + 3)::before {
   background: linear-gradient(
     180deg,
-    rgba(100, 116, 139, 0.6) 0%,
+    rgba(135, 147, 165, 0.6) 0%,
     rgba(71, 85, 105, 0.7) 40%,
     rgba(15, 23, 42, 0.92) 100%
   );

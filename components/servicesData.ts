@@ -527,7 +527,7 @@ export const services: Service[] = [
     t: "Website Development",
     p: "Modern Websites. Stronger Brands.",
     category: "Modern Web Engineering & Headless CMS",
-    image: "/images/service-showcase-1.jpg",
+    image: "/images/website-development.jpg",
     desc: "Fast, modern websites that look sharp on every device and turn visitors into customers.",
     features: [
       "High-Conversion Enterprise Websites",
@@ -748,7 +748,7 @@ export const services: Service[] = [
     t: "App Development",
     p: "Ideas to Powerful Mobile Apps.",
     category: "Mobile Application Engineering (iOS & Android)",
-    image: "/images/service-showcase-2.jpg",
+    image: "/images/app-development.jpg",
     desc: "From first sketch to the app stores: mobile apps for iOS and Android that people enjoy using.",
     features: [
       "Cross-Platform iOS & Android Apps",
@@ -969,7 +969,7 @@ export const services: Service[] = [
     t: "Graphics & UI/UX Design",
     p: "Creative Designs. Lasting Impressions.",
     category: "Brand Identity, Product Design & UI/UX Systems",
-    image: "/images/ui-design-showcase.jpg",
+    image: "/images/ui-design.png",
     desc: "Design that makes your brand memorable and your product easy to use, from logos to complete website and app interfaces.",
     features: [
       "Strategic Brand Identity & Logos",

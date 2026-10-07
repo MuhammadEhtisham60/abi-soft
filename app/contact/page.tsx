@@ -118,7 +118,7 @@ export default function ContactPage() {
                   {/* Step 1: Select Services */}
                   <div className="contact-form-group">
                     <label className="contact-form-label">
-                      1. What services are you interested in? <span className="contact-optional">(Select all that apply)</span>
+                      What services are you interested in? <span className="contact-optional">(Select all that apply)</span>
                     </label>
                     <div className="contact-chips-grid">
                       {serviceOptions.map((svc) => {
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Step 2: Budget Range */}
-                  <div className="contact-form-group">
+                  {/* <div className="contact-form-group">
                     <label className="contact-form-label">2. Estimated Project Budget</label>
                     <div className="contact-pill-selector">
                       {budgetOptions.map((b) => (
@@ -153,11 +153,11 @@ export default function ContactPage() {
                         </button>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Step 3: Timeline */}
-                  <div className="contact-form-group">
-                    <label className="contact-form-label">3. Expected Delivery Timeline</label>
+                  {/* <div className="contact-form-group">
+                    <label className="contact-form-label">Expected Delivery Timeline</label>
                     <div className="contact-pill-selector">
                       {timelineOptions.map((t) => (
                         <button
@@ -170,11 +170,11 @@ export default function ContactPage() {
                         </button>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Step 4: Contact Information */}
                   <div className="contact-form-group">
-                    <label className="contact-form-label">4. Your Details</label>
+                    <label className="contact-form-label">Your Details</label>
                     <div className="contact-input-grid">
                       <div>
                         <input
@@ -219,7 +219,7 @@ export default function ContactPage() {
 
                   {/* Step 5: Message */}
                   <div className="contact-form-group">
-                    <label className="contact-form-label">5. Tell us about your project goals &amp; requirements</label>
+                    <label className="contact-form-label">Tell us about your project goals &amp; requirements</label>
                     <textarea
                       rows={4}
                       required

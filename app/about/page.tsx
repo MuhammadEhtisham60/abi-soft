@@ -53,7 +53,7 @@ export default function AboutPage() {
           </div>
 
           {/* Stats Bar */}
-          <div className="sv-hero-stats-grid">
+          {/* <div className="sv-hero-stats-grid">
             <div className="sv-stat-card">
               <div className="sv-stat-val">100%</div>
               <div className="sv-stat-label">Code &amp; IP Ownership</div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <div className="sv-stat-label">Global Client Support</div>
               <div className="sv-stat-sub">Serving clients across all global time zones</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -90,21 +90,21 @@ export default function AboutPage() {
               <h2 className="about-title-large">
                 We bridge the gap between <em>complex technology</em> and real business growth.
               </h2>
-              <p className="about-p">
+              {/* <p className="about-p">
                 Too many companies are trapped between inflexible, expensive off-the-shelf software and bloated agency teams that take months to deliver basic prototypes.
-              </p>
+              </p> */}
               <p className="about-p">
                 At ABI Technologies, we do things differently. We combine senior full-stack engineering, cutting-edge generative AI, and human-centered design to build software that is lean, lightning-fast, and proprietary to your business.
               </p>
 
               <div className="about-values-list">
-                <div className="about-val-item">
+                {/* <div className="about-val-item">
                   <div className="about-val-icon">⚡</div>
                   <div>
                     <b>Radical Velocity &amp; Transparency</b>
                     <p>Two-week sprint cycles with live preview links, direct Slack access, and weekly video walkthroughs.</p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="about-val-item">
                   <div className="about-val-icon">🛡️</div>
@@ -113,14 +113,14 @@ export default function AboutPage() {
                     <p>Zero training on your proprietary data. SOC2, HIPAA, and GDPR-ready architectures deployed in your own cloud VPC.</p>
                   </div>
                 </div>
-
+{/* 
                 <div className="about-val-item">
                   <div className="about-val-icon">📈</div>
                   <div>
                     <b>Business ROI Over Technology Hype</b>
                     <p>Every line of code and AI prompt is engineered to eliminate operational bottlenecks, reduce costs, or drive new revenue.</p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
