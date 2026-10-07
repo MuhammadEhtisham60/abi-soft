@@ -243,7 +243,7 @@ export default function ServicesPage() {
                             textDecoration: "none",
                           }}
                         >
-                          Explore Detailed Blueprint <Arrow />
+                          Explore Detailed <Arrow />
                         </Link>
                         <Link
                           href={`/contact?service=${service.slug}`}
@@ -429,7 +429,7 @@ export default function ServicesPage() {
               Let’s Architect Your Next Breakthrough.
             </h2>
             <p style={{ fontSize: "16px", color: "#e0f2fe", maxWidth: "620px", margin: "0 auto 28px", lineHeight: "1.6" }}>
-              Schedule a technical discovery session with our senior engineers to receive a fixed-scope proposal, timeline, and architectural blueprint.
+              Schedule a technical discovery session with our senior engineers to receive a fixed-scope proposal, timeline, and architectural.
             </p>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "14px", flexWrap: "wrap" }}>
               <Link

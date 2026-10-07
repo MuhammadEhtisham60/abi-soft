@@ -145,10 +145,18 @@ const DestinationCarousel = ({
                 <div className={styles.des}>{item.description}</div>
                 <Link className={styles.seeMore} href={item.link}>
                   <button type="button">
-                    Explore Solution Blueprint <span>→</span>
+                    Explore Solution <span>→</span>
                   </button>
                 </Link>
               </div>
+
+              {/* Service name label on queue thumbnail cards */}
+              {index > 1 && (
+                <div className={styles.queueCardLabel}>
+                  <span className={styles.queueCardTag}>Service</span>
+                  <span className={styles.queueCardName}>{item.name}</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
