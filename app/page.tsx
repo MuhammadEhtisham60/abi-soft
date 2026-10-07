@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Sections from "@/components/Sections";
+import { Arrow } from "@/components/Icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -18,7 +19,7 @@ export default function Home() {
       // Hero Entrance Timeline
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".hero-nav", {
+      tl.from(".sv-nav-light, .hero-nav", {
         y: -30,
         opacity: 0,
         duration: 0.8,
@@ -61,24 +62,35 @@ export default function Home() {
           <div className="hero-bg-overlay" />
         </div>
 
-        {/* Floating Pill Navigation */}
-        <header className="hero-nav">
+        {/* Floating Light Pill Navigation (Matching Service Detail page) */}
+        <nav className="sv-nav-light" aria-label="Main Navigation">
           <Link href="/" className="hero-logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/logo.png" alt="ABI" className="hero-logo-img" />
+            <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
           </Link>
 
-          <nav className="hero-nav-links">
-            <a href="#services">Services</a>
-            <Link href="/about">About Us</Link>
-            <a href="#process">How We Work</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-
-          <div className="hero-nav-right">
-            <Link href="/contact" className="hero-nav-contact mr-2">Contact Us</Link>
+          <div className="sv-nav-center">
+            <Link href="/" className="sv-nav-link sv-nav-link-active">
+              <span>Home</span>
+              <span className="sv-nav-active-bar" />
+            </Link>
+            <Link href="/#services" className="sv-nav-link">
+              Services
+            </Link>
+            <Link href="/about" className="sv-nav-link">
+              About
+            </Link>
+            <Link href="/contact" className="sv-nav-link">
+              Contact
+            </Link>
           </div>
-        </header>
+
+          <div className="sv-nav-right">
+            <Link className="sv-nav-cta-btn" href="/contact">
+              Get Free Estimate <Arrow />
+            </Link>
+          </div>
+        </nav>
 
         {/* Hero Content with hero.jpg background */}
         <div className="hero-container">
@@ -102,13 +114,9 @@ export default function Home() {
               <a href="#services" className="hero-btn-primary">
                 Explore Our Solutions
               </a>
-              <a href="#contact" className="hero-btn-secondary">
+              <Link href="/contact" className="hero-btn-secondary">
                 Start a Project
-              </a>
-            </div>
-            
-            <div className="hero-tags">
-              AI • SOFTWARE • WEB • APPS • DIGITAL SOLUTIONS
+              </Link>
             </div>
           </div>
         </div>
