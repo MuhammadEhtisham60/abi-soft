@@ -81,7 +81,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "ai-solutions",
-    t: "AI Solutions & Automation",
+    t: "AI Solutions",
     p: "Smarter Technology. Better Tomorrow.",
     big: true,
     category: "Artificial Intelligence & Autonomous Systems",
@@ -303,8 +303,8 @@ export const services: Service[] = [
   },
   {
     slug: "software-development",
-    t: "Custom Software & Cloud",
-    p: "Scalable Architecture for High-Growth Enterprises.",
+    t: "Software Development",
+    p: "Custom Solutions for Your Business.",
     category: "Enterprise Software & Cloud Platforms",
     image: "/images/service-tech-featured.jpg",
     desc: "Custom software built around how your business really works: internal tools, customer platforms and integrations that scale as you grow.",
@@ -524,8 +524,8 @@ export const services: Service[] = [
   },
   {
     slug: "website-development",
-    t: "High-Performance Websites",
-    p: "Modern Websites. Stronger Brands. Higher Conversions.",
+    t: "Website Development",
+    p: "Modern Websites. Stronger Brands.",
     category: "Modern Web Engineering & Headless CMS",
     image: "/images/service-showcase-1.jpg",
     desc: "Fast, modern websites that look sharp on every device and turn visitors into customers.",
@@ -745,8 +745,8 @@ export const services: Service[] = [
   },
   {
     slug: "app-development",
-    t: "Mobile App Engineering",
-    p: "Ideas Transformed into Powerful iOS & Android Applications.",
+    t: "App Development",
+    p: "Ideas to Powerful Mobile Apps.",
     category: "Mobile Application Engineering (iOS & Android)",
     image: "/images/service-showcase-2.jpg",
     desc: "From first sketch to the app stores: mobile apps for iOS and Android that people enjoy using.",
@@ -966,8 +966,8 @@ export const services: Service[] = [
   },
   {
     slug: "graphics-ui-ux-design",
-    t: "Brand & UI/UX Product Design",
-    p: "Creative Experiences Built for Modern Brands.",
+    t: "Graphics & UI/UX Design",
+    p: "Creative Designs. Lasting Impressions.",
     category: "Brand Identity, Product Design & UI/UX Systems",
     image: "/images/ui-design-showcase.jpg",
     desc: "Design that makes your brand memorable and your product easy to use, from logos to complete website and app interfaces.",

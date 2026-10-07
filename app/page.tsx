@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Sections from "@/components/Sections";
-import { Arrow, GlobeNetworkIcon } from "@/components/Icons";
+import Navbar from "@/components/Navbar";
+import { GlobeNetworkIcon } from "@/components/Icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -42,12 +43,17 @@ export default function Home() {
           opacity: 0,
           duration: 0.7,
         }, "-=0.5")
+        .from(".hero-text-col .about-feat-item", {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+        }, "-=0.4")
         .from(".hero-actions > *", {
           y: 20,
           opacity: 0,
           stagger: 0.1,
           duration: 0.6,
-        }, "-=0.4");
+        }, "-=0.3");
     }, stageRef);
 
     return () => ctx.revert();
@@ -55,42 +61,15 @@ export default function Home() {
 
   return (
     <>
+      {/* Floating Light Pill Navigation with Dropdown & Responsive Drawer */}
+      <Navbar activePage="home" />
+
       <main className="hero-stage" ref={stageRef}>
         {/* Background Image and Overlays */}
         <div className="hero-bg-wrap" aria-hidden="true">
           <div className="hero-bg-image" />
           <div className="hero-bg-overlay" />
         </div>
-
-        {/* Floating Light Pill Navigation (Matching Service Detail page) */}
-        <nav className="sv-nav-light" aria-label="Main Navigation">
-          <Link href="/" className="hero-logo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
-          </Link>
-
-          <div className="sv-nav-center">
-            <Link href="/" className="sv-nav-link sv-nav-link-active">
-              <span>Home</span>
-              <span className="sv-nav-active-bar" />
-            </Link>
-            <Link href="/#services" className="sv-nav-link">
-              Services
-            </Link>
-            <Link href="/about" className="sv-nav-link">
-              About
-            </Link>
-            <Link href="/contact" className="sv-nav-link">
-              Contact
-            </Link>
-          </div>
-
-          <div className="sv-nav-right">
-            <Link className="sv-nav-cta-btn" href="/contact">
-              Get Free Estimate <Arrow />
-            </Link>
-          </div>
-        </nav>
 
         {/* Hero Content with hero.jpg background */}
         <div className="hero-container">

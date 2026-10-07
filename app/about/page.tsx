@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DigitalSpireVisual from "@/components/DigitalSpireVisual";
 import { Arrow, Back, MapPinIcon, GlobeNetworkIcon, LayersIcon, PhoneIcon, WebIcon } from "@/components/Icons";
@@ -14,37 +15,11 @@ export default function AboutPage() {
 
   return (
     <div className="sv-page-wrapper">
+      {/* Floating Nav with Dropdown & Mobile Drawer */}
+      <Navbar activePage="about" />
+
       {/* ── 1. HERO SECTION ── */}
       <header className="sv-hero-container">
-        {/* Floating Nav */}
-        <nav className="sv-nav-light" aria-label="Main Navigation">
-          <Link href="/" className="hero-logo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
-          </Link>
-
-          <div className="sv-nav-center">
-            <Link href="/" className="sv-nav-link">
-              Home
-            </Link>
-            <Link href="/#services" className="sv-nav-link">
-              Services
-            </Link>
-            <Link href="/about" className="sv-nav-link sv-nav-link-active">
-              <span>About</span>
-              <span className="sv-nav-active-bar" />
-            </Link>
-            <Link href="/contact" className="sv-nav-link">
-              Contact
-            </Link>
-          </div>
-
-          <div className="sv-nav-right">
-            <Link className="sv-nav-cta-btn" href="/contact">
-              Get Free Estimate <Arrow />
-            </Link>
-          </div>
-        </nav>
 
         {/* Hero Content */}
         <div className="sv-hero-content">

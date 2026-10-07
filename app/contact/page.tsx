@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Arrow, Back, PhoneIcon, WebIcon, MapPinIcon, Tick } from "@/components/Icons";
 
 const serviceOptions = [
-  "AI Solutions & Automation",
-  "Custom Software & Cloud Platforms",
-  "High-Performance Website Development",
-  "Mobile App Engineering (iOS & Android)",
-  "Brand Identity & UI/UX Product Design",
-  "Full End-to-End Digital Transformation",
+  "AI Solutions",
+  "Software Development",
+  "Website Development",
+  "App Development",
+  "Graphics & UI/UX Design",
 ];
 
 const budgetOptions = ["Under $10,000", "$10,000 – $25,000", "$25,000 – $50,000", "$50,000+"];
@@ -19,7 +19,7 @@ const budgetOptions = ["Under $10,000", "$10,000 – $25,000", "$25,000 – $50,
 const timelineOptions = ["Urgent (< 1 Month)", "1 – 3 Months", "3 – 6 Months", "Flexible / Exploring"];
 
 export default function ContactPage() {
-  const [selectedServices, setSelectedServices] = useState<string[]>(["AI Solutions & Automation"]);
+  const [selectedServices, setSelectedServices] = useState<string[]>(["AI Solutions"]);
   const [budget, setBudget] = useState<string>("$10,000 – $25,000");
   const [timeline, setTimeline] = useState<string>("1 – 3 Months");
   const [formData, setFormData] = useState({
@@ -56,37 +56,11 @@ export default function ContactPage() {
 
   return (
     <div className="sv-page-wrapper">
+      {/* Floating Nav with Dropdown & Mobile Drawer */}
+      <Navbar activePage="contact" ctaText="Call Now" ctaHref="tel:+15027135115" />
+
       {/* ── 1. HERO SECTION ── */}
       <header className="sv-hero-container" style={{ paddingBottom: 60 }}>
-        {/* Floating Nav */}
-        <nav className="sv-nav-light" aria-label="Main Navigation">
-          <Link href="/" className="hero-logo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
-          </Link>
-
-          <div className="sv-nav-center">
-            <Link href="/" className="sv-nav-link">
-              Home
-            </Link>
-            <Link href="/#services" className="sv-nav-link">
-              Services
-            </Link>
-            <Link href="/about" className="sv-nav-link">
-              About
-            </Link>
-            <Link href="/contact" className="sv-nav-link sv-nav-link-active">
-              <span>Contact</span>
-              <span className="sv-nav-active-bar" />
-            </Link>
-          </div>
-
-          <div className="sv-nav-right">
-            <a className="sv-nav-cta-btn" href="tel:+15027135115">
-              Call Now <Arrow />
-            </a>
-          </div>
-        </nav>
 
         {/* Hero Content */}
         <div className="sv-hero-content" style={{ paddingBottom: 20 }}>

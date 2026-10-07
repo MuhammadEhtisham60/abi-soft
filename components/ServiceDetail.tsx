@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Arrow, Back, Ic, Tick, PhoneIcon, WebIcon, MapPinIcon } from "./Icons";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { services, type Service } from "./servicesData";
 import gsap from "gsap";
@@ -173,41 +174,11 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
 
   return (
     <div className="sv-page-wrapper" ref={containerRef}>
+      {/* Floating Pill Header Nav with Dropdown & Mobile Drawer */}
+      <Navbar activePage="services" />
+
       {/* ── 1. SERVICE DETAIL BANNER (LIGHT BLUE THEME MATCHING SCREENSHOT) ── */}
       <header className="sv-banner-hero">
-        {/* Floating Pill Header Nav (White Navbar with Home, Services v, About, Contact, Get Free Estimate) */}
-        <nav className="sv-nav-light" aria-label="Main Navigation">
-          <Link href="/" className="hero-logo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
-          </Link>
-
-          <div className="sv-nav-center">
-            <Link href="/" className="sv-nav-link">
-              Home
-            </Link>
-            <Link href="/#services" className="sv-nav-link sv-nav-link-active">
-              <span>Services</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-              <span className="sv-nav-active-bar" />
-            </Link>
-            <Link href="/about" className="sv-nav-link">
-              About
-            </Link>
-            <Link href="/contact" className="sv-nav-link">
-              Contact
-            </Link>
-          </div>
-
-          <div className="sv-nav-right">
-            <Link className="sv-nav-cta-btn" href="/contact">
-              Get Free Estimate <Arrow />
-            </Link>
-          </div>
-        </nav>
-
         {/* Banner Two-Column Content */}
         <div className="sv-banner-container">
           <div className="sv-banner-grid">
