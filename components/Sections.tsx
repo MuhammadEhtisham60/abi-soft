@@ -106,20 +106,12 @@ export default function Sections() {
         ease: "power3.out",
       });
 
-      // 3. Process section animation (distinct step-by-step 1-by-1 card entrance)
+      // 3. Process section animation (step-by-step 5-card entrance)
       const procSection = containerRef.current?.querySelector("#process");
       if (procSection) {
-        const procCards = procSection.querySelectorAll(".proc-card");
-        const connPath = procSection.querySelector<SVGPathElement>(".proc-conn-line-path");
-        const ctaRow = procSection.querySelector(".proc-cta-row");
-
-        if (connPath) {
-          const pathLength = connPath.getTotalLength ? connPath.getTotalLength() : 1000;
-          gsap.set(connPath, {
-            strokeDasharray: pathLength,
-            strokeDashoffset: pathLength,
-          });
-        }
+        const procCards = procSection.querySelectorAll(".proc-card-wrapper");
+        const connTree = procSection.querySelector(".proc-conn-tree");
+        const ctaWrap = procSection.querySelector(".proc-cta-wrap");
 
         const procTl = gsap.timeline({
           scrollTrigger: {
@@ -138,41 +130,44 @@ export default function Sections() {
           ease: "power3.out",
         });
 
-        // Connecting line draw animation
-        if (connPath) {
-          procTl.to(
-            connPath,
+        // Connecting tree fade & slide in
+        if (connTree) {
+          procTl.from(
+            connTree,
             {
-              strokeDashoffset: 0,
-              duration: 1.6,
-              ease: "power1.inOut",
+              opacity: 0,
+              y: -10,
+              duration: 0.8,
+              ease: "power2.out",
             },
-            "-=0.2"
+            "-=0.3"
           );
         }
 
-        // Cards animate 1-by-1 sequentially: 1st -> 2nd -> 3rd -> 4th
+        // Cards animate sequentially: 1 -> 2 -> 3 -> 4 -> 5
         procTl.from(
           procCards,
           {
-            y: 55,
+            y: 45,
             opacity: 0,
-            scale: 0.9,
-            stagger: 0.35,
-            duration: 0.7,
+            scale: 0.94,
+            stagger: 0.12,
+            duration: 0.65,
             ease: "back.out(1.2)",
+            clearProps: "transform,opacity",
           },
-          "-=1.4"
+          "-=0.4"
         );
 
-        if (ctaRow) {
+        if (ctaWrap) {
           procTl.from(
-            ctaRow,
+            ctaWrap,
             {
-              y: 24,
+              y: 20,
               opacity: 0,
               duration: 0.6,
               ease: "power3.out",
+              clearProps: "transform,opacity",
             },
             "-=0.2"
           );
