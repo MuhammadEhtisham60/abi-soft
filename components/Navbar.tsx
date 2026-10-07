@@ -135,12 +135,13 @@ export default function Navbar({
                 </div>
 
                 <div className="sv-dropdown-grid">
-                  {services.map((s) => (
+                  {services.map((s, idx) => (
                     <Link
                       key={s.slug}
                       href={`/services/${s.slug}`}
                       className="sv-dropdown-item"
                       role="menuitem"
+                      style={{ animationDelay: `${(idx + 1) * 55}ms` }}
                       onClick={() => setDropdownOpen(false)}
                     >
                       <div className="sv-dropdown-item-icon">
@@ -262,11 +263,12 @@ export default function Navbar({
 
                 {mobileServicesOpen && (
                   <div className="sv-mobile-services-sublist">
-                    {services.map((s) => (
+                    {services.map((s, idx) => (
                       <Link
                         key={s.slug}
                         href={`/services/${s.slug}`}
                         className="sv-mobile-sublink"
+                        style={{ animationDelay: `${(idx + 1) * 45}ms` }}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <span className="sv-mobile-sublink-dot" />
