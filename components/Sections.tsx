@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import {
   ServicesSection,
   AboutSection,
+  DestinationCarousel,
   ProcessSection,
   FaqSection,
   ContactCtaSection,
@@ -232,6 +233,7 @@ export default function Sections() {
     <div className="light" ref={containerRef}>
       <ServicesSection />
       <AboutSection />
+      <DestinationCarousel />
       <ProcessSection />
       <FaqSection />
       <ContactCtaSection />

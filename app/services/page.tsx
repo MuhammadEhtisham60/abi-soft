@@ -138,122 +138,104 @@ export default function ServicesPage() {
           {/* Services Cards List */}
           <div className="services-catalog-grid" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
             {services.map((service, index) => {
-              const isEven = index % 2 === 1;
+              const primaryStat = service.heroStats?.[0] || { value: "100%", label: "Client Satisfaction" };
+              const serviceImg = service.image || "/images/service-tech-featured.jpg";
+
               return (
                 <article
                   key={service.slug}
                   id={service.slug}
                   className="service-directory-card"
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "24px",
-                    border: "1px solid #e2e8f0",
-                    padding: "36px",
-                    boxShadow: "0 8px 30px rgba(15, 23, 42, 0.04)",
-                    display: "grid",
-                    gridTemplateColumns: "1fr",
-                    gap: "28px",
-                    transition: "all 0.35s ease",
-                  }}
                 >
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px", alignItems: "center" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "36px", alignItems: "stretch" }}>
                     {/* Left Info Column */}
-                    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                      {/* Badge & Number */}
-                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                          <div
-                            style={{
-                              width: "44px",
-                              height: "44px",
-                              borderRadius: "12px",
-                              background: "#f0f7fe",
-                              color: "#0284c7",
-                              display: "grid",
-                              placeItems: "center",
-                              border: "1px solid rgba(2, 132, 199, 0.2)",
-                            }}
-                          >
-                            <ServiceCategoryIcon slug={service.slug} />
+                    <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "16px" }}>
+                      <div>
+                        {/* Badge & Number & Ease-out Icon */}
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", marginBottom: "16px" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                            <div className="svc-dir-icon">
+                              <ServiceCategoryIcon slug={service.slug} />
+                            </div>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                fontWeight: 700,
+                                textTransform: "uppercase",
+                                color: "var(--pri, #0284c7)",
+                                background: "#eff6ff",
+                                border: "1px solid #bfdbfe",
+                                padding: "4px 12px",
+                                borderRadius: "999px",
+                                letterSpacing: "0.04em",
+                              }}
+                            >
+                              {service.category}
+                            </span>
                           </div>
-                          <span
-                            style={{
-                              fontSize: "11px",
-                              fontWeight: 700,
-                              textTransform: "uppercase",
-                              color: "#0284c7",
-                              background: "#eff6ff",
-                              border: "1px solid #bfdbfe",
-                              padding: "4px 12px",
-                              borderRadius: "999px",
-                              letterSpacing: "0.04em",
-                            }}
-                          >
-                            {service.category}
+                          <span style={{ fontSize: "15px", fontWeight: 800, color: "#cbd5e1" }}>
+                            0{index + 1}
                           </span>
                         </div>
-                        <span style={{ fontSize: "14px", fontWeight: 800, color: "#cbd5e1" }}>
-                          0{index + 1}
-                        </span>
-                      </div>
 
-                      {/* Title & Tagline */}
-                      <div>
-                        <h3 style={{ fontSize: "26px", fontWeight: 800, color: "#0f172a", marginBottom: "6px", letterSpacing: "-0.015em" }}>
-                          <Link href={`/services/${service.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
-                            {service.t}
-                          </Link>
-                        </h3>
-                        <p style={{ fontSize: "14.5px", fontWeight: 600, color: "#0284c7" }}>
-                          {service.p}
+                        {/* Title & Tagline */}
+                        <div style={{ marginBottom: "12px" }}>
+                          <h3 style={{ fontSize: "27px", fontWeight: 800, color: "#0f172a", marginBottom: "4px", letterSpacing: "-0.015em" }}>
+                            <Link href={`/services/${service.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
+                              {service.t}
+                            </Link>
+                          </h3>
+                          <p style={{ fontSize: "14.5px", fontWeight: 600, color: "var(--pri, #0284c7)" }}>
+                            {service.p}
+                          </p>
+                        </div>
+
+                        {/* Description */}
+                        <p style={{ fontSize: "14.5px", lineHeight: "1.65", color: "#475569", marginBottom: "16px" }}>
+                          {service.intro || service.desc}
                         </p>
-                      </div>
 
-                      {/* Description */}
-                      <p style={{ fontSize: "14.5px", lineHeight: "1.65", color: "#475569" }}>
-                        {service.intro || service.desc}
-                      </p>
+                        {/* Key Highlights Checklist */}
+                        {service.features && (
+                          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "10px", marginBottom: "16px" }}>
+                            {service.features.slice(0, 4).map((feat) => (
+                              <div key={feat} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "13px", color: "#334155" }}>
+                                <span style={{ color: "var(--pri, #0284c7)", fontWeight: 800, flexShrink: 0 }}>✓</span>
+                                <span>{feat}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
 
-                      {/* Key Highlights Checklist */}
-                      {service.features && (
-                        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "10px", marginTop: "6px" }}>
-                          {service.features.slice(0, 4).map((feat) => (
-                            <div key={feat} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "13px", color: "#334155" }}>
-                              <span style={{ color: "#0284c7", fontWeight: 800, flexShrink: 0 }}>✓</span>
-                              <span>{feat}</span>
-                            </div>
+                        {/* Tech Stack Chips */}
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                          {service.stack.slice(0, 6).map((tech) => (
+                            <span
+                              key={tech}
+                              style={{
+                                fontSize: "11px",
+                                fontWeight: 600,
+                                color: "#475569",
+                                background: "#f8fafc",
+                                border: "1px solid #e2e8f0",
+                                padding: "3px 10px",
+                                borderRadius: "6px",
+                              }}
+                            >
+                              {tech}
+                            </span>
                           ))}
                         </div>
-                      )}
-
-                      {/* Tech Stack Chips */}
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "8px" }}>
-                        {service.stack.slice(0, 6).map((tech) => (
-                          <span
-                            key={tech}
-                            style={{
-                              fontSize: "11px",
-                              fontWeight: 600,
-                              color: "#475569",
-                              background: "#f8fafc",
-                              border: "1px solid #e2e8f0",
-                              padding: "3px 10px",
-                              borderRadius: "6px",
-                            }}
-                          >
-                            {tech}
-                          </span>
-                        ))}
                       </div>
 
                       {/* Actions */}
-                      <div style={{ display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap", marginTop: "12px" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap", marginTop: "16px", paddingTop: "16px", borderTop: "1px solid #f1f5f9" }}>
                         <Link
                           href={`/services/${service.slug}`}
                           className="hero-btn-primary"
                           style={{
-                            padding: "10px 22px",
-                            fontSize: "13.5px",
+                            padding: "11px 24px",
+                            fontSize: "14px",
                             borderRadius: "10px",
                             display: "inline-flex",
                             alignItems: "center",
@@ -266,9 +248,9 @@ export default function ServicesPage() {
                         <Link
                           href={`/contact?service=${service.slug}`}
                           style={{
-                            fontSize: "13px",
+                            fontSize: "13.5px",
                             fontWeight: 600,
-                            color: "#0284c7",
+                            color: "var(--pri, #0284c7)",
                             textDecoration: "none",
                             padding: "10px 14px",
                           }}
@@ -278,67 +260,38 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Right Column: Hero Metrics & Image Showcase */}
-                    <div
-                      style={{
-                        background: "linear-gradient(135deg, #f8fafc 0%, #f0f7fe 100%)",
-                        borderRadius: "18px",
-                        border: "1px solid #e2e8f0",
-                        padding: "24px",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "18px",
-                      }}
-                    >
-                      {/* Stat Highlights */}
-                      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
-                        {service.heroStats?.slice(0, 4).map((st) => (
-                          <div
-                            key={st.label}
-                            style={{
-                              background: "#ffffff",
-                              borderRadius: "12px",
-                              padding: "14px",
-                              border: "1px solid rgba(226, 232, 240, 0.8)",
-                              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.02)",
-                            }}
-                          >
-                            <div style={{ fontSize: "20px", fontWeight: 800, color: "#0284c7", letterSpacing: "-0.02em" }}>
-                              {st.value}
-                            </div>
-                            <div style={{ fontSize: "12px", fontWeight: 700, color: "#0f172a", marginTop: "2px" }}>
-                              {st.label}
-                            </div>
-                            {st.sub && (
-                              <div style={{ fontSize: "11px", color: "#64748b", marginTop: "2px" }}>
-                                {st.sub}
-                              </div>
-                            )}
-                          </div>
-                        ))}
+                    {/* Right Column: Relevant Image Showcase with Shine Flash Effect */}
+                    <div className="svc-img-showcase">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={serviceImg}
+                        alt={service.t}
+                        className="svc-img-element"
+                      />
+
+                      {/* Shine / Flash Wave Element */}
+                      <div className="svc-img-shine" />
+
+                      {/* Top Floating Badge */}
+                      <div className="svc-img-overlay-top">
+                        <div className="svc-img-overlay-badge">
+                          <span className="live-dot" style={{ width: 6, height: 6 }} />
+                          <span>Enterprise SLA</span>
+                        </div>
                       </div>
 
-                      {/* Perspective Snippet */}
-                      {service.marketPerspective && (
-                        <div
-                          style={{
-                            background: "rgba(255, 255, 255, 0.9)",
-                            borderRadius: "12px",
-                            padding: "16px",
-                            border: "1px solid rgba(2, 132, 199, 0.2)",
-                          }}
-                        >
-                          <small style={{ fontSize: "10.5px", fontWeight: 700, textTransform: "uppercase", color: "#0369a1", letterSpacing: "0.05em" }}>
-                            Enterprise Advantage
-                          </small>
-                          <p style={{ fontSize: "13px", fontWeight: 700, color: "#0f172a", margin: "4px 0 2px" }}>
-                            {service.marketPerspective.headline}
-                          </p>
-                          <p style={{ fontSize: "12px", color: "#64748b", lineHeight: "1.45" }}>
-                            {service.marketPerspective.subheadline}
-                          </p>
+                      {/* Bottom Floating Glass Card */}
+                      <div className="svc-img-overlay-bottom">
+                        <div>
+                          <div className="svc-img-metric-val">{primaryStat.value}</div>
+                          <div className="svc-img-metric-label">{primaryStat.label}</div>
                         </div>
-                      )}
+                        {primaryStat.sub && (
+                          <div style={{ fontSize: "10.5px", color: "#94a3b8", textAlign: "right", maxWidth: "120px", lineHeight: "1.25" }}>
+                            {primaryStat.sub}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </article>
