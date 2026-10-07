@@ -3973,9 +3973,9 @@ html.lenis, html.lenis-smooth {
 }
 
 .service-directory-card:hover .svc-dir-icon {
-  transform: scale(1.18) rotate(6deg);
-  background: var(--pri, #0284c7);
-  color: #ffffff;
+  transform: scale(1.18);
+  /* background: var(--pri, #0284c7);
+  color: #ffffff; */
   box-shadow: 0 10px 24px rgba(2, 132, 199, 0.35);
 }
 

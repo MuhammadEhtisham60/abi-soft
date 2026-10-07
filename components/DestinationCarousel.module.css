@@ -72,98 +72,146 @@
 }
 
 .slide {
-  border-radius: 24px;
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  border-radius: 22px;
 }
 
+/* Individual Carousel Item (Base) */
 .item {
   width: 210px;
   height: 280px;
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate3d(0, -50%, 0);
   border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.28);
   background-position: center center;
   background-size: cover;
-  display: inline-block;
-  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  background-repeat: no-repeat;
+  display: block;
+  transition:
+    left 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    top 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    width 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    height 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    transform 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    border-radius 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    box-shadow 0.85s cubic-bezier(0.25, 1, 0.38, 1),
+    opacity 0.85s cubic-bezier(0.25, 1, 0.38, 1);
+  will-change: transform, left, top, width, height, opacity;
   border: 1px solid rgba(226, 232, 240, 0.8);
   cursor: pointer;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.item::before {
-  content: "";
+/* Cross-fading Overlays */
+.cardOverlay {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(71, 85, 105, 0.45) 0%, rgba(15, 23, 42, 0.85) 100%);
-  transition: opacity 0.5s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.2) 0%,
+    rgba(15, 23, 42, 0.55) 45%,
+    rgba(15, 23, 42, 0.92) 100%
+  );
+  opacity: 1;
+  transition: opacity 0.75s ease;
+  pointer-events: none;
+  z-index: 2;
 }
 
-/* Main Active Slide (White Overlay) */
+.mainOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.82) 42%,
+    rgba(255, 255, 255, 0.25) 80%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.75s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Main Active Slide (Items 1 and 2 expand to fill viewport) */
 .item:nth-child(1),
 .item:nth-child(2) {
   top: 0;
   left: 0;
-  transform: translate(0, 0);
-  border-radius: 24px;
+  transform: translate3d(0, 0, 0);
+  border-radius: 22px;
   width: 100%;
   height: 100%;
   box-shadow: none;
   border: none;
+  cursor: default;
 }
 
-.item:nth-child(1)::before,
-.item:nth-child(2)::before {
-  background:
-  linear-gradient(90deg, rgb(255 255 255 / 78%) 0%, rgb(255 255 255 / 20%) 45%, rgb(255 255 255 / 27%) 100%);
+.item:nth-child(1) {
+  z-index: 1;
 }
 
-/* Queue Thumbnails (Gray Overlay) */
-.item:nth-child(n + 3)::before {
-  background: linear-gradient(
-    180deg,
-    rgba(135, 147, 165, 0.6) 0%,
-    rgba(71, 85, 105, 0.7) 40%,
-    rgba(15, 23, 42, 0.92) 100%
-  );
+.item:nth-child(2) {
+  z-index: 2;
 }
 
-.item:nth-child(n + 3):hover {
-  transform: translate(0, calc(-50% - 8px)) scale(1.04);
-  border-color: rgba(2, 132, 199, 0.85);
-  box-shadow: 0 25px 55px rgba(15, 23, 42, 0.45), 0 0 20px rgba(2, 132, 199, 0.25);
+.item:nth-child(1) .cardOverlay,
+.item:nth-child(2) .cardOverlay {
+  opacity: 0;
 }
 
-.item:nth-child(n + 3):hover::before {
-  background: linear-gradient(
-    180deg,
-    rgba(100, 116, 139, 0.4) 0%,
-    rgba(71, 85, 105, 0.55) 40%,
-    rgba(15, 23, 42, 0.85) 100%
-  );
+.item:nth-child(1) .mainOverlay,
+.item:nth-child(2) .mainOverlay {
+  opacity: 1;
 }
 
+/* Queue Thumbnails Positioning & Stacking */
 .item:nth-child(3) {
   left: 54%;
+  z-index: 6;
 }
 
 .item:nth-child(4) {
   left: calc(54% + 225px);
+  z-index: 5;
 }
 
 .item:nth-child(5) {
   left: calc(54% + 450px);
+  z-index: 4;
 }
 
 .item:nth-child(n + 6) {
   left: calc(54% + 675px);
+  z-index: 3;
   opacity: 0;
   pointer-events: none;
+}
+
+/* Hover effect on thumbnail queue items */
+.item:nth-child(n + 3):hover {
+  transform: translate3d(0, calc(-50% - 8px), 0) scale(1.03);
+  border-color: rgba(2, 132, 199, 0.85);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.42), 0 0 20px rgba(2, 132, 199, 0.25);
+}
+
+.item:nth-child(n + 3):hover .cardOverlay {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.1) 0%,
+    rgba(15, 23, 42, 0.4) 45%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
 }
 
 /* Queue Card Service Name Label */
@@ -172,24 +220,36 @@
   bottom: 14px;
   left: 12px;
   right: 12px;
-  z-index: 4;
+  z-index: 6;
   display: flex;
   flex-direction: column;
   gap: 2px;
   pointer-events: none;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.78);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   padding: 8px 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.item:nth-child(1) .queueCardLabel,
+.item:nth-child(2) .queueCardLabel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 14px, 0);
+  pointer-events: none;
 }
 
 .item:nth-child(n + 3):hover .queueCardLabel {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.92);
   border-color: rgba(56, 189, 248, 0.6);
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
 }
 
 .queueCardTag {
@@ -212,21 +272,26 @@
   text-overflow: ellipsis;
 }
 
-/* Active Main Slide Content (High Contrast on White) */
+/* Active Main Slide Content */
 .content {
   position: absolute;
   top: 48%;
   left: 70px;
-  width: min(460px, 85%);
+  width: min(470px, 85%);
   text-align: left;
   color: #0f172a;
-  transform: translate(0, -50%);
-  display: none;
-  z-index: 5;
+  transform: translate3d(0, -50%, 0);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
 }
 
 .item:nth-child(2) .content {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .categoryPill {
@@ -242,7 +307,10 @@
   border-radius: 999px;
   margin-bottom: 12px;
   opacity: 0;
-  animation: animateText 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s 1 forwards;
+}
+
+.item:nth-child(2) .categoryPill {
+  animation: slideFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.1s 1 forwards;
 }
 
 .name {
@@ -253,7 +321,10 @@
   letter-spacing: -0.02em;
   color: #0f172a;
   opacity: 0;
-  animation: animateText 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s 1 forwards;
+}
+
+.item:nth-child(2) .name {
+  animation: slideFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.2s 1 forwards;
 }
 
 .subtitle {
@@ -262,7 +333,10 @@
   color: var(--pri, #0284c7);
   margin-top: 6px;
   opacity: 0;
-  animation: animateText 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s 1 forwards;
+}
+
+.item:nth-child(2) .subtitle {
+  animation: slideFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.3s 1 forwards;
 }
 
 .des {
@@ -272,7 +346,10 @@
   line-height: 1.6;
   color: #475569;
   opacity: 0;
-  animation: animateText 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s 1 forwards;
+}
+
+.item:nth-child(2) .des {
+  animation: slideFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.4s 1 forwards;
 }
 
 .seeMore {
@@ -296,26 +373,27 @@
   letter-spacing: 0.02em;
   box-shadow: 0 4px 20px rgba(2, 132, 199, 0.35);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  animation: animateText 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s 1 forwards;
+}
+
+.item:nth-child(2) .seeMore button {
+  animation: slideFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.5s 1 forwards;
 }
 
 .seeMore button:hover {
   background: var(--pri2, #0369a1);
   color: #ffffff;
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
   box-shadow: 0 6px 24px rgba(3, 105, 161, 0.45);
 }
 
-@keyframes animateText {
+@keyframes slideFadeIn {
   from {
     opacity: 0;
-    transform: translateY(35px);
-    filter: blur(12px);
+    transform: translate3d(0, 24px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -327,7 +405,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 20;
   pointer-events: none;
 }
 
@@ -346,8 +424,9 @@
   border: 1px solid #cbd5e1;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #0f172a;
   font-size: 16px;
   display: grid;
@@ -359,12 +438,12 @@
   color: #ffffff;
   background: var(--pri, #0284c7);
   border-color: var(--pri, #0284c7);
-  transform: scale(1.1);
+  transform: scale(1.08);
   box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4);
 }
 
 .button button:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
 
 .next {
@@ -389,7 +468,7 @@
   background: rgba(148, 163, 184, 0.5);
   border: none;
   cursor: pointer;
-  transition: all 0.35s ease;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   padding: 0;
 }
 
@@ -428,7 +507,7 @@
 
 @media (max-width: 680px) {
   .container {
-    height: 470px;
+    height: 480px;
     border-radius: 18px;
   }
   .content {
@@ -436,9 +515,7 @@
     width: calc(100% - 48px);
     top: 42%;
   }
-  .item:nth-child(3),
-  .item:nth-child(4),
-  .item:nth-child(5) {
+  .item:nth-child(n + 3) {
     display: none;
   }
   .controlsBar {

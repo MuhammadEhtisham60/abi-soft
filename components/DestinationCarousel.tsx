@@ -45,6 +45,8 @@ const DestinationCarousel = ({
   const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const isIntersectingRef = useRef(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   // Rotate to next slide
   const handleNext = useCallback(() => {
@@ -55,6 +57,31 @@ const DestinationCarousel = ({
   const handlePrev = useCallback(() => {
     setItems((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
   }, []);
+
+  // Touch swipe support for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsPaused(true);
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   // Intersection Observer to only auto-play when in viewport
   useEffect(() => {
@@ -111,54 +138,72 @@ const DestinationCarousel = ({
         className={styles.container}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className={styles.slide}>
-          {items.map((item, index) => (
-            <div
-              key={item.id}
-              className={styles.item}
-              style={{
-                backgroundImage: `url('${item.image}')`,
-              }}
-              data-index={index}
-              onClick={() => {
-                if (index > 1) {
-                  // Jump to clicked card
-                  setItems((prev) => {
-                    const shiftCount = index - 1;
-                    return [...prev.slice(shiftCount), ...prev.slice(0, shiftCount)];
-                  });
-                }
-              }}
-            >
-              {/* Content overlay shown on active slide */}
-              <div className={styles.content}>
-                {item.badge && (
-                  <span className={styles.categoryPill}>{item.badge}</span>
-                )}
-                <div className={styles.name}>{item.name}</div>
-                {item.subtitle && (
-                  <div className={styles.subtitle}>{item.subtitle}</div>
-                )}
-                <div className={styles.des}>{item.description}</div>
-                <Link className={styles.seeMore} href={item.link}>
-                  <button type="button">
-                    Explore Solution <span>→</span>
-                  </button>
-                </Link>
-              </div>
+          {items.map((item, index) => {
+            const isQueue = index > 1;
+            return (
+              <div
+                key={item.id}
+                className={styles.item}
+                style={{
+                  backgroundImage: `url('${item.image}')`,
+                }}
+                data-index={index}
+                role={isQueue ? "button" : undefined}
+                tabIndex={isQueue ? 0 : -1}
+                aria-label={isQueue ? `Switch to ${item.name}` : undefined}
+                onKeyDown={(e) => {
+                  if (isQueue && (e.key === "Enter" || e.key === " ")) {
+                    e.preventDefault();
+                    setItems((prev) => {
+                      const shiftCount = index - 1;
+                      return [...prev.slice(shiftCount), ...prev.slice(0, shiftCount)];
+                    });
+                  }
+                }}
+                onClick={() => {
+                  if (isQueue) {
+                    // Jump to clicked card smoothly
+                    setItems((prev) => {
+                      const shiftCount = index - 1;
+                      return [...prev.slice(shiftCount), ...prev.slice(0, shiftCount)];
+                    });
+                  }
+                }}
+              >
+                {/* Overlays for smooth cross-fading without flash */}
+                <div className={styles.cardOverlay} />
+                <div className={styles.mainOverlay} />
 
-              {/* Service name label on queue thumbnail cards */}
-              {index > 1 && (
+                {/* Content overlay shown on active slide */}
+                <div className={styles.content}>
+                  {item.badge && (
+                    <span className={styles.categoryPill}>{item.badge}</span>
+                  )}
+                  <div className={styles.name}>{item.name}</div>
+                  {item.subtitle && (
+                    <div className={styles.subtitle}>{item.subtitle}</div>
+                  )}
+                  <div className={styles.des}>{item.description}</div>
+                  <Link className={styles.seeMore} href={item.link}>
+                    <button type="button">
+                      Explore Solution <span>→</span>
+                    </button>
+                  </Link>
+                </div>
+
+                {/* Service name label on queue thumbnail cards (faded via CSS on active) */}
                 <div className={styles.queueCardLabel}>
                   <span className={styles.queueCardTag}>Service</span>
                   <span className={styles.queueCardName}>{item.name}</span>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
 
         {/* Floating Controls & Dots */}

@@ -113,11 +113,10 @@ export default function Navbar({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button
-              type="button"
+            <Link
+              href="/services"
               className={`sv-nav-link sv-nav-dropdown-btn ${isServices ? "sv-nav-link-active" : ""}`}
-              onClick={() => setDropdownOpen((prev) => !prev)}
-              aria-expanded={dropdownOpen}
+              onClick={() => setDropdownOpen(false)}
             >
               <span>Services</span>
               <svg
@@ -134,7 +133,7 @@ export default function Navbar({
                 <polyline points="6 9 12 15 18 9" />
               </svg>
               {isServices && <span className="sv-nav-active-bar" />}
-            </button>
+            </Link>
 
             {/* Dropdown Menu Card */}
             {dropdownOpen && (
@@ -250,26 +249,48 @@ export default function Navbar({
 
               {/* Mobile Services Accordion */}
               <div className="sv-mobile-accordion">
-                <button
-                  type="button"
-                  className={`sv-mobile-link sv-mobile-accordion-btn ${isServices ? "sv-mobile-link-active" : ""}`}
-                  onClick={() => setMobileServicesOpen((prev) => !prev)}
-                >
-                  <span>Services</span>
-                  <svg
-                    className={`sv-chevron-icon ${mobileServicesOpen ? "sv-chevron-open" : ""}`}
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                  <Link
+                    href="/services"
+                    className={`sv-mobile-link ${isServices ? "sv-mobile-link-active" : ""}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{ flex: 1 }}
                   >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </button>
+                    Services
+                  </Link>
+                  <button
+                    type="button"
+                    className="sv-mobile-accordion-toggle"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setMobileServicesOpen((prev) => !prev);
+                    }}
+                    aria-label="Toggle services submenu"
+                    style={{
+                      background: "none",
+                      border: "none",
+                      padding: "10px 14px",
+                      cursor: "pointer",
+                      color: isServices ? "#0284c7" : "#64748b",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <svg
+                      className={`sv-chevron-icon ${mobileServicesOpen ? "sv-chevron-open" : ""}`}
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                </div>
 
                 {mobileServicesOpen && (
                   <div className="sv-mobile-services-sublist">
