@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Arrow } from "../Icons";
 
 const faqs = [
@@ -26,6 +27,13 @@ const faqs = [
 ];
 
 export default function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const handleToggle = (idx: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpenIndex((prev) => (prev === idx ? null : idx));
+  };
+
   return (
     <section className="sec faq-section-container" id="faq">
       <div className="faq-wrap">
@@ -45,29 +53,36 @@ export default function FaqSection() {
               <span>Ask a Question</span>
               <Arrow />
             </a>
-            <div className="faq-support-meta">
+            {/* <div className="faq-support-meta">
               <span className="faq-online-dot" />
               <span>Direct engineer response &bull; <strong>&lt; 2 hrs</strong></span>
-            </div>
+            </div> */}
           </div>
         </div>
 
         <div className="faq">
-          {faqs.map((item, idx) => (
-            <details key={idx} className="faq-item" open={idx === 0}>
-              <summary>
-                <span className="faq-question-text">{item.q}</span>
-                <span className="faq-chevron" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </span>
-              </summary>
-              <div className="faq-body">
-                <p>{item.a}</p>
-              </div>
-            </details>
-          ))}
+          {faqs.map((item, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <details
+                key={idx}
+                className="faq-item"
+                open={isOpen}
+              >
+                <summary onClick={(e) => handleToggle(idx, e)}>
+                  <span className="faq-question-text">{item.q}</span>
+                  <span className="faq-chevron" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="faq-body">
+                  <p>{item.a}</p>
+                </div>
+              </details>
+            );
+          })}
         </div>
       </div>
     </section>
