@@ -147,7 +147,7 @@ export default function ServicesPage() {
                   id={service.slug}
                   className="service-directory-card"
                 >
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "36px", alignItems: "stretch" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "36px", alignItems: "stretch" }}>
                     {/* Left Info Column */}
                     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "16px" }}>
                       <div>
@@ -197,7 +197,7 @@ export default function ServicesPage() {
 
                         {/* Key Highlights Checklist */}
                         {service.features && (
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "10px", marginBottom: "16px" }}>
+                          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "10px", marginBottom: "16px" }}>
                             {service.features.slice(0, 4).map((feat) => (
                               <div key={feat} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "13px", color: "#334155" }}>
                                 <span style={{ color: "var(--pri, #0284c7)", fontWeight: 800, flexShrink: 0 }}>✓</span>

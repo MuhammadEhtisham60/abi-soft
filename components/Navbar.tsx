@@ -7,7 +7,7 @@ import { services } from "./servicesData";
 import { Arrow } from "./Icons";
 
 type NavbarProps = {
-  activePage?: "home" | "services" | "about" | "contact";
+  activePage?: "home" | "services" | "about" | "team" | "contact";
   className?: string;
   ctaText?: string;
   ctaHref?: string;
@@ -54,6 +54,7 @@ export default function Navbar({
   const isHome = activePage === "home" || pathname === "/";
   const isServices = activePage === "services" || pathname.startsWith("/services");
   const isAbout = activePage === "about" || pathname === "/about";
+  const isTeam = activePage === "team" || pathname === "/team";
   const isContact = activePage === "contact" || pathname === "/contact";
 
   // Close dropdown on outside click
@@ -177,6 +178,11 @@ export default function Navbar({
           <Link href="/about" className={`sv-nav-link ${isAbout ? "sv-nav-link-active" : ""}`}>
             <span>About</span>
             {isAbout && <span className="sv-nav-active-bar" />}
+          </Link>
+
+          <Link href="/team" className={`sv-nav-link ${isTeam ? "sv-nav-link-active" : ""}`}>
+            <span>Our Team</span>
+            {isTeam && <span className="sv-nav-active-bar" />}
           </Link>
 
           <Link href="/contact" className={`sv-nav-link ${isContact ? "sv-nav-link-active" : ""}`}>
@@ -326,6 +332,14 @@ export default function Navbar({
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About Us
+              </Link>
+
+              <Link
+                href="/team"
+                className={`sv-mobile-link ${isTeam ? "sv-mobile-link-active" : ""}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Team
               </Link>
 
               <Link

@@ -44,7 +44,7 @@ export default function Footer() {
 
   return (
     <footer className="foot" ref={footerRef}>
-      <div className="foot-in" style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1.1fr" }}>
+      <div className="foot-in">
         <div>
           <b>ABI Technologies &amp; Digital Solutions</b>
           <p>Welcome to the Digital World. USA-based engineering team delivering custom AI, enterprise software, web platforms, mobile apps, and UI/UX design worldwide.</p>
@@ -59,6 +59,7 @@ export default function Footer() {
           <h4>Company</h4>
           <Link href="/">Home</Link>
           <Link href="/about">About Us</Link>
+          <Link href="/team">Our Team</Link>
           <Link href="/#process">How We Work</Link>
           <Link href="/contact">Contact &amp; RFP</Link>
           <Link href="/#faq">Insights &amp; FAQ</Link>

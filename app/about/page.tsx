@@ -126,9 +126,7 @@ export default function AboutPage() {
 
             {/* Visual Side */}
             <div className="about-visual-side">
-              <div className="digital-spire-container" style={{ minHeight: 560 }}>
-                <DigitalSpireVisual />
-              </div>
+              <DigitalSpireVisual />
             </div>
           </div>
         </section>
