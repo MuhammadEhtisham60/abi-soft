@@ -13,7 +13,7 @@ export default function AboutSection() {
         </div>
         <h2>
           Let&apos;s change the world,
-          <br />
+          <br className="about-h2-br" />
           <em>one digital solution at a time.</em>
         </h2>
         <p className="lead">
@@ -26,8 +26,19 @@ export default function AboutSection() {
               <GlobeNetworkIcon />
             </div>
             <div className="about-feat-text">
-              <b>Serving clients worldwide</b>
-              <small>Remote-first delivery across every time zone</small>
+              <div className="about-feat-header">
+                <b>Serving clients worldwide</b>
+                <span className="about-feat-badge">
+                  <span className="about-pulse-dot" />
+                  Global Delivery
+                </span>
+              </div>
+              <small>Remote-first delivery across every time zone Frequently asked</small>
+              {/* <div className="about-feat-tags">
+                <span className="about-feat-tag">🇺🇸 US-Managed</span>
+                <span className="about-feat-tag">⚡ Rapid Sprints</span>
+                <span className="about-feat-tag">🌐 20+ Countries</span>
+              </div> */}
             </div>
           </div>
         </div>

@@ -84,12 +84,12 @@ export default function Sections() {
         ease: "power3.out",
       });
 
-      gsap.from(".about-feat-item", {
+      gsap.from("#about .about-feat-item", {
         scrollTrigger: {
-          trigger: ".about-features",
+          trigger: "#about .about-features",
           start: "top 85%",
         },
-        x: -30,
+        y: 20,
         opacity: 0,
         stagger: 0.12,
         duration: 0.7,
@@ -193,7 +193,7 @@ export default function Sections() {
           trigger: "#faq .faq",
           start: "top 80%",
         },
-        x: 30,
+        y: 20,
         opacity: 0,
         stagger: 0.08,
         duration: 0.7,

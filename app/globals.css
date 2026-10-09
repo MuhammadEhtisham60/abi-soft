@@ -64,12 +64,17 @@ a{color:inherit;text-decoration:none}
 }
 
 @media (max-width: 768px) {
+  .hero-bg-image {
+    background-position: 70% 100%;
+    background-size: cover;
+  }
   .hero-bg-overlay {
     background: linear-gradient(
       180deg,
-      rgba(210, 230, 252, 0.96) 0%,
-      rgba(210, 230, 252, 0.90) 55%,
-      rgba(210, 230, 252, 0.65) 100%
+      rgba(210, 230, 252, 0.95) 0%,
+      rgba(210, 230, 252, 0.85) 40%,
+      rgba(210, 230, 252, 0.45) 75%,
+      rgba(210, 230, 252, 0.15) 100%
     );
   }
 }
@@ -709,49 +714,106 @@ html.lenis, html.lenis-smooth {
 }
 .about-feat-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
-  padding: 16px 20px;
+  padding: 18px 20px;
   border-radius: 18px;
   background: #ffffff;
-  border: 1px solid #e8f0fe;
-  box-shadow: 0 4px 20px -2px rgba(30, 58, 138, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(30, 58, 138, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
 }
 .about-feat-item:hover {
-  transform: translateX(4px);
-  border-color: #bfdbfe;
-  box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.12);
 }
 .about-feat-icon {
   width: 44px;
   height: 44px;
   border-radius: 14px;
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-  border: 1px solid rgba(191, 219, 254, 0.8);
+  border: 1px solid rgba(191, 219, 254, 0.85);
   display: grid;
   place-items: center;
   color: var(--pri);
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  margin-top: 2px;
 }
 .about-feat-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
+  flex: 1;
+}
+.about-feat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .about-feat-text b {
   display: block;
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.01em;
 }
+.about-feat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #15803d;
+  letter-spacing: 0.02em;
+}
+.about-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+  animation: pulseDotGreen 2s infinite ease-in-out;
+}
+@keyframes pulseDotGreen {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.8); }
+}
 .about-feat-text small {
   display: block;
-  font-size: 12.8px;
+  font-size: 13px;
   color: #64748b;
-  line-height: 1.45;
+  line-height: 1.5;
+}
+.about-feat-tags {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.about-feat-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px 9px;
+  border-radius: 6px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.about-feat-tag:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 .about-visual-wrapper {
   position: relative;
@@ -3346,14 +3408,227 @@ html.lenis, html.lenis-smooth {
   margin: 0;
 }
 
-/* ---------- landing page FAQ ---------- */
-.faq-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
-.faq-wrap h2{font-size:clamp(30px,4vw,44px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:20px 0 14px}
-.faq-wrap h2 em{font-style:normal;color:var(--pri2)}
-.faq-wrap .lead{color:var(--mute);font-size:15px;line-height:1.7;max-width:380px}
-.faq-wrap .cta{justify-content:flex-start;margin-top:26px}
-.faq-wrap .faq{max-width:none;margin:0}
-@media(max-width:980px){.faq-wrap{grid-template-columns:1fr;gap:36px}}
+/* ---------- LANDING FAQ SECTION ---------- */
+.faq-section-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 24px 100px;
+}
+
+.faq-wrap {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+  width: 100%;
+}
+
+.faq-intro-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: sticky;
+  top: 100px;
+}
+
+.faq-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #dce8fa;
+  box-shadow: 0 2px 8px rgba(30, 80, 180, 0.04);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0284c7;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.faq-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284c7;
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.7);
+}
+
+.faq-intro-col h2 {
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.faq-intro-col h2 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--pri2) 0%, var(--pri) 45%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-intro-col .lead {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0 0 28px;
+  max-width: 440px;
+}
+
+.faq-cta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+}
+
+.faq-ask-btn {
+  background: #0284c7;
+  color: #ffffff;
+  padding: 13px 26px;
+  border-radius: 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border: 1px solid #0284c7;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.faq-ask-btn:hover {
+  background: #0369a1;
+  border-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(2, 132, 199, 0.35);
+}
+
+.faq-support-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.faq-online-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+.faq-question-text {
+  flex: 1;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.faq-body {
+  padding: 0 24px 22px;
+}
+
+@media (max-width: 980px) {
+  .faq-wrap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .faq-intro-col {
+    position: static;
+    max-width: 100%;
+  }
+  .faq-intro-col .lead {
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-section-container {
+    padding: 50px 16px 60px;
+  }
+  .faq-wrap {
+    gap: 28px;
+  }
+  .faq-intro-col h2 {
+    font-size: clamp(24px, 7vw, 32px);
+    margin-bottom: 12px;
+  }
+  .faq-intro-col .lead {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .faq-ask-btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+  .faq-support-meta {
+    font-size: 11.8px;
+  }
+  .faq summary {
+    padding: 16px 16px;
+    gap: 12px;
+    font-size: 14.5px;
+  }
+  .faq-chevron {
+    width: 28px;
+    height: 28px;
+  }
+  .faq-body {
+    padding: 0 16px 16px;
+  }
+  .faq p {
+    font-size: 13.8px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 375px) {
+  .faq-pill-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    margin-bottom: 14px;
+  }
+  .faq-intro-col h2 {
+    font-size: 22px;
+  }
+  .faq-intro-col .lead {
+    font-size: 13px;
+  }
+  .faq summary {
+    padding: 14px 12px;
+    gap: 10px;
+    font-size: 13.5px;
+  }
+  .faq-chevron {
+    width: 26px;
+    height: 26px;
+  }
+  .faq-chevron svg {
+    width: 12px;
+    height: 12px;
+  }
+  .faq-body {
+    padding: 0 12px 14px;
+  }
+  .faq p {
+    font-size: 12.8px;
+  }
+}
 
 /* ---------- ABOUT US PAGE STYLES ---------- */
 .about-split-grid {
@@ -4505,6 +4780,30 @@ h1, h2, h3, h4, p, span, a, label {
   }
 
   /* Grid Layouts on Tablet */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-content {
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .about-content h2 {
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin-bottom: 16px;
+  }
+  .about-content .lead,
+  .about-features {
+    max-width: 100%;
+  }
+  .about-visual-wrapper {
+    min-height: 440px;
+    height: 440px;
+    width: 100%;
+  }
+  .digital-spire-container {
+    min-height: 440px;
+  }
   .about-split-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -4542,7 +4841,23 @@ h1, h2, h3, h4, p, span, a, label {
   }
 
   /* Hero & Headings */
-  .hero-stage,
+  .hero-stage {
+    padding-top: 72px;
+    min-height: auto;
+  }
+  .hero-bg-image {
+    background-position: 72% 100%;
+    background-size: cover;
+  }
+  .hero-bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(210, 230, 252, 0.96) 0%,
+      rgba(210, 230, 252, 0.88) 36%,
+      rgba(210, 230, 252, 0.45) 70%,
+      rgba(210, 230, 252, 0.18) 100%
+    );
+  }
   .sv-banner-hero,
   .sv-hero-container {
     padding-top: 72px;
@@ -4613,25 +4928,77 @@ h1, h2, h3, h4, p, span, a, label {
   }
 
   /* Digital Spire Visual Mobile Safety */
+  .about {
+    gap: 28px;
+  }
+  .about-pill-badge {
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+  .about-content h2 {
+    font-size: clamp(22px, 6.5vw, 30px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .about-content .lead {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .about-features {
+    gap: 12px;
+  }
+  .about-feat-item {
+    padding: 13px 15px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+  .about-feat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+  .about-feat-text b {
+    font-size: 14px;
+  }
+  .about-feat-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+  .about-feat-text small {
+    font-size: 12px;
+  }
+  .about-feat-tags {
+    gap: 5px;
+  }
+  .about-feat-tag {
+    font-size: 10.5px;
+    padding: 2px 7px;
+  }
+  .about-visual-wrapper {
+    min-height: 340px;
+    height: 340px;
+  }
   .digital-spire-container {
-    min-height: 380px;
+    min-height: 340px;
     border-radius: 20px;
   }
   .digital-spire-badge {
-    margin: 14px 14px auto auto;
-    padding: 5px 12px;
-    font-size: 10.5px;
+    margin: 12px 12px auto auto;
+    padding: 5px 11px;
+    font-size: 10px;
   }
   .digital-spire-telemetry {
-    margin: auto 12px 12px;
-    padding: 10px 14px;
-    gap: 8px;
+    margin: auto 10px 10px;
+    padding: 10px 12px;
+    gap: 6px;
   }
   .telemetry-item strong {
-    font-size: 11.5px;
+    font-size: 11px;
   }
   .telemetry-item small {
-    font-size: 9px;
+    font-size: 8.5px;
   }
 
   /* About & Cards on Mobile */
@@ -4720,8 +5087,138 @@ h1, h2, h3, h4, p, span, a, label {
   }
 }
 
-/* 5. Extra Narrow Screens (<= 375px) */
+/* 5. Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .about {
+    gap: 22px;
+  }
+  .about-pill-badge {
+    padding: 4px 10px;
+    font-size: 10.5px;
+    margin-bottom: 12px;
+  }
+  .about-content h2 {
+    font-size: clamp(20px, 6vw, 24px);
+    margin-bottom: 10px;
+  }
+  .about-h2-br {
+    display: none;
+  }
+  .about-content .lead {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .about-feat-item {
+    padding: 11px 12px;
+    gap: 11px;
+    border-radius: 12px;
+  }
+  .about-feat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+  .about-feat-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .about-feat-text b {
+    font-size: 13.5px;
+  }
+  .about-feat-text small {
+    font-size: 11.2px;
+  }
+  .about-visual-wrapper {
+    min-height: 300px;
+    height: 300px;
+  }
+  .digital-spire-container {
+    min-height: 300px;
+    border-radius: 16px;
+  }
+  .digital-spire-badge {
+    margin: 10px 10px auto auto;
+    padding: 4px 8px;
+    font-size: 9.5px;
+    gap: 5px;
+  }
+  .digital-spire-telemetry {
+    margin: auto 8px 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    gap: 4px;
+  }
+  .telemetry-item strong {
+    font-size: 10px;
+  }
+  .telemetry-item small {
+    font-size: 8px;
+    letter-spacing: 0.02em;
+  }
+  .telemetry-divider {
+    height: 18px;
+  }
+}
+
+/* 6. Extra Narrow Screens (<= 375px) */
 @media (max-width: 375px) {
+  .about {
+    gap: 18px;
+  }
+  .about-pill-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .about-content h2 {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+  .about-content .lead {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .about-feat-item {
+    padding: 9px 10px;
+    gap: 9px;
+  }
+  .about-feat-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .about-feat-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .about-feat-text b {
+    font-size: 12px;
+  }
+  .about-feat-text small {
+    font-size: 10.5px;
+  }
+  .about-visual-wrapper {
+    min-height: 270px;
+    height: 270px;
+  }
+  .digital-spire-container {
+    min-height: 270px;
+    border-radius: 14px;
+  }
+  .digital-spire-badge {
+    margin: 8px 8px auto auto;
+    padding: 3px 7px;
+    font-size: 8.5px;
+  }
+  .digital-spire-telemetry {
+    margin: auto 6px 6px;
+    padding: 6px 8px;
+  }
+  .telemetry-item strong {
+    font-size: 9px;
+  }
+  .telemetry-item small {
+    font-size: 7px;
+  }
   .hero-badge,
   .sv-category-badge,
   .svc-pill-badge {

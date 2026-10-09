@@ -3,37 +3,69 @@
 import { Arrow } from "../Icons";
 
 const faqs = [
-  ["What services do you offer?", "AI solutions, custom software, websites, mobile apps, and graphics with UI/UX design, all from one team."],
-  ["Where are you based, and do you work with international clients?", "We are USA based and serve clients worldwide, working remotely across time zones."],
-  ["How do I get started?", "Send us an email or give us a call. We will set up a discovery call to understand your goals, then share a clear, scoped plan."],
-  ["How much does a project cost?", "It depends on scope and complexity. After a short discovery call we provide a clear quote, so you know what to expect before we start."],
+  {
+    q: "What services do you offer?",
+    a: "AI solutions, custom software engineering, modern web applications, mobile apps, and UI/UX design — all delivered by our specialized, cross-functional team.",
+  },
+  {
+    q: "Where are you based, and do you work with international clients?",
+    a: "We are proudly USA-based with headquarters in the United States and serve clients globally across North America, Europe, Asia, and worldwide with seamless remote-first collaboration.",
+  },
+  {
+    q: "How do I get started with a project?",
+    a: "Send us a message or schedule a consultation. We will arrange a 30-minute discovery call to evaluate your goals, discuss architecture, and provide a clear, scoped execution plan.",
+  },
+  {
+    q: "How much does a project cost and what are your timelines?",
+    a: "Costs and timelines depend on project scope and complexity. After our initial discovery call, we provide a transparent, milestone-based quote and delivery roadmap so you know exactly what to expect before we begin.",
+  },
+  {
+    q: "How do you handle security and IP ownership?",
+    a: "You retain 100% full intellectual property and code ownership upon completion. We adhere to rigorous security standards, non-disclosure agreements (NDAs), and enterprise-grade data protection practices.",
+  },
 ];
 
 export default function FaqSection() {
   return (
-    <section className="sec" id="faq">
+    <section className="sec faq-section-container" id="faq">
       <div className="faq-wrap">
-        <div>
-          <span className="pill">
-            <i /> FAQ
-          </span>
+        <div className="faq-intro-col">
+          <div className="faq-pill-badge">
+            <span className="faq-pill-dot" />
+            <span>FAQ &amp; INSIGHTS</span>
+          </div>
           <h2>
-            Frequently asked <em>questions</em>
+            Frequently Asked <em>Questions</em>
           </h2>
           <p className="lead">
-            Can&apos;t find what you are looking for? Send us a message and we will get back to you.
+            Everything you need to know about working with ABI Technologies. Have additional questions? We&apos;re here to help.
           </p>
-          <div className="cta">
-            <a className="btn red" href="mailto:umar@abitechsolutions.com">
-              Ask a question <Arrow />
+          <div className="faq-cta-box">
+            <a className="faq-ask-btn" href="mailto:umar@abitechsolutions.com">
+              <span>Ask a Question</span>
+              <Arrow />
             </a>
+            <div className="faq-support-meta">
+              <span className="faq-online-dot" />
+              <span>Direct engineer response &bull; <strong>&lt; 2 hrs</strong></span>
+            </div>
           </div>
         </div>
+
         <div className="faq">
-          {faqs.map(([q, a]) => (
-            <details key={q}>
-              <summary>{q}</summary>
-              <p>{a}</p>
+          {faqs.map((item, idx) => (
+            <details key={idx} className="faq-item" open={idx === 0}>
+              <summary>
+                <span className="faq-question-text">{item.q}</span>
+                <span className="faq-chevron" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="faq-body">
+                <p>{item.a}</p>
+              </div>
             </details>
           ))}
         </div>
