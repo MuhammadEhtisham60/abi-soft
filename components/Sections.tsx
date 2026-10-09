@@ -218,7 +218,7 @@ export default function Sections() {
           trigger: "#contact .contact-info-grid",
           start: "top 85%",
         },
-        x: 30,
+        y: 20,
         opacity: 0,
         stagger: 0.12,
         duration: 0.7,

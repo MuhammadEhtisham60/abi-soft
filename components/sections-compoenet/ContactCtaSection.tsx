@@ -17,11 +17,12 @@ export default function ContactCtaSection() {
             Have an idea? <em>Let&apos;s build it.</em>
           </h2>
           <p>
-            Tell us what you need: a website, Reach out to Umar Darraz, Founder &amp; CEO, and let&apos;s talk about your project.
+            Tell us what you need: AI, custom software, web platforms, mobile apps, or UI/UX design. Reach out to our team and let&apos;s discuss your project.
           </p>
           <div className="contact-actions">
             <a className="contact-btn-primary" href="mailto:umar@abitechsolutions.com">
-              Let&apos;s Talk <Arrow />
+              <span>Let&apos;s Talk</span>
+              <Arrow />
             </a>
           </div>
         </div>
@@ -32,7 +33,7 @@ export default function ContactCtaSection() {
               <PhoneIcon />
             </div>
             <div className="contact-info-text">
-              <small>Phone</small>
+              <small>Direct Phone</small>
               <b>+1 (502) 713-5115</b>
             </div>
           </a>
@@ -42,7 +43,7 @@ export default function ContactCtaSection() {
               <WebIcon />
             </div>
             <div className="contact-info-text">
-              <small>Email</small>
+              <small>Email Inquiries</small>
               <b>umar@abitechsolutions.com</b>
             </div>
           </a>
@@ -52,8 +53,8 @@ export default function ContactCtaSection() {
               <MapPinIcon />
             </div>
             <div className="contact-info-text">
-              <small>Location</small>
-              <b>USA Based, Serving Clients Worldwide</b>
+              <small>Headquarters</small>
+              <b>USA Based &bull; Global Delivery</b>
             </div>
           </div>
         </div>

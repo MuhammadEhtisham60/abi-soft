@@ -4812,12 +4812,34 @@ h1, h2, h3, h4, p, span, a, label {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+  .contact-section {
+    padding: 40px 20px 70px;
+  }
   .contact-main-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+  .contact-card {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 36px 30px;
+    border-radius: 24px;
+  }
+  .contact-content {
+    max-width: 100%;
+  }
+  .contact-content p {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
   .contact-info-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    width: 100%;
+  }
+  .contact-info-grid .contact-info-card:last-child {
+    grid-column: span 2;
   }
 }
 
@@ -5044,17 +5066,71 @@ h1, h2, h3, h4, p, span, a, label {
     padding: 22px 16px;
     border-radius: 20px;
   }
-  .contact-info-grid {
-    grid-template-columns: 1fr;
+  .contact-section {
+    padding: 30px 16px 50px;
   }
   .contact-card,
   .sv-contact-card {
-    padding: 30px 18px;
-    border-radius: 22px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 26px 18px;
+    border-radius: 20px;
   }
-  .contact-card h2,
+  .contact-pill-badge {
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+  .contact-content h2,
   .sv-contact-card h2 {
-    font-size: clamp(22px, 6.5vw, 30px);
+    font-size: clamp(22px, 6.5vw, 28px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .contact-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .contact-actions {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .contact-btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+  .contact-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .contact-info-grid .contact-info-card:last-child {
+    grid-column: auto;
+  }
+  .contact-info-card {
+    padding: 14px 16px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+  .contact-info-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  .contact-info-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .contact-info-text b {
+    font-size: 13.5px;
+    word-break: break-word;
+  }
+  .contact-info-text small {
+    font-size: 11px;
   }
 
   /* FAQ Accordions */
@@ -5239,6 +5315,30 @@ h1, h2, h3, h4, p, span, a, label {
     height: 48px;
     font-size: 16px;
     border-radius: 14px;
+  }
+  .contact-card,
+  .sv-contact-card {
+    padding: 22px 14px;
+    gap: 20px;
+    border-radius: 18px;
+  }
+  .contact-content h2,
+  .sv-contact-card h2 {
+    font-size: 21px;
+  }
+  .contact-content p {
+    font-size: 13px;
+  }
+  .contact-info-card {
+    padding: 11px 12px;
+    gap: 10px;
+  }
+  .contact-info-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .contact-info-text b {
+    font-size: 12.5px;
   }
 }
 
