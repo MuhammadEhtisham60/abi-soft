@@ -1170,6 +1170,20 @@ html.lenis, html.lenis-smooth {
     position: relative;
     width: 100%;
   }
+  .proc-mobile-track {
+    padding: 10px 4px 18px;
+    scroll-behavior: smooth;
+  }
+  .proc-card-wrapper {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .proc-card-wrapper.active,
+  .proc-card-wrapper:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  .proc-card {
+    transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
 }
 
 .proc-mobile-track {
@@ -1177,6 +1191,7 @@ html.lenis, html.lenis-smooth {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
   gap: 16px;
   padding-bottom: 16px;
   scrollbar-width: none;

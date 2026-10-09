@@ -107,71 +107,69 @@ export default function Sections() {
         ease: "power3.out",
       });
 
-      // 3. Process section animation (step-by-step 5-card entrance)
+      // 3. Process section animation (immediate, smooth entrance)
       const procSection = containerRef.current?.querySelector("#process");
       if (procSection) {
         const procCards = procSection.querySelectorAll(".proc-card-wrapper");
         const connTree = procSection.querySelector(".proc-conn-tree");
         const ctaWrap = procSection.querySelector(".proc-cta-wrap");
 
-        const procTl = gsap.timeline({
+        // Header reveals immediately
+        gsap.from("#process .proc-head > *", {
           scrollTrigger: {
             trigger: procSection,
-            start: "top 75%",
-            toggleActions: "play none none reverse",
+            start: "top 92%",
+            once: true,
           },
-        });
-
-        // Header entrance
-        procTl.from("#process .proc-head > *", {
-          y: 35,
+          y: 20,
           opacity: 0,
-          stagger: 0.1,
-          duration: 0.7,
-          ease: "power3.out",
+          stagger: 0.08,
+          duration: 0.45,
+          ease: "power2.out",
         });
 
-        // Connecting tree fade & slide in
+        // Connecting tree fade in
         if (connTree) {
-          procTl.from(
-            connTree,
-            {
-              opacity: 0,
-              y: -10,
-              duration: 0.8,
-              ease: "power2.out",
+          gsap.from(connTree, {
+            scrollTrigger: {
+              trigger: procSection,
+              start: "top 90%",
+              once: true,
             },
-            "-=0.3"
-          );
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.out",
+          });
         }
 
-        // Cards animate sequentially: 1 -> 2 -> 3 -> 4 -> 5
-        procTl.from(
-          procCards,
-          {
-            y: 45,
-            opacity: 0,
-            scale: 0.94,
-            stagger: 0.12,
-            duration: 0.65,
-            ease: "back.out(1.2)",
-            clearProps: "transform,opacity",
+        // Cards animate IMMEDIATELY without waiting for previous animations
+        gsap.from(procCards, {
+          scrollTrigger: {
+            trigger: procSection,
+            start: "top 90%",
+            once: true,
           },
-          "-=0.4"
-        );
+          y: 22,
+          opacity: 0,
+          stagger: 0.06,
+          duration: 0.45,
+          ease: "power2.out",
+          clearProps: "all",
+        });
 
         if (ctaWrap) {
-          procTl.from(
-            ctaWrap,
-            {
-              y: 20,
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-              clearProps: "transform,opacity",
+          gsap.from(ctaWrap, {
+            scrollTrigger: {
+              trigger: procSection,
+              start: "top 85%",
+              once: true,
             },
-            "-=0.2"
-          );
+            y: 15,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power2.out",
+            clearProps: "all",
+          });
         }
       }
 

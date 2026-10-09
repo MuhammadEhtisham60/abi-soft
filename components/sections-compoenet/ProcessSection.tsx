@@ -235,8 +235,24 @@ export default function ProcessSection({
 
     const timer = setInterval(() => {
       if (!isInViewRef.current || isPaused) return;
-      setActiveIndex((prev) => (prev + 1) % items.length);
-    }, 1500);
+
+      const isMobile = typeof window !== "undefined" && window.innerWidth <= 580;
+      if (isMobile) {
+        setCurrentSlide((prev) => {
+          const next = (prev + 1) % items.length;
+          if (trackRef.current) {
+            const clientWidth = trackRef.current.clientWidth;
+            trackRef.current.scrollTo({
+              left: next * clientWidth,
+              behavior: "smooth",
+            });
+          }
+          return next;
+        });
+      } else {
+        setActiveIndex((prev) => (prev + 1) % items.length);
+      }
+    }, 2800);
 
     return () => clearInterval(timer);
   }, [items.length, autoAnimate, isPaused]);
@@ -259,6 +275,8 @@ export default function ProcessSection({
       behavior: "smooth",
     });
     setCurrentSlide(index);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 3500);
   };
 
   return (
@@ -319,10 +337,17 @@ export default function ProcessSection({
             className="proc-mobile-track"
             ref={trackRef}
             onScroll={handleScroll}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
           >
-            {items.map((it) => (
+            {items.map((it, i) => (
               <div key={it.num} className="proc-mobile-slide">
-                <UBCard item={it} isActive={false} />
+                <UBCard
+                  item={it}
+                  isActive={i === currentSlide}
+                  onHoverStart={() => setIsPaused(true)}
+                  onHoverEnd={() => setIsPaused(false)}
+                />
               </div>
             ))}
           </div>
