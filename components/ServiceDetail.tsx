@@ -68,7 +68,7 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
         .from(
           ".sv-banner-right",
           {
-            x: 35,
+            y: 25,
             opacity: 0,
             duration: 0.85,
             ease: "power3.out",

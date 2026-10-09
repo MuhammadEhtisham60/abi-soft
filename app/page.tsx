@@ -82,7 +82,7 @@ export default function Home() {
             <p className="hero-desc">
               AI-powered solutions, scalable software, and modern digital experiences engineered to help businesses grow, operate, and compete globally.
             </p>
-            <div className="about-feat-item" style={{ marginBottom: 28, maxWidth: 460 }}>
+            <div className="about-feat-item" style={{ marginBottom: 28 }}>
               <div className="about-feat-icon">
                 <GlobeNetworkIcon />
               </div>

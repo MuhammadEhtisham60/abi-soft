@@ -180,10 +180,10 @@ export default function Navbar({
             {isAbout && <span className="sv-nav-active-bar" />}
           </Link>
 
-          <Link href="/team" className={`sv-nav-link ${isTeam ? "sv-nav-link-active" : ""}`}>
+          {/* <Link href="/team" className={`sv-nav-link ${isTeam ? "sv-nav-link-active" : ""}`}>
             <span>Our Team</span>
             {isTeam && <span className="sv-nav-active-bar" />}
-          </Link>
+          </Link> */}
 
           <Link href="/contact" className={`sv-nav-link ${isContact ? "sv-nav-link-active" : ""}`}>
             <span>Contact</span>

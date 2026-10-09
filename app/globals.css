@@ -242,6 +242,8 @@ a{color:inherit;text-decoration:none}
   padding: 12px 18px;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  max-width: 460px;
+  width: 100%;
 }
 .hero-actions {
   position: relative;
@@ -4669,21 +4671,213 @@ html.lenis, html.lenis-smooth {
 @media (max-width: 1024px) {
   .team-lead-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .team-squads-grid {
+    gap: 20px;
+  }
+  .team-card,
+  .team-squad-card {
+    padding: 26px 22px;
   }
 }
 
 @media (max-width: 768px) {
   .team-lead-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
   .team-squads-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .team-card {
-    padding: 24px 20px;
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  .team-avatar-wrapper {
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .team-avatar-img-frame,
+  .team-avatar,
+  .team-avatar-glow {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    font-size: 18px;
+  }
+  .team-info h3 {
+    font-size: 17.5px;
+  }
+  .team-role {
+    font-size: 12.5px;
+  }
+  .team-location-pill {
+    font-size: 11px;
+    padding: 2.5px 8px;
+  }
+  .team-bio {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 10px 0 14px;
+  }
+  .team-tags {
+    gap: 5px;
+    padding-top: 12px;
+  }
+  .team-tag {
+    font-size: 10.5px;
+    padding: 2.5px 7px;
   }
   .team-squad-card {
-    padding: 24px 20px;
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  .team-squad-icon-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+  .team-squad-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .team-squad-card p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .team-squad-list li {
+    font-size: 12.8px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-lead-grid {
+    gap: 14px;
+  }
+  .team-squads-grid {
+    gap: 14px;
+  }
+  .team-card {
+    padding: 18px 15px;
+    border-radius: 16px;
+  }
+  .team-avatar-wrapper {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .team-avatar-img-frame,
+  .team-avatar,
+  .team-avatar-glow {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    font-size: 16px;
+  }
+  .team-info h3 {
+    font-size: 16px;
+  }
+  .team-role {
+    font-size: 11.5px;
+  }
+  .team-location-pill {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+  .team-bio {
+    font-size: 12.8px;
+    line-height: 1.5;
+    margin: 8px 0 12px;
+  }
+  .team-tags {
+    gap: 4px;
+    padding-top: 10px;
+  }
+  .team-tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  .team-squad-card {
+    padding: 18px 15px;
+    border-radius: 16px;
+  }
+  .team-squad-icon-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+  .team-squad-card h3 {
+    font-size: 16.5px;
+    margin-bottom: 6px;
+  }
+  .team-squad-card p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .team-squad-list li {
+    font-size: 12px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 375px) {
+  .team-card {
+    padding: 15px 12px;
+    border-radius: 14px;
+  }
+  .team-avatar-wrapper {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .team-avatar-img-frame,
+  .team-avatar,
+  .team-avatar-glow {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+  .team-info h3 {
+    font-size: 15px;
+  }
+  .team-role {
+    font-size: 11px;
+  }
+  .team-location-pill {
+    font-size: 9.5px;
+    padding: 2px 5px;
+  }
+  .team-bio {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .team-tag {
+    font-size: 9.5px;
+    padding: 2px 5px;
+  }
+  .team-squad-card {
+    padding: 15px 12px;
+    border-radius: 14px;
+  }
+  .team-squad-icon-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .team-squad-card h3 {
+    font-size: 15.5px;
+  }
+  .team-squad-list li {
+    font-size: 11.5px;
   }
 }
 
@@ -4815,6 +5009,31 @@ h1, h2, h3, h4, p, span, a, label {
   .digital-spire-container {
     min-height: 440px;
   }
+  /* Grid Layouts on Tablet */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-content {
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .about-content h2 {
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin-bottom: 16px;
+  }
+  .about-content .lead,
+  .about-features {
+    max-width: 100%;
+  }
+  .about-visual-wrapper {
+    min-height: 440px;
+    height: 440px;
+    width: 100%;
+  }
+  .digital-spire-container {
+    min-height: 440px;
+  }
   .about-split-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -4852,10 +5071,70 @@ h1, h2, h3, h4, p, span, a, label {
   .contact-info-grid .contact-info-card:last-child {
     grid-column: span 2;
   }
+
+  /* Services & Detail Subpages on Tablet */
+  .sv-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .sv-market-drivers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .sv-other-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .sv-roi-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .services-catalog-grid {
+    gap: 28px;
+  }
+  .service-directory-card {
+    padding: 28px 24px;
+  }
+}
+
+/* 3B. Mid Tablet Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  .sv-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .sv-market-drivers-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .sv-other-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .sv-roi-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .sv-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .about-values-list {
+    gap: 14px;
+  }
+  .contact-sidebar {
+    gap: 18px;
+  }
 }
 
 /* 4. Mobile Devices (<= 640px) */
 @media (max-width: 640px) {
+  /* Universal mobile container safety */
+  .sv-page-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   /* Top sticky navigation */
   .sv-nav-sticky-container {
     padding: 0 10px;
@@ -4920,11 +5199,36 @@ h1, h2, h3, h4, p, span, a, label {
     line-height: 1.6;
   }
 
-  /* Full-width Stacked CTA Buttons */
+  /* Service Detail Hero Banner */
+  .sv-hero-banner-image-wrap {
+    max-width: 100%;
+  }
+  .sv-banner-img-frame {
+    max-height: 240px;
+    border-radius: 16px;
+    aspect-ratio: 16 / 10;
+  }
+  .sv-hero-banner-image {
+    max-height: 240px;
+  }
+
+  /* Full-width Stacked CTA Buttons & Hero Text */
+  .hero-text-col {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-text-col .about-feat-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch;
+    box-sizing: border-box;
+    margin-bottom: 24px !important;
+  }
   .hero-actions,
   .sv-hero-actions,
   .contact-actions {
     width: 100%;
+    align-self: stretch;
     flex-direction: column;
     gap: 12px;
   }
@@ -4935,6 +5239,7 @@ h1, h2, h3, h4, p, span, a, label {
   .contact-btn-primary,
   .contact-btn-secondary {
     width: 100%;
+    box-sizing: border-box;
     justify-content: center;
     text-align: center;
     padding: 13px 20px;
@@ -5035,22 +5340,50 @@ h1, h2, h3, h4, p, span, a, label {
   }
 
   /* About & Cards on Mobile */
+  .about-split-grid {
+    gap: 28px;
+  }
   .about-global-card,
   .about-founder-box {
-    padding: 26px 18px;
+    padding: 24px 16px;
     border-radius: 20px;
   }
   .about-global-features {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
   .about-founder-quote {
-    font-size: 15.5px;
+    font-size: 15px;
     line-height: 1.6;
   }
   .about-founder-avatar {
     width: 42px;
     height: 42px;
     font-size: 14px;
+  }
+
+  /* Service Detail Cards & Subsections on Mobile */
+  .sv-market-narrative-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+  .sv-market-card,
+  .sv-pillar-card {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+  .sv-roi-banner {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  .sv-tech-group {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+  .sv-other-card {
+    padding: 18px 16px;
+    border-radius: 16px;
   }
 
   /* Contact Page on Mobile */
@@ -5072,6 +5405,20 @@ h1, h2, h3, h4, p, span, a, label {
   .contact-input-grid {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+  .contact-text-input,
+  .contact-textarea {
+    font-size: 16px;
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+  .contact-submit-btn {
+    padding: 13px 20px;
+    font-size: 14.5px;
+  }
+  .contact-trust-box {
+    padding: 18px 16px;
+    border-radius: 16px;
   }
   .contact-side-card {
     padding: 22px 16px;
@@ -5163,6 +5510,22 @@ h1, h2, h3, h4, p, span, a, label {
     width: 44px;
     height: 44px;
   }
+  .svc-img-showcase,
+  .svc-img-element {
+    min-height: 220px;
+    height: 220px;
+    border-radius: 16px;
+  }
+  .svc-img-overlay-bottom {
+    padding: 10px 12px;
+    border-radius: 12px;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+  }
+  .svc-img-metric-val {
+    font-size: 16px;
+  }
 
   /* Footer */
   .foot {
@@ -5176,6 +5539,98 @@ h1, h2, h3, h4, p, span, a, label {
 
 /* 5. Small Phones (<= 480px) */
 @media (max-width: 480px) {
+  /* Service Hero Banner on Small Mobile */
+  .sv-banner-container {
+    padding: 24px 14px 0;
+  }
+  .sv-banner-title {
+    font-size: clamp(22px, 6.5vw, 28px);
+    margin-bottom: 12px;
+  }
+  .sv-banner-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .sv-hero-container {
+    padding-top: 68px;
+  }
+  .sv-banner-hero {
+    padding-top: 68px;
+    padding-bottom: 40px;
+  }
+  .sv-hero-title {
+    font-size: clamp(22px, 6.5vw, 28px);
+  }
+  .sv-hero-tagline {
+    font-size: 13.5px;
+    margin-bottom: 12px;
+  }
+  .sv-hero-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  /* Service Subsections on Small Mobile */
+  .sv-market-card,
+  .sv-pillar-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+  .sv-pillar-card h3 {
+    font-size: 18px;
+  }
+  .sv-pillar-tagline {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .sv-pillar-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .sv-pillar-highlights li {
+    font-size: 12.5px;
+  }
+  .sv-deliv-chip {
+    font-size: 10.5px;
+    padding: 3px 8px;
+  }
+  .sv-market-narrative-card {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .sv-market-desc-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  /* Service Directory Card on Small Mobile */
+  .service-directory-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+  .svc-img-showcase,
+  .svc-img-element {
+    min-height: 190px;
+    height: 190px;
+    border-radius: 14px;
+  }
+
+  /* Contact Page on Small Mobile */
+  .contact-form-card,
+  .contact-side-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+  .contact-form-header h2 {
+    font-size: 18px;
+  }
+  .contact-form-header p {
+    font-size: 13px;
+  }
+
+  /* About Page on Small Mobile */
   .about {
     gap: 22px;
   }
@@ -5248,8 +5703,54 @@ h1, h2, h3, h4, p, span, a, label {
   }
 }
 
-/* 6. Extra Narrow Screens (<= 375px) */
+/* 6. Extra Narrow Screens (<= 375px) - e.g. Realme Note 60x, iPhone SE */
 @media (max-width: 375px) {
+  .sv-banner-container {
+    padding: 20px 10px 0;
+  }
+  .sv-banner-title {
+    font-size: 21px;
+  }
+  .sv-banner-desc {
+    font-size: 12.5px;
+  }
+  .sv-banner-img-frame {
+    max-height: 190px;
+    border-radius: 12px;
+  }
+  .sv-market-card h3 {
+    font-size: 16px;
+  }
+  .sv-market-card p {
+    font-size: 12.5px;
+  }
+  .sv-pillar-card h3 {
+    font-size: 16.5px;
+  }
+  .service-directory-card {
+    padding: 15px 12px;
+    border-radius: 14px;
+  }
+  .svc-img-showcase,
+  .svc-img-element {
+    min-height: 165px;
+    height: 165px;
+    border-radius: 12px;
+  }
+  .contact-form-card,
+  .contact-side-card {
+    padding: 15px 12px;
+    border-radius: 14px;
+  }
+  .contact-channel-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .contact-channel-icon {
+    width: 34px;
+    height: 34px;
+  }
+
   .about {
     gap: 18px;
   }
