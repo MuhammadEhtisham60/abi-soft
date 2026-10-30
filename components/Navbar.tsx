@@ -7,7 +7,7 @@ import { services } from "./servicesData";
 import { Arrow } from "./Icons";
 
 type NavbarProps = {
-  activePage?: "home" | "services" | "about" | "team" | "contact";
+  activePage?: "home" | "services" | "about" | "team" | "contact" | "case-study";
   className?: string;
   ctaText?: string;
   ctaHref?: string;
@@ -53,6 +53,7 @@ export default function Navbar({
   // Determine active route
   const isHome = activePage === "home" || pathname === "/";
   const isServices = activePage === "services" || pathname.startsWith("/services");
+  const isCaseStudy = activePage === "case-study" || pathname === "/case-study" || pathname === "/case-studies" || pathname.startsWith("/case-study/") || pathname.startsWith("/case-studies/");
   const isAbout = activePage === "about" || pathname === "/about";
   const isTeam = activePage === "team" || pathname === "/team";
   const isContact = activePage === "contact" || pathname === "/contact";
@@ -174,6 +175,11 @@ export default function Navbar({
               </div>
             )}
           </div>
+
+          <Link href="/case-study" className={`sv-nav-link ${isCaseStudy ? "sv-nav-link-active" : ""}`}>
+            <span>Case Studies</span>
+            {isCaseStudy && <span className="sv-nav-active-bar" />}
+          </Link>
 
           <Link href="/about" className={`sv-nav-link ${isAbout ? "sv-nav-link-active" : ""}`}>
             <span>About</span>
@@ -325,6 +331,14 @@ export default function Navbar({
                   </div>
                 )}
               </div>
+
+              <Link
+                href="/case-study"
+                className={`sv-mobile-link ${isCaseStudy ? "sv-mobile-link-active" : ""}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Case Studies
+              </Link>
 
               <Link
                 href="/about"

@@ -354,95 +354,57 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
           </div>
         </section>
 
-        {/* ── 2D. 4-STEP AGILE DELIVERY PROCESS ── */}
-        {/* <section className="sec sv-process-sec">
-          <div className="head">
-            <div className="svc-pill-badge">
-              <span>DELIVERY LIFECYCLE</span>
+        {/* ── 2D. VERIFIED ENTERPRISE PROJECTS & CASE STUDIES ── */}
+        {s.projects && s.projects.length > 0 && (
+          <section className="sec sv-projects-sec" id="projects">
+            <div className="head">
+              <div className="svc-pill-badge">
+                <span>VERIFIED PRODUCTION PORTFOLIO</span>
+              </div>
+              <h2>
+                Enterprise Systems <em>Delivered In Production</em>
+              </h2>
+              <p className="lead">
+                Explore real-world software architectures delivered by our team—backed by verified full-stack codebases.
+              </p>
             </div>
-            <h2>From Discovery to Cloud, <em>In Four Steps</em></h2>
-            <p className="lead">A transparent, milestone-driven execution methodology with zero guesswork.</p>
-          </div>
 
-          <div className="sv-process-grid">
-            {s.processSteps.map((step) => (
-              <div key={step.step} className="sv-process-step">
-                <div className="sv-step-header">
-                  <div className="sv-step-badge">{step.step}</div>
-                  <span className="sv-step-time">{step.timeframe}</span>
-                </div>
-                <div className="sv-step-phase">{step.phase}</div>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
+            <div className="sv-case-cards-grid">
+              {s.projects.map((proj, idx) => (
+                <article key={proj.id} className="sv-case-compact-card">
+                  {/* Category & Counter Header */}
+                  <div className="sv-case-card-header">
+                    <span className="sv-case-badge">{proj.category}</span>
+                    <span className="sv-case-num">Case Study 0{idx + 1}</span>
+                  </div>
 
-                <div className="sv-step-milestones">
-                  <b>Key Deliverables:</b>
-                  <div className="sv-step-tags">
-                    {step.deliverables.map((del, dIdx) => (
-                      <span key={dIdx} className="proc-deliv-chip">{del}</span>
+                  {/* Title */}
+                  <h3 className="sv-case-card-title">{proj.title}</h3>
+
+                  {/* Description */}
+                  <p className="sv-case-card-desc">{proj.shortDesc}</p>
+
+                  {/* Tags */}
+                  <div className="sv-case-tags">
+                    {proj.tags.map((tag) => (
+                      <span key={tag} className="sv-case-tag">
+                        {tag}
+                      </span>
                     ))}
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section> */}
 
-        {/* ── 2E. PROVEN USE CASES & REAL-WORLD SOLUTIONS ── */}
-        {/* <section className="sec sv-usecases-sec">
-          <div className="head">
-            <div className="svc-pill-badge">
-              <span>REAL-WORLD SOLUTIONS</span>
-            </div>
-            <h2>Measurable Impact <em>Across Industries</em></h2>
-            <p className="lead">Explore how our engineering solves critical business challenges.</p>
-          </div>
-
-          <div className="sv-usecases-grid">
-            {s.useCases.map((uc, idx) => (
-              <div key={idx} className="sv-usecase-card">
-                <div className="sv-uc-badge">{uc.badge}</div>
-                <h3>{uc.industry}</h3>
-
-                <div className="sv-uc-block">
-                  <div className="sv-uc-label sv-red-label">The Challenge</div>
-                  <p>{uc.challenge}</p>
-                </div>
-
-                <div className="sv-uc-block">
-                  <div className="sv-uc-label sv-blue-label">Engineered Solution</div>
-                  <p>{uc.solution}</p>
-                </div>
-
-                <div className="sv-uc-impact-box">
-                  <div className="sv-uc-impact-label">Business Outcome</div>
-                  <p>{uc.impact}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section> */}
-
-        {/* ── 2F. ENTERPRISE GUARANTEES & TRUST ── */}
-        {/* <section className="sec sv-guarantees-sec">
-          <div className="sv-guarantees-card">
-            <div className="sv-guarantees-head">
-              <h3>Enterprise Trust &amp; Commercial Guarantees</h3>
-              <p>Transparent agreements, complete code ownership, and US-based accountability.</p>
-            </div>
-            <div className="sv-guarantees-grid">
-              {s.guarantees.map((g, idx) => (
-                <div key={idx} className="sv-guarantee-item">
-                  <span className="sv-g-icon">🛡️</span>
-                  <div>
-                    <b>{g.title}</b>
-                    <p>{g.desc}</p>
+                  {/* Footer Action */}
+                  <div className="sv-case-card-footer">
+                    <Link href={`/case-study/${proj.id}`} className="sv-case-view-btn">
+                      <span>Full Case Study</span>
+                      <Arrow />
+                    </Link>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
-          </div>
-        </section> */}
+          </section>
+        )}
 
         {/* ── 2G. FAQ ACCORDION ── */}
         <section className="sec sv-faq-sec">

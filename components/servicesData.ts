@@ -1,3 +1,5 @@
+import { ProjectCaseStudy, getProjectsByService } from "./projectsData";
+
 export type ServiceStat = {
   value: string;
   label: string;
@@ -76,6 +78,7 @@ export type Service = {
   stack: string[];
   faq: [string, string][];
   guarantees: { title: string; desc: string }[];
+  projects: ProjectCaseStudy[];
 };
 
 export const services: Service[] = [
@@ -300,6 +303,7 @@ export const services: Service[] = [
       { title: "US-Based Project Management", desc: "Clear communication, daily Slack channels, and scheduled milestone demos in US time zones." },
       { title: "Deterministic Performance SLAs", desc: "Sub-second vector lookup latency, 99.9% uptime targets, and continuous observability." },
     ],
+    projects: getProjectsByService("ai-solutions"),
   },
   {
     slug: "software-development",
@@ -521,6 +525,7 @@ export const services: Service[] = [
       { title: "Scalable Architecture Guarantee", desc: "Decoupled cloud infrastructure designed to handle 10x traffic surges effortlessly." },
       { title: "Dedicated US Management", desc: "Transparent sprint reporting with US-based leadership and clear accountability." },
     ],
+    projects: getProjectsByService("software-development"),
   },
   {
     slug: "website-development",
@@ -742,6 +747,7 @@ export const services: Service[] = [
       { title: "Zero Data or SEO Loss Migration", desc: "Meticulous 301 redirects ensuring your organic search equity stays intact." },
       { title: "Full CMS Ownership & Training", desc: "Complete training videos showing your team how to update any section in minutes." },
     ],
+    projects: getProjectsByService("website-development"),
   },
   {
     slug: "app-development",
@@ -963,6 +969,7 @@ export const services: Service[] = [
       { title: "Complete Source Code Ownership", desc: "Full git repository ownership with zero third-party licensing fees." },
       { title: "Ongoing OS Version Support", desc: "Proactive compatibility maintenance for every new annual iOS and Android release." },
     ],
+    projects: getProjectsByService("app-development"),
   },
   {
     slug: "graphics-ui-ux-design",
@@ -1184,5 +1191,6 @@ export const services: Service[] = [
       { title: "Developer-Ready Handoff", desc: "Pixel-perfect Figma specs, auto-layout tokens, and organized asset exports." },
       { title: "Fast-Track Collaborative Revisions", desc: "Daily communication and rapid feedback integration via Figma and Slack." },
     ],
+    projects: getProjectsByService("graphics-ui-ux-design"),
   },
 ];
