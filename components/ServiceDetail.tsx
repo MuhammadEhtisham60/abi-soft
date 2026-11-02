@@ -278,7 +278,7 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
         </section>
 
         {/* ── 2B. CORE CAPABILITIES & DEEP SERVICE PILLARS ── */}
-        <section className="sec sv-pillars-sec">
+        {/* <section className="sec sv-pillars-sec">
           <div className="head">
             <div className="svc-pill-badge">
               <span>CORE ARCHITECTURAL PILLARS</span>
@@ -298,7 +298,6 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
                 <p className="sv-pillar-tagline">{pillar.tagline}</p>
                 <p className="sv-pillar-desc">{pillar.description}</p>
 
-                {/* Feature Highlights */}
                 <div className="sv-pillar-highlights">
                   <b>Key Capabilities:</b>
                   <ul>
@@ -310,7 +309,6 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
                   </ul>
                 </div>
 
-                {/* Deliverables */}
                 <div className="sv-pillar-deliv-box">
                   <span className="sv-deliv-title">Included Deliverables:</span>
                   <div className="sv-deliv-tags">
@@ -322,37 +320,9 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
-        {/* ── 2C. TECHNOLOGY ECOSYSTEM & INFRASTRUCTURE ── */}
-        <section className="sec sv-tech-sec">
-          <div className="head">
-            <div className="svc-pill-badge">
-              <span>TECHNOLOGY ECOSYSTEM</span>
-            </div>
-            <h2>Modern Technologies. <em>Zero Legacy Debt.</em></h2>
-            <p className="lead">We engineer with battle-tested frameworks, modern clouds, and industry-standard protocols.</p>
-          </div>
 
-          <div className="sv-tech-grid">
-            {s.techCategories.map((group, idx) => (
-              <div key={idx} className="sv-tech-group">
-                <div className="sv-tech-group-title">
-                  <span className="sv-tech-dot" />
-                  <h4>{group.category}</h4>
-                </div>
-                <div className="sv-tech-items-wrap">
-                  {group.items.map((item, iIdx) => (
-                    <div key={iIdx} className="sv-tech-item-chip">
-                      <span className="sv-tech-name">{item.name}</span>
-                      {item.tag && <span className="sv-tech-subtag">{item.tag}</span>}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* ── 2D. VERIFIED ENTERPRISE PROJECTS & CASE STUDIES ── */}
         {s.projects && s.projects.length > 0 && (
@@ -406,6 +376,36 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
           </section>
         )}
 
+        {/* ── 2C. TECHNOLOGY ECOSYSTEM & INFRASTRUCTURE ── */}
+        <section className="sec sv-tech-sec">
+          <div className="head">
+            <div className="svc-pill-badge">
+              <span>TECHNOLOGY ECOSYSTEM</span>
+            </div>
+            <h2>Modern Technologies. <em>Zero Legacy Debt.</em></h2>
+            <p className="lead">We engineer with battle-tested frameworks, modern clouds, and industry-standard protocols.</p>
+          </div>
+
+          <div className="sv-tech-grid">
+            {s.techCategories.map((group, idx) => (
+              <div key={idx} className="sv-tech-group">
+                <div className="sv-tech-group-title">
+                  <span className="sv-tech-dot" />
+                  <h4>{group.category}</h4>
+                </div>
+                <div className="sv-tech-items-wrap">
+                  {group.items.map((item, iIdx) => (
+                    <div key={iIdx} className="sv-tech-item-chip">
+                      <span className="sv-tech-name">{item.name}</span>
+                      {item.tag && <span className="sv-tech-subtag">{item.tag}</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        
         {/* ── 2G. FAQ ACCORDION ── */}
         <section className="sec sv-faq-sec">
           <div className="head">

@@ -48,16 +48,25 @@ a{color:inherit;text-decoration:none}
   z-index: 1;
 }
 
-.hero-bg-image {
+.hero-bg-image,
+.hero-slide-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/hero.jpg');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
-  mix-blend-mode: normal;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.25, 1, 0.35, 1);
+  z-index: 1;
+}
+
+.hero-slide-bg.active,
+.hero-bg-image {
+  opacity: 1;
+  z-index: 2;
 }
 
 .hero-bg-overlay {
@@ -67,11 +76,98 @@ a{color:inherit;text-decoration:none}
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(210, 230, 252, 0.96) 0%,
-    rgba(210, 230, 252, 0.85) 45%,
-    rgba(210, 230, 252, 0.35) 80%,
-    rgba(210, 230, 252, 0.15) 100%
+    rgba(210, 230, 252, 0.92) 0%,
+    rgba(210, 230, 252, 0.78) 38%,
+    rgba(210, 230, 252, 0.15) 65%,
+    rgba(210, 230, 252, 0) 82%
   );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Right Side Hero Slide Dots (Concentric Ring Indicator) */
+.hero-right-dots {
+  position: absolute;
+  right: 32px;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+.hero-right-dot {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: transform 0.25s ease;
+}
+.hero-dot-ring {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-dot-core {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-right-dot:hover .hero-dot-core {
+  background: #0284c7;
+  transform: scale(1.2);
+}
+.hero-right-dot.active .hero-dot-ring {
+  border-color: #0284c7;
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.35);
+}
+.hero-right-dot.active .hero-dot-core {
+  background: #0284c7;
+  width: 7px;
+  height: 7px;
+}
+.hero-right-dot-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.hero-right-dot:hover .hero-right-dot-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-3px);
+}
+@media (max-width: 900px) {
+  .hero-right-dots {
+    right: 16px;
+    gap: 10px;
+  }
+  .hero-right-dot-tooltip {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -461,7 +557,7 @@ html.lenis, html.lenis-smooth {
   border-radius: 20px;
   background-color: #050d1e;
   background-image: 
-    linear-gradient(90deg, #050d1e 0%, rgba(5, 13, 30, 0.96) 44%, rgba(5, 13, 30, 0.45) 68%, rgba(5, 13, 30, 0.05) 92%),
+    linear-gradient(90deg, rgba(5, 13, 30, 0.88) 0%, rgba(5, 13, 30, 0.72) 36%, rgba(5, 13, 30, 0.16) 60%, rgba(5, 13, 30, 0) 76%),
     url('/images/ai.jpg');
   background-position: right center;
   background-size: cover;
