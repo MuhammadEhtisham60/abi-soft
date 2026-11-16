@@ -14,6 +14,7 @@ interface TeamMember {
   initials: string;
   name: string;
   role: string;
+  email?: string;
   image?: string;
   location: string;
   bio: string;
@@ -33,18 +34,20 @@ const leadershipTeam: TeamMember[] = [
     isFounder: true,
   },
   {
-    initials: "AV",
-    name: "Alex Vance",
-    role: "Principal AI & Machine Learning Architect",
+    initials: "AA",
+    name: "Abdullah Alvi",
+    role: "Software Engineer",
+    email: "aalvi1606@gmail.com",
     image: "/images/team/alex-vance.jpg",
     location: "🌐 Global Delivery Hub",
     bio: "Specializing in Large Language Model fine-tuning, retrieval-augmented generation (RAG), vector databases, and real-time inference pipelines that solve complex business automation challenges.",
     tags: ["Generative AI", "LangChain / LlamaIndex", "Vector Search", "Python / PyTorch"],
   },
   {
-    initials: "TM",
-    name: "Tariq Munir",
-    role: "Lead Full-Stack Cloud Architect",
+    initials: "EU",
+    name: "Ehtisham Ul Haq",
+    role: "Software Engineer",
+    email: "muhammadehtisham618@gmail.com",
     image: "/images/team/tariq-munir.jpg",
     location: "🌐 Global Delivery Hub",
     bio: "Expert in distributed cloud systems, scalable microservices, and serverless architectures. Drives high-concurrency Next.js and Node.js enterprise software with 99.99% uptime guarantees.",
@@ -211,6 +214,21 @@ export default function TeamPage() {
                     <h3>{member.name}</h3>
                     <span className="team-role">{member.role}</span>
                     <span className="team-location-pill">{member.location}</span>
+                    {member.email && (
+                      <a
+                        href={`mailto:${member.email}`}
+                        style={{
+                          display: "inline-block",
+                          marginTop: 6,
+                          fontSize: 13,
+                          fontWeight: 500,
+                          color: "#0284c7",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {member.email}
+                      </a>
+                    )}
                   </div>
                 </div>
 
