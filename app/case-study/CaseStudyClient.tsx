@@ -17,7 +17,7 @@ const filterCategories = [
 
 export default function CaseStudyClient() {
   const [activeFilter, setActiveFilter] = useState<string>("All Projects");
-  const mail = "mailto:umar@abitechsolutions.com?subject=Case%20Study%20Architecture%20Inquiry";
+  const mail = "mailto:mzleodye75@gmail.com?subject=Case%20Study%20Architecture%20Inquiry";
 
   const filteredProjects =
     activeFilter === "All Projects"
@@ -254,7 +254,7 @@ export default function CaseStudyClient() {
               </div>
               <div className="contact-info-text">
                 <small>Direct Email</small>
-                <b>umar@abitechsolutions.com</b>
+                <b>mzleodye75@gmail.com</b>
               </div>
             </a>
 

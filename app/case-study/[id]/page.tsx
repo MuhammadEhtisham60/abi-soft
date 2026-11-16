@@ -36,7 +36,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const project = getProjectById(id);
   if (!project) notFound();
 
-  const mail = `mailto:umar@abitechsolutions.com?subject=${encodeURIComponent(
+  const mail = `mailto:mzleodye75@gmail.com?subject=${encodeURIComponent(
     `Case Study Enquiry: ${project.shortTitle}`
   )}`;
 
@@ -280,7 +280,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               </div>
               <div className="contact-info-text">
                 <small>Direct Email</small>
-                <b>umar@abitechsolutions.com</b>
+                <b>mzleodye75@gmail.com</b>
               </div>
             </a>
 

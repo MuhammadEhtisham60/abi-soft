@@ -329,13 +329,13 @@ export default function TeamPage() {
                 </div>
               </a>
 
-              <a className="contact-info-card" href="mailto:umar@abitechsolutions.com">
+              <a className="contact-info-card" href="mailto:mzleodye75@gmail.com">
                 <div className="contact-info-icon">
                   <WebIcon />
                 </div>
                 <div className="contact-info-text">
                   <small>Email</small>
-                  <b>umar@abitechsolutions.com</b>
+                  <b>mzleodye75@gmail.com</b>
                 </div>
               </a>
 

@@ -49,7 +49,7 @@ export default function FaqSection() {
             Everything you need to know about working with ABI Technologies. Have additional questions? We&apos;re here to help.
           </p>
           <div className="faq-cta-box">
-            <a className="faq-ask-btn" href="mailto:umar@abitechsolutions.com">
+            <a className="faq-ask-btn" href="mailto:mzleodye75@gmail.com">
               <span>Ask a Question</span>
               <Arrow />
             </a>

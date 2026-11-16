@@ -20,7 +20,7 @@ export default function ContactCtaSection() {
             Tell us what you need: AI, custom software, web platforms, mobile apps, or UI/UX design. Reach out to our team and let&apos;s discuss your project.
           </p>
           <div className="contact-actions">
-            <a className="contact-btn-primary" href="mailto:umar@abitechsolutions.com">
+            <a className="contact-btn-primary" href="mailto:mzleodye75@gmail.com">
               <span>Let&apos;s Talk</span>
               <Arrow />
             </a>
@@ -38,13 +38,13 @@ export default function ContactCtaSection() {
             </div>
           </a>
 
-          <a className="contact-info-card" href="mailto:umar@abitechsolutions.com">
+          <a className="contact-info-card" href="mailto:mzleodye75@gmail.com">
             <div className="contact-info-icon">
               <WebIcon />
             </div>
             <div className="contact-info-text">
               <small>Email Inquiries</small>
-              <b>umar@abitechsolutions.com</b>
+              <b>mzleodye75@gmail.com</b>
             </div>
           </a>
 

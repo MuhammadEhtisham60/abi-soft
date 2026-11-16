@@ -51,7 +51,7 @@ export default function ContactPage() {
     );
 
     // Open user's email client automatically with prefilled enquiry
-    window.location.href = `mailto:umar@abitechsolutions.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:mzleodye75@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -259,13 +259,13 @@ export default function ContactPage() {
                     </div>
                   </a>
 
-                  <a className="contact-channel-item" href="mailto:umar@abitechsolutions.com">
+                  <a className="contact-channel-item" href="mailto:mzleodye75@gmail.com">
                     <div className="contact-channel-icon">
                       <WebIcon />
                     </div>
                     <div>
                       <small>Founder Direct Email</small>
-                      <b>umar@abitechsolutions.com</b>
+                      <b>mzleodye75@gmail.com</b>
                     </div>
                   </a>
 

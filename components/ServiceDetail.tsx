@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 export default function ServiceDetail({ service: s }: { service: Service }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<number>(0);
-  const mail = `mailto:umar@abitechsolutions.com?subject=${encodeURIComponent("Project Enquiry: " + s.t)}`;
+  const mail = `mailto:mzleodye75@gmail.com?subject=${encodeURIComponent("Project Enquiry: " + s.t)}`;
   const others = services.filter((x) => x.slug !== s.slug);
 
   useEffect(() => {
@@ -476,7 +476,7 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
                 </div>
                 <div className="contact-info-text">
                   <small>Direct Email</small>
-                  <b>umar@abitechsolutions.com</b>
+                  <b>mzleodye75@gmail.com</b>
                 </div>
               </a>
 

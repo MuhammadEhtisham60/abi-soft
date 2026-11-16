@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const mail = "mailto:umar@abitechsolutions.com?subject=Strategic%20Partnership%20Enquiry";
+  const mail = "mailto:mzleodye75@gmail.com?subject=Strategic%20Partnership%20Enquiry";
 
   return (
     <div className="sv-page-wrapper">
@@ -257,13 +257,13 @@ export default function AboutPage() {
                 </div>
               </a>
 
-              <a className="contact-info-card" href="mailto:umar@abitechsolutions.com">
+              <a className="contact-info-card" href="mailto:mzleodye75@gmail.com">
                 <div className="contact-info-icon">
                   <WebIcon />
                 </div>
                 <div className="contact-info-text">
                   <small>Email</small>
-                  <b>umar@abitechsolutions.com</b>
+                  <b>mzleodye75@gmail.com</b>
                 </div>
               </a>
 
