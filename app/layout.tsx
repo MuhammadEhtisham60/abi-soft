@@ -21,13 +21,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" style={{ colorScheme: "light" }} className="light">
+    <html lang="en" style={{ colorScheme: "light" }} className="light" suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="supported-color-schemes" content="light" />
         <link rel="preload" as="image" href="/images/slides/slide-1.webp" type="image/webp" />
       </head>
-      <body className={inter.className} style={{ colorScheme: "light" }}>
+      <body className={inter.className} style={{ colorScheme: "light" }} suppressHydrationWarning>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

@@ -97,8 +97,9 @@ export default function Navbar({
         <header className={`sv-nav-light ${isScrolled ? "sv-nav-scrolled" : ""} ${className}`} aria-label="Main Navigation">
         {/* Logo */}
         <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/dark-logo.png" alt="Avantis" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
+          <span className="sv-brand-wordmark">
+            Avantis<span className="sv-brand-dot" aria-hidden="true">.</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -234,8 +235,9 @@ export default function Navbar({
           <div className="sv-mobile-drawer" onClick={(e) => e.stopPropagation()}>
             <div className="sv-mobile-drawer-header">
               <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/dark-logo.png" alt="Avantis" className="hero-logo-img" style={{ height: 32, width: "auto" }} />
+                <span className="sv-brand-wordmark">
+                  Avantis<span className="sv-brand-dot" aria-hidden="true">.</span>
+                </span>
               </Link>
               <button
                 type="button"

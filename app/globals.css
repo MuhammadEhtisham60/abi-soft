@@ -326,6 +326,25 @@ a{color:inherit;text-decoration:none}
   align-items: center;
   gap: 10px;
 }
+.sv-brand-wordmark {
+  font-size: clamp(21px, 2vw, 25px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--ink-black);
+  display: inline-flex;
+  align-items: baseline;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.hero-logo:hover .sv-brand-wordmark {
+  color: var(--deep-space-blue);
+  transform: translateY(-0.5px);
+}
+.sv-brand-dot {
+  color: var(--deep-space-blue);
+  font-weight: 900;
+  margin-left: 1px;
+}
 .hero-logo-img {
   height: 38px;
   width: auto;
