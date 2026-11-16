@@ -68,7 +68,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               <span className="sv-category-dot" />
               <span>{project.category.toUpperCase()}</span>
             </div>
-            <span className="sv-project-tag-pill" style={{ background: "#e0f2fe", color: "#0369a1", borderColor: "#bae6fd", fontWeight: 700 }}>
+            <span className="sv-project-tag-pill" style={{ background: "#ebf2fa", color: "#064789", borderColor: "#c5d9eb", fontWeight: 700 }}>
               Verified Production System
             </span>
           </div>

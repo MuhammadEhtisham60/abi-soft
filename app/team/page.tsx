@@ -222,7 +222,7 @@ export default function TeamPage() {
                           marginTop: 6,
                           fontSize: 13,
                           fontWeight: 500,
-                          color: "#0284c7",
+                          color: "#064789",
                           textDecoration: "none",
                         }}
                       >

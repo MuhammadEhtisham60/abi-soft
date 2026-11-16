@@ -283,7 +283,7 @@ export default function Navbar({
                       border: "none",
                       padding: "10px 14px",
                       cursor: "pointer",
-                      color: isServices ? "#0284c7" : "#64748b",
+                      color: isServices ? "#064789" : "#64748b",
                       display: "flex",
                       alignItems: "center",
                     }}

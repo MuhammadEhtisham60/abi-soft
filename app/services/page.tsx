@@ -162,7 +162,7 @@ export default function ServicesPage() {
                                 fontSize: "11px",
                                 fontWeight: 700,
                                 textTransform: "uppercase",
-                                color: "var(--pri, #0284c7)",
+                                color: "var(--pri, #064789)",
                                 background: "#eff6ff",
                                 border: "1px solid #bfdbfe",
                                 padding: "4px 12px",
@@ -185,7 +185,7 @@ export default function ServicesPage() {
                               {service.t}
                             </Link>
                           </h3>
-                          <p style={{ fontSize: "14.5px", fontWeight: 600, color: "var(--pri, #0284c7)" }}>
+                          <p style={{ fontSize: "14.5px", fontWeight: 600, color: "var(--pri, #064789)" }}>
                             {service.p}
                           </p>
                         </div>
@@ -200,7 +200,7 @@ export default function ServicesPage() {
                           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "10px", marginBottom: "16px" }}>
                             {service.features.slice(0, 4).map((feat) => (
                               <div key={feat} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "13px", color: "#334155" }}>
-                                <span style={{ color: "var(--pri, #0284c7)", fontWeight: 800, flexShrink: 0 }}>✓</span>
+                                <span style={{ color: "var(--pri, #064789)", fontWeight: 800, flexShrink: 0 }}>✓</span>
                                 <span>{feat}</span>
                               </div>
                             ))}
@@ -250,7 +250,7 @@ export default function ServicesPage() {
                           style={{
                             fontSize: "13.5px",
                             fontWeight: 600,
-                            color: "var(--pri, #0284c7)",
+                            color: "var(--pri, #064789)",
                             textDecoration: "none",
                             padding: "10px 14px",
                           }}
@@ -399,12 +399,12 @@ export default function ServicesPage() {
         <section className="sec" style={{ paddingTop: 0, paddingBottom: "90px" }}>
           <div
             style={{
-              background: "linear-gradient(135deg, #0f172a 0%, #0369a1 100%)",
+              background: "linear-gradient(135deg, #0f172a 0%, #064789 100%)",
               borderRadius: "24px",
               padding: "48px 36px",
               color: "#ffffff",
               textAlign: "center",
-              boxShadow: "0 20px 60px rgba(2, 132, 199, 0.25)",
+              boxShadow: "0 20px 60px rgba(6, 71, 137, 0.25)",
               maxWidth: "1100px",
               margin: "0 auto",
             }}
@@ -428,7 +428,7 @@ export default function ServicesPage() {
             <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", fontWeight: 900, marginBottom: "14px", color: "#ffffff" }}>
               Let’s Architect Your Next Breakthrough.
             </h2>
-            <p style={{ fontSize: "16px", color: "#e0f2fe", maxWidth: "620px", margin: "0 auto 28px", lineHeight: "1.6" }}>
+            <p style={{ fontSize: "16px", color: "#ebf2fa", maxWidth: "620px", margin: "0 auto 28px", lineHeight: "1.6" }}>
               Schedule a technical discovery session with our senior engineers to receive a fixed-scope proposal, timeline, and architectural.
             </p>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "14px", flexWrap: "wrap" }}>
@@ -441,7 +441,7 @@ export default function ServicesPage() {
                   fontWeight: 700,
                   borderRadius: "50px",
                   background: "#ffffff",
-                  color: "#0369a1",
+                  color: "#064789",
                   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
                   textDecoration: "none",
                 }}

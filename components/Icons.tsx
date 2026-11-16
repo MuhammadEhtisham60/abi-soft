@@ -29,22 +29,22 @@ export const CodeIcon = () => (
 
 export const WebIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="9" stroke="#0284c7" strokeWidth="1.8" />
-    <path d="M3.6 9h16.8M3.6 15h16.8" stroke="#0284c7" strokeWidth="1.6" />
-    <ellipse cx="12" cy="12" rx="4.5" ry="9" stroke="#0284c7" strokeWidth="1.6" />
-    <circle cx="16.5" cy="7.5" r="3.5" fill="#f0f9ff" stroke="#0284c7" strokeWidth="1.5" />
-    <path d="M15 9l3-3" stroke="#0284c7" strokeWidth="1.6" strokeLinecap="round" />
+    <circle cx="12" cy="12" r="9" stroke="#064789" strokeWidth="1.8" />
+    <path d="M3.6 9h16.8M3.6 15h16.8" stroke="#064789" strokeWidth="1.6" />
+    <ellipse cx="12" cy="12" rx="4.5" ry="9" stroke="#064789" strokeWidth="1.6" />
+    <circle cx="16.5" cy="7.5" r="3.5" fill="#ebf2fa" stroke="#064789" strokeWidth="1.5" />
+    <path d="M15 9l3-3" stroke="#064789" strokeWidth="1.6" strokeLinecap="round" />
   </svg>
 );
 
 export const PhoneIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-    <rect x="5.5" y="2.5" width="13" height="19" rx="3" fill="url(#phoneBodyGrad)" stroke="#38bdf8" strokeWidth="1.5" />
+    <rect x="5.5" y="2.5" width="13" height="19" rx="3" fill="url(#phoneBodyGrad)" stroke="#427aa1" strokeWidth="1.5" />
     <line x1="10" y1="5.5" x2="14" y2="5.5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" opacity="0.9" />
     <defs>
       <linearGradient id="phoneBodyGrad" x1="5.5" y1="2.5" x2="18.5" y2="21.5" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#38bdf8" />
-        <stop offset="1" stopColor="#0284c7" />
+        <stop stopColor="#427aa1" />
+        <stop offset="1" stopColor="#064789" />
       </linearGradient>
     </defs>
   </svg>
@@ -52,9 +52,9 @@ export const PhoneIcon = () => (
 
 export const BrushIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-    <rect x="3" y="3" width="14" height="14" rx="2.5" fill="#e0f2fe" stroke="#38bdf8" strokeWidth="1.5" />
-    <path d="m14 6 3.5 3.5m-3.5-3.5L9 11a2 2 0 0 0-.5 1.2V15h2.8c.45 0 .88-.18 1.2-.5L17.5 9.5m-3.5-3.5 2-2a1.8 1.8 0 0 1 2.5 2.5L17.5 9.5" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M5.5 14.5l2-2" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+    <rect x="3" y="3" width="14" height="14" rx="2.5" fill="#ebf2fa" stroke="#427aa1" strokeWidth="1.5" />
+    <path d="m14 6 3.5 3.5m-3.5-3.5L9 11a2 2 0 0 0-.5 1.2V15h2.8c.45 0 .88-.18 1.2-.5L17.5 9.5m-3.5-3.5 2-2a1.8 1.8 0 0 1 2.5 2.5L17.5 9.5" stroke="#064789" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M5.5 14.5l2-2" stroke="#427aa1" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 

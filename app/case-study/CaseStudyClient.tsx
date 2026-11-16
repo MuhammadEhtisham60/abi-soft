@@ -116,7 +116,7 @@ export default function CaseStudyClient() {
                   <span className="sv-project-cat-pill">{proj.category}</span>
                 </div>
                 <div className="sv-project-tags" style={{ margin: 0 }}>
-                  <span className="sv-project-tag-pill" style={{ background: "#e0f2fe", color: "#0369a1", borderColor: "#bae6fd" }}>
+                  <span className="sv-project-tag-pill" style={{ background: "#ebf2fa", color: "#064789", borderColor: "#c5d9eb" }}>
                     Verified Production Codebase
                   </span>
                 </div>

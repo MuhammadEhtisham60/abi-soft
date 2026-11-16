@@ -100,9 +100,9 @@ export default function DigitalSpireVisual() {
       }
 
       const scanGrad = ctx.createLinearGradient(0, scanY - 15, 0, scanY + 15);
-      scanGrad.addColorStop(0, "rgba(56, 189, 248, 0)");
-      scanGrad.addColorStop(0.5, "rgba(56, 189, 248, 0.12)");
-      scanGrad.addColorStop(1, "rgba(56, 189, 248, 0)");
+      scanGrad.addColorStop(0, "rgba(66, 122, 161, 0)");
+      scanGrad.addColorStop(0.5, "rgba(66, 122, 161, 0.12)");
+      scanGrad.addColorStop(1, "rgba(66, 122, 161, 0)");
       ctx.fillStyle = scanGrad;
       ctx.fillRect(0, scanY - 15, W, 30);
 
@@ -121,8 +121,8 @@ export default function DigitalSpireVisual() {
 
         // Glowing pulse head and fading tail
         const pulseGrad = ctx.createLinearGradient(px, py + tailLength, px, py);
-        pulseGrad.addColorStop(0, "rgba(56, 189, 248, 0)");
-        pulseGrad.addColorStop(0.7, "rgba(56, 189, 248, 0.65)");
+        pulseGrad.addColorStop(0, "rgba(66, 122, 161, 0)");
+        pulseGrad.addColorStop(0.7, "rgba(66, 122, 161, 0.65)");
         pulseGrad.addColorStop(1, "rgba(255, 255, 255, 0.95)");
 
         ctx.strokeStyle = pulseGrad;
@@ -134,7 +134,7 @@ export default function DigitalSpireVisual() {
 
         // Bright tip
         ctx.fillStyle = "#ffffff";
-        ctx.shadowColor = "#38bdf8";
+        ctx.shadowColor = "#427aa1";
         ctx.shadowBlur = 8;
         ctx.beginPath();
         ctx.arc(px, py, 2.2, 0, Math.PI * 2);
@@ -147,7 +147,7 @@ export default function DigitalSpireVisual() {
           const topNodeY = l.topY * H;
           const ringRadius = 4 + (1 - l.burstAlpha) * 16;
 
-          ctx.strokeStyle = `rgba(56, 189, 248, ${l.burstAlpha * 0.8})`;
+          ctx.strokeStyle = `rgba(66, 122, 161, ${l.burstAlpha * 0.8})`;
           ctx.lineWidth = 1.2;
           ctx.beginPath();
           ctx.arc(topX, topNodeY, ringRadius, 0, Math.PI * 2);
@@ -155,7 +155,7 @@ export default function DigitalSpireVisual() {
 
           // Core node flash
           ctx.fillStyle = `rgba(255, 255, 255, ${l.burstAlpha})`;
-          ctx.shadowColor = "#38bdf8";
+          ctx.shadowColor = "#427aa1";
           ctx.shadowBlur = 12 * l.burstAlpha;
           ctx.beginPath();
           ctx.arc(topX, topNodeY, 3, 0, Math.PI * 2);
@@ -179,7 +179,7 @@ export default function DigitalSpireVisual() {
         const cy = p.y * H;
 
         if (p.isCube) {
-          ctx.fillStyle = `rgba(56, 189, 248, ${p.alpha * 0.75})`;
+          ctx.fillStyle = `rgba(66, 122, 161, ${p.alpha * 0.75})`;
           ctx.fillRect(cx - p.size, cy - p.size, p.size * 2, p.size * 2);
         } else {
           ctx.fillStyle = `rgba(125, 211, 252, ${p.alpha})`;

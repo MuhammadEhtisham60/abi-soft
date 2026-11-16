@@ -33,7 +33,7 @@ const SLIDE_DURATION_MS = 6500;
 const heroSlides: HeroSlide[] = [
   {
     id: "slide-1",
-    image: "/images/slides/slide-1.webp",
+    image: "/images/slides/slide1.jpg",
     imageAlt: "Enterprise software engineers collaborating around cloud infrastructure dashboards",
     badge: "SCALABLE SOFTWARE • CLOUD-NATIVE",
     titleLine1: "BUILT TO SCALE,",
@@ -347,7 +347,7 @@ export default function Home() {
             <p className="hero-desc">{active.desc}</p>
 
             {/* Worldwide Feature Item */}
-            <div className="about-feat-item" style={{ marginBottom: 24 }}>
+            {/* <div className="about-feat-item" style={{ marginBottom: 24 }}>
               <div className="about-feat-icon">
                 <GlobeNetworkIcon />
               </div>
@@ -355,7 +355,7 @@ export default function Home() {
                 <b>Serving clients worldwide</b>
                 <small>Remote-first delivery across every time zone</small>
               </div>
-            </div>
+            </div> */}
 
             {/* Hero CTAs */}
             <div className="hero-actions">
