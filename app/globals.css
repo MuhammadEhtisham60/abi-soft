@@ -8,6 +8,8 @@
   --ink:#0f172a;
   --mute:#64748b;
   --line:#e2e8f0;
+  --container-max: 1440px;
+  --container-px: clamp(18px, 3.8vw, 56px);
 }
 html,body{
   color-scheme: light !important;
@@ -54,19 +56,27 @@ a{color:inherit;text-decoration:none}
   inset: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.85s cubic-bezier(0.25, 1, 0.35, 1);
   z-index: 1;
+  overflow: hidden;
+  will-change: opacity, transform;
 }
 
 .hero-slide-bg.active,
 .hero-bg-image {
   opacity: 1;
   z-index: 2;
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  display: block;
+  will-change: transform;
+  transform-origin: center center;
 }
 
 .hero-bg-overlay {
@@ -76,13 +86,129 @@ a{color:inherit;text-decoration:none}
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(210, 230, 252, 0.92) 0%,
-    rgba(210, 230, 252, 0.78) 38%,
-    rgba(210, 230, 252, 0.15) 65%,
-    rgba(210, 230, 252, 0) 82%
+    rgba(232, 243, 255, 0.95) 0%,
+    rgba(220, 236, 253, 0.86) 36%,
+    rgba(210, 230, 252, 0.34) 64%,
+    rgba(15, 23, 42, 0.14) 100%
   );
   pointer-events: none;
   z-index: 3;
+}
+
+/* Bottom Hero Slider Controls Bar (Aligned with Shared Container) */
+.hero-controls-bar {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: auto auto 0;
+  padding: 18px var(--container-px) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-progress-indicators {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  max-width: 520px;
+}
+
+.hero-progress-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  outline: none;
+}
+
+.hero-progress-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.55);
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-progress-btn.active .hero-progress-label,
+.hero-progress-btn:hover .hero-progress-label {
+  color: #0f172a;
+}
+
+.hero-progress-track {
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.14);
+  overflow: hidden;
+}
+
+.hero-progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.hero-arrow-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-slide-counter {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #334155;
+  margin-right: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  transition: all 0.22s ease;
+}
+
+.hero-arrow-btn:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(2, 132, 199, 0.28);
+}
+
+.hero-arrow-btn:focus-visible,
+.hero-progress-btn:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
 }
 
 /* Right Side Hero Slide Dots (Concentric Ring Indicator) */
@@ -273,9 +399,9 @@ a{color:inherit;text-decoration:none}
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 1220px;
-  margin: 30px auto 0;
-  padding: 20px 24px 40px;
+  max-width: var(--container-max);
+  margin: auto auto 0;
+  padding: 28px var(--container-px) 24px;
   display: flex;
   align-items: center;
 }
@@ -410,13 +536,29 @@ a{color:inherit;text-decoration:none}
   }
 }
 @media (max-width: 640px) {
-  .hero-nav, .sv-nav-light {
-    width: calc(100% - 24px);
+  .hero-nav {
+    width: calc(100% - (var(--container-px) * 2));
     margin-top: 14px;
     padding: 10px 16px;
   }
+  .sv-nav-light {
+    width: 100%;
+    padding: 10px 16px;
+  }
   .hero-container {
-    padding: 40px 18px 60px;
+    padding: 28px var(--container-px) 24px;
+  }
+  .hero-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding-top: 10px;
+  }
+  .hero-progress-indicators {
+    max-width: 100%;
+  }
+  .hero-arrow-controls {
+    justify-content: flex-end;
   }
   .hero-desc {
     max-width: 100%;
@@ -443,7 +585,7 @@ html.lenis, html.lenis-smooth {
   overflow: clip;
 }
 /* ---------- sections below the hero ---------- */
-.sec{position:relative;max-width:1180px;margin:0 auto;padding:80px 24px}
+.sec{position:relative;width:100%;max-width:var(--container-max);margin:0 auto;padding:80px var(--container-px)}
 .head{text-align:center;max-width:660px;margin:0 auto 56px}
 .head h2,.about h2,.cta-box h2{font-size:clamp(30px,4vw,46px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:20px 0 14px}
 .head h2 em,.about h2 em,.cta-box h2 em{font-style:normal;color:var(--pri);text-shadow:0 0 28px rgba(45,156,255,.4)}
@@ -451,9 +593,10 @@ html.lenis, html.lenis-smooth {
 /* ====== NEW SERVICES DESIGN (MATCHING REFERENCE IMAGE) ====== */
 .svc-section-wrap {
   position: relative;
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 100px 24px 120px;
+  padding: 100px var(--container-px) 120px;
 }
 .svc-bg-ambient {
   position: absolute;
@@ -1047,9 +1190,10 @@ html.lenis, html.lenis-smooth {
 /* ---------- HOW WE WORK / PROCESS SECTION (UPGRADE BUSINESS 5-STEP) ---------- */
 .proc-section {
   position: relative;
-  max-width: 1240px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 80px 24px 70px;
+  padding: 80px var(--container-px) 70px;
 }
 
 .proc-head {
@@ -1368,9 +1512,10 @@ html.lenis, html.lenis-smooth {
 /* ---------- CONTACT / CTA SECTION ("Welcome to the Digital World") ---------- */
 .contact-section {
   position: relative;
-  max-width: 1220px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 50px 24px 120px;
+  padding: 50px var(--container-px) 120px;
 }
 
 .contact-card {
@@ -1587,12 +1732,14 @@ html.lenis, html.lenis-smooth {
   position: relative;
   background: #ffffff;
   border-top: 1px solid #e2e8f0;
-  padding: 80px 24px 36px;
+  padding: 80px 0 36px;
   color: #0f172a;
 }
 
 .foot-in {
-  max-width: 1220px;
+  width: 100%;
+  max-width: var(--container-max);
+  padding-inline: var(--container-px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
@@ -1647,9 +1794,10 @@ html.lenis, html.lenis-smooth {
 }
 
 .copy {
-  max-width: 1220px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 50px auto 0;
-  padding-top: 26px;
+  padding: 26px var(--container-px) 0;
   border-top: 1px solid #e2e8f0;
   font-size: 13px;
   color: #64748b;
@@ -1979,6 +2127,7 @@ html.lenis, html.lenis-smooth {
   right: 0;
   z-index: 9999;
   width: 100%;
+  padding-inline: var(--container-px);
   pointer-events: none;
   display: flex;
   justify-content: center;
@@ -1989,8 +2138,8 @@ html.lenis, html.lenis-smooth {
   position: relative;
   pointer-events: auto;
   z-index: 20;
-  width: calc(100% - 48px);
-  max-width: 1160px;
+  width: 100%;
+  max-width: calc(var(--container-max) - (var(--container-px) * 2));
   margin: 0 auto;
   padding: 12px 24px;
   background: rgba(255, 255, 255, 0.94);
@@ -5010,11 +5159,12 @@ h1, h2, h3, h4, p, span, a, label {
 @media (min-width: 1440px) {
   .sec,
   .hero-container,
+  .hero-controls-bar,
   .sv-banner-container,
   .sv-hero-content,
   .foot-in,
   .copy {
-    max-width: 1240px;
+    max-width: var(--container-max);
   }
 }
 
@@ -5054,7 +5204,7 @@ h1, h2, h3, h4, p, span, a, label {
     display: flex !important;
   }
   .sv-nav-sticky-container {
-    padding: 0 16px;
+    padding-inline: var(--container-px);
   }
   .sv-nav-light {
     width: 100%;
@@ -5063,10 +5213,10 @@ h1, h2, h3, h4, p, span, a, label {
 
   /* Section Spacing */
   .sec {
-    padding: 60px 20px;
+    padding: 60px var(--container-px);
   }
   .sec-tight {
-    padding: 40px 20px;
+    padding: 40px var(--container-px);
   }
   .head {
     margin-bottom: 40px;
@@ -5248,7 +5398,7 @@ h1, h2, h3, h4, p, span, a, label {
 
   /* Top sticky navigation */
   .sv-nav-sticky-container {
-    padding: 0 10px;
+    padding-inline: var(--container-px);
     top: 10px;
   }
   .sv-nav-light {
@@ -5286,7 +5436,10 @@ h1, h2, h3, h4, p, span, a, label {
     padding-top: 72px;
   }
   .hero-container {
-    padding: 30px 16px 50px;
+    padding: 28px var(--container-px) 24px;
+  }
+  .hero-slide-img {
+    object-position: 70% center;
   }
   .hero-title {
     font-size: clamp(26px, 8.5vw, 40px);

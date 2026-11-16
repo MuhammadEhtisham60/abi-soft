@@ -15,8 +15,8 @@ if (typeof window !== "undefined") {
 interface HeroSlide {
   id: string;
   image: string;
+  imageAlt: string;
   badge: string;
-  flag: string;
   titleLine1: string;
   titleHighlight: string;
   titleLine3: string;
@@ -25,148 +25,265 @@ interface HeroSlide {
   primaryCtaLink: string;
   secondaryCtaText: string;
   secondaryCtaLink: string;
-  tooltip: string;
+  shortLabel: string;
 }
+
+const SLIDE_DURATION_MS = 6500;
 
 const heroSlides: HeroSlide[] = [
   {
     id: "slide-1",
-    image: "/images/slides/slide1.jpg",
-    badge: "USA-BASED • SERVING CLIENTS WORLDWIDE",
-    flag: "🇺🇸",
-    titleLine1: "BUILDING THE",
-    titleHighlight: "DIGITAL INFRASTRUCTURE",
-    titleLine3: "OF TOMORROW.",
-    desc: "AI-powered solutions, scalable software, and modern digital experiences engineered to help businesses grow, operate, and compete globally.",
+    image: "/images/slides/slide-1.webp",
+    imageAlt: "Enterprise software engineers collaborating around cloud infrastructure dashboards",
+    badge: "SCALABLE SOFTWARE • CLOUD-NATIVE",
+    titleLine1: "BUILT TO SCALE,",
+    titleHighlight: "FROM THE FIRST USER",
+    titleLine3: "TO THE MILLION.",
+    desc: "Reliable platforms, clean APIs, and scalable architectures designed to grow with your business.",
     primaryCtaText: "Explore Our Solutions",
     primaryCtaLink: "#services",
     secondaryCtaText: "Start a Project",
     secondaryCtaLink: "/contact",
-    tooltip: "Digital Infrastructure",
+    shortLabel: "Enterprise & Cloud",
   },
   {
     id: "slide-2",
-    image: "/images/slides/slide2.jpg",
-    badge: "AI SOLUTIONS • USA-BASED",
-    flag: "🇺🇸",
-    titleLine1: "AUTOMATE THE",
-    titleHighlight: "WORK THAT",
-    titleLine3: "HOLDS YOU BACK.",
-    desc: "Custom AI systems that handle repetitive tasks, surface insights from your data, and free your team to focus on the work that grows the business.",
-    primaryCtaText: "Explore AI Solutions",
-    primaryCtaLink: "/services/ai-solutions",
-    secondaryCtaText: "Start a Project",
+    image: "/images/slides/slide-2.webp",
+    imageAlt: "Modern software development workspace with web and mobile application interfaces",
+    badge: "MOBILE & WEB APPLICATION DEVELOPMENT",
+    titleLine1: "TURN YOUR IDEAS INTO",
+    titleHighlight: "POWERFUL DIGITAL",
+    titleLine3: "EXPERIENCES.",
+    desc: "Beautiful, high-performance web and mobile applications designed to engage users and accelerate business growth.",
+    primaryCtaText: "Explore Development",
+    primaryCtaLink: "/services/app-development",
+    secondaryCtaText: "Get Free Estimate",
     secondaryCtaLink: "/contact",
-    tooltip: "AI Solutions",
+    shortLabel: "Web & Mobile Apps",
   },
   {
     id: "slide-3",
-    image: "/images/slides/slide3.jpg",
-    badge: "SCALABLE SOFTWARE • CLOUD-NATIVE",
-    flag: "🇺🇸",
-    titleLine1: "BUILT TO SCALE",
-    titleHighlight: "FROM THE FIRST",
-    titleLine3: "USER TO THE MILLION.",
-    desc: "Reliable platforms, clean APIs, and architecture designed to grow with your traffic, so your product keeps working as your customers multiply.",
-    primaryCtaText: "Explore Scalable Software",
-    primaryCtaLink: "/services/software-development",
-    secondaryCtaText: "Start a Project",
+    image: "/images/slides/slide-3.webp",
+    imageAlt: "Futuristic AI neural network, data visualization, and intelligent automation environment",
+    badge: "AI • AUTOMATION • DIGITAL INNOVATION",
+    titleLine1: "BUILD SMARTER.",
+    titleHighlight: "AUTOMATE FASTER.",
+    titleLine3: "GROW FURTHER.",
+    desc: "Transform your business with intelligent AI solutions, automation, and data-driven digital innovation.",
+    primaryCtaText: "Discover AI Solutions",
+    primaryCtaLink: "/services/ai-solutions",
+    secondaryCtaText: "Let's Talk",
     secondaryCtaLink: "/contact",
-    tooltip: "Scalable Software",
+    shortLabel: "AI & Automation",
   },
 ];
 
 export default function Home() {
   const stageRef = useRef<HTMLElement>(null);
+  const bgWrapRef = useRef<HTMLDivElement>(null);
   const textColRef = useRef<HTMLDivElement>(null);
+  const slideBgRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const progressFillRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const progressTweenRef = useRef<gsap.core.Tween | null>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchDeltaX = useRef<number>(0);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentSlide(((index % heroSlides.length) + heroSlides.length) % heroSlides.length);
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   }, []);
 
-  // Initial Entrance Animation
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  }, []);
 
-      tl.from(".hero-badge", {
-        scale: 0.85,
-        opacity: 0,
-        y: 15,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-      })
-        .from(
-          ".hero-title-line",
-          {
-            y: 35,
-            opacity: 0,
-            stagger: 0.12,
-            duration: 0.8,
-          },
-          "-=0.3"
-        )
-        .from(
-          ".hero-desc",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.7,
-          },
-          "-=0.5"
-        )
-        .from(
-          ".hero-text-col .about-feat-item",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.6,
-          },
-          "-=0.4"
-        )
-        .from(
-          ".hero-actions",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.6,
-          },
-          "-=0.3"
-        )
-        .from(
-          ".hero-right-dots",
-          {
-            opacity: 0,
-            x: 20,
-            duration: 0.6,
-          },
-          "-=0.3"
-        );
+  // Scroll-linked subtle parallax for hero background
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion || !stageRef.current || !bgWrapRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.to(bgWrapRef.current, {
+        yPercent: 10,
+        ease: "none",
+        scrollTrigger: {
+          trigger: stageRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     }, stageRef);
 
     return () => ctx.revert();
   }, []);
 
-  // Animate text transition when slide changes
+  // Slide transition: background cinematic fade + zoom + sequential text/CTA entrance
   useEffect(() => {
-    if (!textColRef.current) return;
-    gsap.fromTo(
-      textColRef.current.children,
-      { opacity: 0, y: 14 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: "power2.out" }
-    );
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const ctx = gsap.context(() => {
+      slideBgRefs.current.forEach((el, idx) => {
+        if (!el) return;
+        const img = el.querySelector(".hero-slide-img");
+        if (idx === currentSlide) {
+          gsap.killTweensOf([el, img]);
+          if (prefersReducedMotion) {
+            gsap.set(el, { opacity: 1, zIndex: 2 });
+            if (img) gsap.set(img, { scale: 1 });
+          } else {
+            gsap.fromTo(
+              el,
+              { opacity: 0, zIndex: 2 },
+              { opacity: 1, duration: 0.9, ease: "power2.out" }
+            );
+            if (img) {
+              gsap.fromTo(
+                img,
+                { scale: 1.08 },
+                { scale: 1, duration: 6.5, ease: "power1.out" }
+              );
+            }
+          }
+        } else {
+          gsap.killTweensOf(el);
+          gsap.to(el, {
+            opacity: 0,
+            zIndex: 1,
+            duration: prefersReducedMotion ? 0 : 0.75,
+            ease: "power2.inOut",
+          });
+        }
+      });
+
+      if (!prefersReducedMotion && textColRef.current) {
+        const badge = textColRef.current.querySelector(".hero-badge");
+        const titleLines = textColRef.current.querySelectorAll(".hero-title-line");
+        const desc = textColRef.current.querySelector(".hero-desc");
+        const feat = textColRef.current.querySelector(".about-feat-item");
+        const actions = textColRef.current.querySelector(".hero-actions");
+
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        if (badge) {
+          tl.fromTo(
+            badge,
+            { opacity: 0, y: 14, scale: 0.94 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.45 }
+          );
+        }
+        if (titleLines.length) {
+          tl.fromTo(
+            titleLines,
+            { opacity: 0, y: 26 },
+            { opacity: 1, y: 0, stagger: 0.09, duration: 0.65 },
+            "-=0.25"
+          );
+        }
+        if (desc) {
+          tl.fromTo(
+            desc,
+            { opacity: 0, y: 18 },
+            { opacity: 1, y: 0, duration: 0.55 },
+            "-=0.4"
+          );
+        }
+        if (feat) {
+          tl.fromTo(
+            feat,
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.45 },
+            "-=0.35"
+          );
+        }
+        if (actions) {
+          tl.fromTo(
+            actions,
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.45 },
+            "-=0.3"
+          );
+        }
+      }
+    }, stageRef);
+
+    return () => ctx.revert();
   }, [currentSlide]);
 
-  // Auto-play timer (pauses on hover)
+  // Progress bar animation & autoplay synchronized with hover pause/resume
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
+    progressTweenRef.current?.kill();
+    progressFillRefs.current.forEach((bar, idx) => {
+      if (!bar) return;
+      gsap.killTweensOf(bar);
+      gsap.set(bar, { scaleX: idx < currentSlide ? 1 : 0 });
+    });
+
+    const activeBar = progressFillRefs.current[currentSlide];
+    if (!activeBar) return;
+
+    const tween = gsap.fromTo(
+      activeBar,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: SLIDE_DURATION_MS / 1000,
+        ease: "none",
+        paused: isPaused,
+        onComplete: () => {
+          nextSlide();
+        },
+      }
+    );
+
+    progressTweenRef.current = tween;
+
+    return () => {
+      tween.kill();
+    };
+  }, [currentSlide, nextSlide]);
+
+  // Pause / resume active progress tween on hover without resetting progress
+  useEffect(() => {
+    if (!progressTweenRef.current) return;
+    if (isPaused) {
+      progressTweenRef.current.pause();
+    } else {
+      progressTweenRef.current.play();
+    }
+  }, [isPaused]);
+
+  // Touch / swipe gesture handlers for mobile
+  const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchDeltaX.current = 0;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLElement>) => {
+    if (touchStartX.current === null) return;
+    touchDeltaX.current = e.touches[0].clientX - touchStartX.current;
+  };
+
+  const handleTouchEnd = () => {
+    if (Math.abs(touchDeltaX.current) > 45) {
+      if (touchDeltaX.current < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    touchStartX.current = null;
+    touchDeltaX.current = 0;
+  };
 
   const active = heroSlides[currentSlide];
 
@@ -180,44 +297,42 @@ export default function Home() {
         ref={stageRef}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        aria-roledescription="carousel"
+        aria-label="ABI Technologies Featured Solutions"
       >
-        {/* Background Slides with smooth cross-fade */}
-        <div className="hero-bg-wrap" aria-hidden="true">
+        {/* Background Slides with GSAP cross-fade & zoom */}
+        <div className="hero-bg-wrap" ref={bgWrapRef} aria-hidden="true">
           {heroSlides.map((slide, idx) => (
             <div
               key={slide.id}
+              ref={(el) => {
+                slideBgRefs.current[idx] = el;
+              }}
               className={`hero-slide-bg ${currentSlide === idx ? "active" : ""}`}
-              style={{ backgroundImage: `url('${slide.image}')` }}
-            />
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={slide.image}
+                alt={slide.imageAlt}
+                className="hero-slide-img"
+                loading={idx === 0 ? "eager" : "lazy"}
+                fetchPriority={idx === 0 ? "high" : "auto"}
+                decoding={idx === 0 ? "sync" : "async"}
+              />
+            </div>
           ))}
           <div className="hero-bg-overlay" />
         </div>
 
-        {/* Concentric Ring Navigation Dots on Right Side */}
-        <nav className="hero-right-dots" aria-label="Slide Navigation">
-          {heroSlides.map((slide, idx) => (
-            <button
-              key={slide.id}
-              type="button"
-              className={`hero-right-dot ${currentSlide === idx ? "active" : ""}`}
-              onClick={() => setCurrentSlide(idx)}
-              aria-label={`Slide ${idx + 1}: ${slide.tooltip}`}
-              aria-current={currentSlide === idx ? "true" : undefined}
-            >
-              <span className="hero-dot-ring">
-                <span className="hero-dot-core" />
-              </span>
-              <span className="hero-right-dot-tooltip">{slide.tooltip}</span>
-            </button>
-          ))}
-        </nav>
-
         {/* Hero Content Container */}
         <div className="hero-container">
           <div className="hero-text-col" ref={textColRef}>
-            {/* Category / Location Badge */}
+            {/* Category Badge */}
             <div className="hero-badge">
-              <span className="hero-flag">{active.flag}</span>
+              <span className="about-pill-dot" />
               <span>{active.badge}</span>
             </div>
 
@@ -232,7 +347,7 @@ export default function Home() {
             <p className="hero-desc">{active.desc}</p>
 
             {/* Worldwide Feature Item */}
-            <div className="about-feat-item" style={{ marginBottom: 28 }}>
+            <div className="about-feat-item" style={{ marginBottom: 24 }}>
               <div className="about-feat-icon">
                 <GlobeNetworkIcon />
               </div>
@@ -244,13 +359,74 @@ export default function Home() {
 
             {/* Hero CTAs */}
             <div className="hero-actions">
-              <a href={active.primaryCtaLink} className="hero-btn-primary">
-                {active.primaryCtaText}
-              </a>
+              {active.primaryCtaLink.startsWith("#") ? (
+                <a href={active.primaryCtaLink} className="hero-btn-primary">
+                  {active.primaryCtaText}
+                </a>
+              ) : (
+                <Link href={active.primaryCtaLink} className="hero-btn-primary">
+                  {active.primaryCtaText}
+                </Link>
+              )}
               <Link href={active.secondaryCtaLink} className="hero-btn-secondary">
                 {active.secondaryCtaText}
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom Slider Controls: 3 Progress Indicators + Prev/Next Arrows */}
+        <div className="hero-controls-bar">
+          <div className="hero-progress-indicators" role="tablist" aria-label="Hero Slide Indicators">
+            {heroSlides.map((slide, idx) => (
+              <button
+                key={slide.id}
+                type="button"
+                role="tab"
+                aria-selected={currentSlide === idx}
+                aria-label={`Slide ${idx + 1}: ${slide.shortLabel}`}
+                className={`hero-progress-btn ${currentSlide === idx ? "active" : ""}`}
+                onClick={() => goToSlide(idx)}
+              >
+                <span className="hero-progress-label">
+                  0{idx + 1} · {slide.shortLabel}
+                </span>
+                <span className="hero-progress-track">
+                  <span
+                    className="hero-progress-fill"
+                    ref={(el) => {
+                      progressFillRefs.current[idx] = el;
+                    }}
+                  />
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <div className="hero-arrow-controls">
+            <span className="hero-slide-counter" aria-live="polite">
+              0{currentSlide + 1} / 0{heroSlides.length}
+            </span>
+            <button
+              type="button"
+              className="hero-arrow-btn"
+              onClick={prevSlide}
+              aria-label="Previous slide"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="hero-arrow-btn"
+              onClick={nextSlide}
+              aria-label="Next slide"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
           </div>
         </div>
       </main>

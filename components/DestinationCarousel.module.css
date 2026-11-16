@@ -1,8 +1,9 @@
 .sectionWrapper {
   position: relative;
-  max-width: 1240px;
+  width: 100%;
+  max-width: var(--container-max, 1440px);
   margin: 0 auto;
-  padding: 80px 24px 70px;
+  padding: 80px var(--container-px, clamp(18px, 3.8vw, 56px)) 70px;
 }
 
 .head {
