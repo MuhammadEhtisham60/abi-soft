@@ -6,8 +6,8 @@ import DigitalSpireVisual from "@/components/DigitalSpireVisual";
 import { Arrow, Back, MapPinIcon, GlobeNetworkIcon, LayersIcon, PhoneIcon, WebIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "About Us – ABI Technologies & Digital Solutions | Nexora",
-  description: "Learn about ABI Technologies & Digital Solutions. USA-based engineering team delivering custom AI, enterprise software, modern web platforms, mobile apps, and UI/UX design.",
+  title: "About Us – Avantis Technologies & Digital Solutions | Nexora",
+  description: "Learn about Avantis Technologies & Digital Solutions. USA-based engineering team delivering custom AI, enterprise software, modern web platforms, mobile apps, and UI/UX design.",
 };
 
 export default function AboutPage() {
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
           <p className="sv-hero-tagline">Smarter Technology. Deterministic Scale. Measurable ROI.</p>
           <p className="sv-hero-desc">
-            ABI Technologies &amp; Digital Solutions (Nexora) partners with ambitious businesses worldwide to build custom AI workflows, scalable enterprise software, high-converting web applications, native mobile apps, and iconic UI/UX design systems.
+            Avantis Technologies &amp; Digital Solutions (Nexora) partners with ambitious businesses worldwide to build custom AI workflows, scalable enterprise software, high-converting web applications, native mobile apps, and iconic UI/UX design systems.
           </p>
 
           <div className="sv-hero-actions">
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 Too many companies are trapped between inflexible, expensive off-the-shelf software and bloated agency teams that take months to deliver basic prototypes.
               </p> */}
               <p className="about-p">
-                At ABI Technologies, we do things differently. We combine senior full-stack engineering, cutting-edge generative AI, and human-centered design to build software that is lean, lightning-fast, and proprietary to your business.
+                At Avantis Technologies, we do things differently. We combine senior full-stack engineering, cutting-edge generative AI, and human-centered design to build software that is lean, lightning-fast, and proprietary to your business.
               </p>
 
               <div className="about-values-list">
@@ -138,13 +138,13 @@ export default function AboutPage() {
             <div className="about-founder-content">
               <h3>A Message from Our Leadership</h3>
               <p className="about-founder-quote">
-                &ldquo;Our vision for ABI Technologies is simple: to be the most trusted, dependable digital engineering partner for modern businesses. When you work with us, you are not just hiring developers—you are gaining a dedicated technical leadership team that cares about your bottom-line success as much as you do.&rdquo;
+                &ldquo;Our vision for Avantis Technologies is simple: to be the most trusted, dependable digital engineering partner for modern businesses. When you work with us, you are not just hiring developers—you are gaining a dedicated technical leadership team that cares about your bottom-line success as much as you do.&rdquo;
               </p>
               <div className="about-founder-profile">
                 <div className="about-founder-avatar">UD</div>
                 <div>
                   <b>Umar Darraz</b>
-                  <small>Founder &amp; CEO, ABI Technologies &amp; Digital Solutions</small>
+                  <small>Founder &amp; CEO, Avantis Technologies &amp; Digital Solutions</small>
                 </div>
               </div>
             </div>

@@ -52,7 +52,7 @@ export default function CaseStudyClient() {
 
           {/* Description */}
           <p className="cs-hero-desc">
-            Explore deep-dive technical case studies across dual-database ERPs, RAG legal intelligence, multi-tenant SaaS engines, and high-concurrency luxury mobility systems engineered by ABI Technologies.
+            Explore deep-dive technical case studies across dual-database ERPs, RAG legal intelligence, multi-tenant SaaS engines, and high-concurrency luxury mobility systems engineered by Avantis Technologies.
           </p>
 
           {/* Metrics Row */}
@@ -116,7 +116,7 @@ export default function CaseStudyClient() {
                   <span className="sv-project-cat-pill">{proj.category}</span>
                 </div>
                 <div className="sv-project-tags" style={{ margin: 0 }}>
-                  <span className="sv-project-tag-pill" style={{ background: "#ebf2fa", color: "#064789", borderColor: "#c5d9eb" }}>
+                  <span className="sv-project-tag-pill" style={{ background: "#ffffff", color: "#003459", borderColor: "#cbd5e1" }}>
                     Verified Production Codebase
                   </span>
                 </div>

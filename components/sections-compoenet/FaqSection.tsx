@@ -46,7 +46,7 @@ export default function FaqSection() {
             Frequently Asked <em>Questions</em>
           </h2>
           <p className="lead">
-            Everything you need to know about working with ABI Technologies. Have additional questions? We&apos;re here to help.
+            Everything you need to know about working with Avantis Technologies. Have additional questions? We&apos;re here to help.
           </p>
           <div className="faq-cta-box">
             <a className="faq-ask-btn" href="mailto:mzleodye75@gmail.com">

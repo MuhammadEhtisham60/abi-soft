@@ -6,7 +6,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const viewport: Viewport = {
-  themeColor: "#ebf2fa",
+  themeColor: "#ffffff",
   colorScheme: "light",
 };
 

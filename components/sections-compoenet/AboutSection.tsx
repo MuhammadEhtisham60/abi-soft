@@ -17,7 +17,7 @@ export default function AboutSection() {
           <em>one digital solution at a time.</em>
         </h2>
         <p className="lead">
-          ABI Technologies &amp; Digital Solutions partners with businesses of every size, delivering AI, software, web, apps and design to clients around the globe.
+          Avantis Technologies &amp; Digital Solutions partners with businesses of every size, delivering AI, software, web, apps and design to clients around the globe.
         </p>
 
         <div className="about-features">

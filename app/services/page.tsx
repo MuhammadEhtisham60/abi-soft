@@ -8,7 +8,7 @@ import { Arrow, PhoneIcon, Tick, LayersIcon, GlobeNetworkIcon } from "@/componen
 export const metadata: Metadata = {
   title: "Our Services – Custom AI, Enterprise Software, Web & Mobile Engineering | Nexora",
   description:
-    "Explore ABI Technologies & Digital Solutions full suite of digital services: Custom AI & Autonomous RAG, Bespoke SaaS & Enterprise Software, Next.js Web Platforms, iOS/Android Mobile Apps, and Figma UI/UX Design.",
+    "Explore Avantis Technologies & Digital Solutions full suite of digital services: Custom AI & Autonomous RAG, Bespoke SaaS & Enterprise Software, Next.js Web Platforms, iOS/Android Mobile Apps, and Figma UI/UX Design.",
 };
 
 // Category Icons mapping
@@ -127,7 +127,7 @@ export default function ServicesPage() {
             <div className="svc-pill-badge">
               <span>OUR SERVICE DIRECTORY</span>
             </div>
-            <h2 style={{ fontSize: "clamp(30px, 3.8vw, 44px)", fontWeight: 800, color: "#0f172a", marginBottom: "14px" }}>
+            <h2 style={{ fontSize: "clamp(30px, 3.8vw, 44px)", fontWeight: 800, color: "#00171f", marginBottom: "14px" }}>
               Explore Our <span className="proc-title-blue">Core Capabilities</span>
             </h2>
             <p className="lead" style={{ color: "#64748b", fontSize: "16px", lineHeight: "1.6" }}>
@@ -162,7 +162,7 @@ export default function ServicesPage() {
                                 fontSize: "11px",
                                 fontWeight: 700,
                                 textTransform: "uppercase",
-                                color: "var(--pri, #064789)",
+                                color: "var(--pri, #003459)",
                                 background: "#eff6ff",
                                 border: "1px solid #bfdbfe",
                                 padding: "4px 12px",
@@ -180,12 +180,12 @@ export default function ServicesPage() {
 
                         {/* Title & Tagline */}
                         <div style={{ marginBottom: "12px" }}>
-                          <h3 style={{ fontSize: "27px", fontWeight: 800, color: "#0f172a", marginBottom: "4px", letterSpacing: "-0.015em" }}>
+                          <h3 style={{ fontSize: "27px", fontWeight: 800, color: "#00171f", marginBottom: "4px", letterSpacing: "-0.015em" }}>
                             <Link href={`/services/${service.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
                               {service.t}
                             </Link>
                           </h3>
-                          <p style={{ fontSize: "14.5px", fontWeight: 600, color: "var(--pri, #064789)" }}>
+                          <p style={{ fontSize: "14.5px", fontWeight: 600, color: "var(--pri, #003459)" }}>
                             {service.p}
                           </p>
                         </div>
@@ -200,7 +200,7 @@ export default function ServicesPage() {
                           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "10px", marginBottom: "16px" }}>
                             {service.features.slice(0, 4).map((feat) => (
                               <div key={feat} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "13px", color: "#334155" }}>
-                                <span style={{ color: "var(--pri, #064789)", fontWeight: 800, flexShrink: 0 }}>✓</span>
+                                <span style={{ color: "var(--pri, #003459)", fontWeight: 800, flexShrink: 0 }}>✓</span>
                                 <span>{feat}</span>
                               </div>
                             ))}
@@ -250,7 +250,7 @@ export default function ServicesPage() {
                           style={{
                             fontSize: "13.5px",
                             fontWeight: 600,
-                            color: "var(--pri, #064789)",
+                            color: "var(--pri, #003459)",
                             textDecoration: "none",
                             padding: "10px 14px",
                           }}
@@ -306,7 +306,7 @@ export default function ServicesPage() {
             <div className="svc-pill-badge">
               <span>OUR ENGAGEMENT PROMISE</span>
             </div>
-            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#0f172a", marginBottom: "12px" }}>
+            <h2 style={{ fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 800, color: "#00171f", marginBottom: "12px" }}>
               Enterprise Standards. <span className="proc-title-blue">Zero Surprises.</span>
             </h2>
             <p className="lead" style={{ color: "#64748b", fontSize: "15px", lineHeight: "1.6" }}>
@@ -327,11 +327,11 @@ export default function ServicesPage() {
                 border: "1px solid #e2e8f0",
                 borderRadius: "18px",
                 padding: "26px",
-                boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)",
+                boxShadow: "0 4px 16px rgba(0, 23, 31, 0.03)",
               }}
             >
               <div style={{ fontSize: "28px", marginBottom: "12px" }}>🛡️</div>
-              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>
+              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#00171f", marginBottom: "8px" }}>
                 100% IP &amp; Code Ownership
               </h3>
               <p style={{ fontSize: "13.5px", color: "#64748b", lineHeight: "1.55" }}>
@@ -345,11 +345,11 @@ export default function ServicesPage() {
                 border: "1px solid #e2e8f0",
                 borderRadius: "18px",
                 padding: "26px",
-                boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)",
+                boxShadow: "0 4px 16px rgba(0, 23, 31, 0.03)",
               }}
             >
               <div style={{ fontSize: "28px", marginBottom: "12px" }}>⚡</div>
-              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>
+              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#00171f", marginBottom: "8px" }}>
                 Fixed-Scope Agile Sprints
               </h3>
               <p style={{ fontSize: "13.5px", color: "#64748b", lineHeight: "1.55" }}>
@@ -363,11 +363,11 @@ export default function ServicesPage() {
                 border: "1px solid #e2e8f0",
                 borderRadius: "18px",
                 padding: "26px",
-                boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)",
+                boxShadow: "0 4px 16px rgba(0, 23, 31, 0.03)",
               }}
             >
               <div style={{ fontSize: "28px", marginBottom: "12px" }}>🔒</div>
-              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>
+              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#00171f", marginBottom: "8px" }}>
                 Data Sovereignty &amp; NDA
               </h3>
               <p style={{ fontSize: "13.5px", color: "#64748b", lineHeight: "1.55" }}>
@@ -381,11 +381,11 @@ export default function ServicesPage() {
                 border: "1px solid #e2e8f0",
                 borderRadius: "18px",
                 padding: "26px",
-                boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)",
+                boxShadow: "0 4px 16px rgba(0, 23, 31, 0.03)",
               }}
             >
               <div style={{ fontSize: "28px", marginBottom: "12px" }}>🤝</div>
-              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>
+              <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#00171f", marginBottom: "8px" }}>
                 US-Based Management
               </h3>
               <p style={{ fontSize: "13.5px", color: "#64748b", lineHeight: "1.55" }}>
@@ -399,12 +399,12 @@ export default function ServicesPage() {
         <section className="sec" style={{ paddingTop: 0, paddingBottom: "90px" }}>
           <div
             style={{
-              background: "linear-gradient(135deg, #0f172a 0%, #064789 100%)",
+              background: "linear-gradient(135deg, #00171f 0%, #003459 100%)",
               borderRadius: "24px",
               padding: "48px 36px",
               color: "#ffffff",
               textAlign: "center",
-              boxShadow: "0 20px 60px rgba(6, 71, 137, 0.25)",
+              boxShadow: "0 20px 60px rgba(0, 52, 89, 0.25)",
               maxWidth: "1100px",
               margin: "0 auto",
             }}
@@ -428,7 +428,7 @@ export default function ServicesPage() {
             <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", fontWeight: 900, marginBottom: "14px", color: "#ffffff" }}>
               Let’s Architect Your Next Breakthrough.
             </h2>
-            <p style={{ fontSize: "16px", color: "#ebf2fa", maxWidth: "620px", margin: "0 auto 28px", lineHeight: "1.6" }}>
+            <p style={{ fontSize: "16px", color: "#ffffff", maxWidth: "620px", margin: "0 auto 28px", lineHeight: "1.6" }}>
               Schedule a technical discovery session with our senior engineers to receive a fixed-scope proposal, timeline, and architectural.
             </p>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "14px", flexWrap: "wrap" }}>
@@ -441,7 +441,7 @@ export default function ServicesPage() {
                   fontWeight: 700,
                   borderRadius: "50px",
                   background: "#ffffff",
-                  color: "#064789",
+                  color: "#003459",
                   boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
                   textDecoration: "none",
                 }}

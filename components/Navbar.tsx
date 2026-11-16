@@ -98,7 +98,7 @@ export default function Navbar({
         {/* Logo */}
         <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
+          <img src="/images/dark-logo.png" alt="Avantis" className="hero-logo-img" style={{ height: 36, width: "auto" }} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -235,7 +235,7 @@ export default function Navbar({
             <div className="sv-mobile-drawer-header">
               <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/dark-logo.png" alt="ABI" className="hero-logo-img" style={{ height: 32, width: "auto" }} />
+                <img src="/images/dark-logo.png" alt="Avantis" className="hero-logo-img" style={{ height: 32, width: "auto" }} />
               </Link>
               <button
                 type="button"
@@ -283,7 +283,7 @@ export default function Navbar({
                       border: "none",
                       padding: "10px 14px",
                       cursor: "pointer",
-                      color: isServices ? "#064789" : "#64748b",
+                      color: isServices ? "#003459" : "#64748b",
                       display: "flex",
                       alignItems: "center",
                     }}
@@ -316,7 +316,7 @@ export default function Navbar({
                       >
                         <span className="sv-mobile-sublink-dot" />
                         <span className="sv-mobile-sublink-text">
-                          <strong style={{ display: 'block', color: '#0f172a' }}>{s.t}</strong>
+                          <strong style={{ display: 'block', color: '#00171f' }}>{s.t}</strong>
                           <span style={{ display: 'block', fontSize: '11px', color: '#64748b' }}>{s.p}</span>
                         </span>
                       </Link>

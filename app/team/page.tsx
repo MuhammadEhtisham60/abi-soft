@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { Arrow, PhoneIcon, WebIcon, MapPinIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Our Team – ABI Technologies & Digital Solutions",
+  title: "Our Team – Avantis Technologies & Digital Solutions",
   description:
-    "Meet the senior engineers, AI architects, and product designers behind ABI Technologies & Digital Solutions. USA-based technical leadership delivering custom digital engineering worldwide.",
+    "Meet the senior engineers, AI architects, and product designers behind Avantis Technologies & Digital Solutions. USA-based technical leadership delivering custom digital engineering worldwide.",
 };
 
 interface TeamMember {
@@ -29,7 +29,7 @@ const leadershipTeam: TeamMember[] = [
     role: "Founder & Chief Executive Officer",
     image: "/images/team/umar-darraz.jpg",
     location: "🇺🇸 United States",
-    bio: "Visionary technologist and systems architect leading ABI Technologies. Umar oversees executive product strategy, client engineering relationships, and deterministic delivery of custom enterprise platforms and AI ecosystems.",
+    bio: "Visionary technologist and systems architect leading Avantis Technologies. Umar oversees executive product strategy, client engineering relationships, and deterministic delivery of custom enterprise platforms and AI ecosystems.",
     tags: ["Executive Strategy", "Enterprise Architecture", "AI Systems", "Client Partnerships"],
     isFounder: true,
   },
@@ -161,7 +161,7 @@ export default function TeamPage() {
             No Juniors. No Hand-offs. Pure Technical Excellence.
           </p>
           <p className="sv-hero-desc">
-            At ABI Technologies &amp; Digital Solutions, our multidisciplinary collective of senior full-stack developers, AI researchers, cloud architects, and UI/UX designers work directly with you to turn ambitious business visions into market-leading software.
+            At Avantis Technologies &amp; Digital Solutions, our multidisciplinary collective of senior full-stack developers, AI researchers, cloud architects, and UI/UX designers work directly with you to turn ambitious business visions into market-leading software.
           </p>
 
           <div className="sv-hero-actions">
@@ -222,7 +222,7 @@ export default function TeamPage() {
                           marginTop: 6,
                           fontSize: 13,
                           fontWeight: 500,
-                          color: "#064789",
+                          color: "#003459",
                           textDecoration: "none",
                         }}
                       >
@@ -274,7 +274,7 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* The ABI Engineering Standard */}
+        {/* The Avantis Engineering Standard */}
         <section className="sec" style={{ paddingTop: 0 }}>
           <div className="about-global-card">
             <div className="about-global-content">
@@ -286,11 +286,11 @@ export default function TeamPage() {
                   borderColor: "rgba(255,255,255,0.3)",
                 }}
               >
-                <span>THE ABI ENGINEERING STANDARD</span>
+                <span>THE AVANTIS ENGINEERING STANDARD</span>
               </div>
               <h2>How Our Team Operates Differently</h2>
               <p>
-                We eliminate the layers of project management bureaucracy and junior bait-and-switch common in traditional agencies. When you partner with ABI Technologies, you get direct, unfiltered access to senior engineering talent.
+                We eliminate the layers of project management bureaucracy and junior bait-and-switch common in traditional agencies. When you partner with Avantis Technologies, you get direct, unfiltered access to senior engineering talent.
               </p>
               <div className="about-global-features">
                 <div>

@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
 
   return {
-    title: project.seoMetadata.metaTitle || `${project.shortTitle} – Case Study | ABI Technologies`,
+    title: project.seoMetadata.metaTitle || `${project.shortTitle} – Case Study | Avantis Technologies`,
     description: project.seoMetadata.metaDescription || project.shortDesc,
     keywords: [
       project.seoMetadata.primaryKeyword,
       ...project.tags,
       "Enterprise Case Study",
-      "ABI Technologies",
+      "Avantis Technologies",
     ],
   };
 }
@@ -68,7 +68,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               <span className="sv-category-dot" />
               <span>{project.category.toUpperCase()}</span>
             </div>
-            <span className="sv-project-tag-pill" style={{ background: "#ebf2fa", color: "#064789", borderColor: "#c5d9eb", fontWeight: 700 }}>
+            <span className="sv-project-tag-pill" style={{ background: "#ffffff", color: "#003459", borderColor: "#cbd5e1", fontWeight: 700 }}>
               Verified Production System
             </span>
           </div>
@@ -97,13 +97,13 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
       {/* ── 2. MAIN TECHNICAL SPECIFICATION BODY ── */}
       <main className="sv-projects-sec" style={{ paddingTop: 40, paddingBottom: 60 }}>
-        <div className="sv-project-card" style={{ boxShadow: "0 10px 40px rgba(15, 23, 42, 0.06)" }}>
+        <div className="sv-project-card" style={{ boxShadow: "0 10px 40px rgba(0, 23, 31, 0.06)" }}>
           {/* Section 1: Deep Architectural Overview */}
           <div style={{ marginBottom: 36 }}>
             <div className="svc-pill-badge" style={{ marginBottom: 12 }}>
               <span>SYSTEM ARCHITECTURE &amp; SCOPE</span>
             </div>
-            <h2 style={{ fontSize: 24, fontWeight: 800, color: "#0f172a", marginBottom: 14 }}>
+            <h2 style={{ fontSize: 24, fontWeight: 800, color: "#00171f", marginBottom: 14 }}>
               Detailed Architectural Overview
             </h2>
             <div className="sv-project-overview-box" style={{ background: "#f8fafc", padding: "26px 30px", fontSize: 16 }}>
@@ -118,7 +118,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             <div className="svc-pill-badge" style={{ marginBottom: 12 }}>
               <span>DELIVERED CAPABILITIES</span>
             </div>
-            <h2 style={{ fontSize: 24, fontWeight: 800, color: "#0f172a", marginBottom: 16 }}>
+            <h2 style={{ fontSize: 24, fontWeight: 800, color: "#00171f", marginBottom: 16 }}>
               Key Implemented Features &amp; Modules
             </h2>
             <div className="sv-project-features-grid" style={{ gap: "16px 24px" }}>
@@ -136,7 +136,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             <div className="svc-pill-badge" style={{ marginBottom: 12 }}>
               <span>INFRASTRUCTURE &amp; STACK</span>
             </div>
-            <h2 style={{ fontSize: 24, fontWeight: 800, color: "#0f172a", marginBottom: 16 }}>
+            <h2 style={{ fontSize: 24, fontWeight: 800, color: "#00171f", marginBottom: 16 }}>
               Verified Technology Stack Matrix
             </h2>
             <div className="sv-project-stack-grid" style={{ padding: 24 }}>
@@ -208,7 +208,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             <div className="svc-pill-badge">
               <span>EXPLORE MORE CASE STUDIES</span>
             </div>
-            <h2 style={{ fontSize: 26, fontWeight: 800, color: "#0f172a", marginBottom: 24 }}>
+            <h2 style={{ fontSize: 26, fontWeight: 800, color: "#00171f", marginBottom: 24 }}>
               Related Production Deliveries
             </h2>
             <div className="sv-case-cards-grid">
