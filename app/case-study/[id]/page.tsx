@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
 
   return {
-    title: project.seoMetadata.metaTitle || `${project.shortTitle} – Case Study | Avantis Technologies`,
+    title: project.seoMetadata.metaTitle || `${project.shortTitle} – Case Study | KoderFors Technologies`,
     description: project.seoMetadata.metaDescription || project.shortDesc,
     keywords: [
       project.seoMetadata.primaryKeyword,
       ...project.tags,
       "Enterprise Case Study",
-      "Avantis Technologies",
+      "KoderFors Technologies",
     ],
   };
 }

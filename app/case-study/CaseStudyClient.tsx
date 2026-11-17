@@ -52,7 +52,7 @@ export default function CaseStudyClient() {
 
           {/* Description */}
           <p className="cs-hero-desc">
-            Explore deep-dive technical case studies across dual-database ERPs, RAG legal intelligence, multi-tenant SaaS engines, and high-concurrency luxury mobility systems engineered by Avantis Technologies.
+            Explore deep-dive technical case studies across dual-database ERPs, RAG legal intelligence, multi-tenant SaaS engines, and high-concurrency luxury mobility systems engineered by KoderFors Technologies.
           </p>
 
           {/* Metrics Row */}

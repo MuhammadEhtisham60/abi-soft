@@ -46,7 +46,7 @@ export default function Footer() {
     <footer className="foot" ref={footerRef}>
       <div className="foot-in">
         <div>
-          <b>Avantis Technologies &amp; Digital Solutions</b>
+          <b>KoderFors Technologies &amp; Digital Solutions</b>
           <p>Welcome to the Digital World. USA-based engineering team delivering custom AI, enterprise software, web platforms, mobile apps, and UI/UX design worldwide.</p>
         </div>
         <div>
@@ -75,7 +75,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="copy">© 2026 Avantis Technologies &amp; Digital Solutions. All rights reserved.</div>
+      <div className="copy">© 2026 KoderFors Technologies &amp; Digital Solutions. All rights reserved.</div>
     </footer>
   );
 }

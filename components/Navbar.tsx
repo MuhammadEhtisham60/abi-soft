@@ -98,7 +98,7 @@ export default function Navbar({
         {/* Logo */}
         <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
           <span className="sv-brand-wordmark">
-            Avantis<span className="sv-brand-dot" aria-hidden="true">.</span>
+            KoderFors<span className="sv-brand-dot" aria-hidden="true">.</span>
           </span>
         </Link>
 
@@ -236,7 +236,7 @@ export default function Navbar({
             <div className="sv-mobile-drawer-header">
               <Link href="/" className="hero-logo" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sv-brand-wordmark">
-                  Avantis<span className="sv-brand-dot" aria-hidden="true">.</span>
+                  KoderFors<span className="sv-brand-dot" aria-hidden="true">.</span>
                 </span>
               </Link>
               <button

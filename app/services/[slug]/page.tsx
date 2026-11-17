@@ -13,7 +13,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
-  return s ? { title: `${s.t} – Avantis Technologies & Digital Solutions`, description: s.intro } : {};
+  return s ? { title: `${s.t} – KoderFors Technologies & Digital Solutions`, description: s.intro } : {};
 }
 
 export default async function ServicePage({ params }: Props) {

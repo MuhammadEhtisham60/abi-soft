@@ -323,7 +323,7 @@ export default function Home() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         aria-roledescription="carousel"
-        aria-label="Avantis Technologies Featured Solutions"
+        aria-label="KoderFors Technologies Featured Solutions"
       >
         {/* Background Slides */}
         <div className="hero-bg-wrap" ref={bgWrapRef} aria-hidden="true">
