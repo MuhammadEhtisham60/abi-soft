@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}
   background: #00171f;
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  overflow: hidden;
   padding-bottom: 40px;
 }
 
@@ -192,9 +192,19 @@ a{color:inherit;text-decoration:none}
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    order: 2;
+  }
   .hero-side-dots {
-    right: 14px;
-    gap: 10px;
+    order: 3;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin: 4px auto 0;
   }
   .hero-side-dot-tooltip,
   .hero-scroll-cue {
@@ -5439,8 +5449,9 @@ h1, h2, h3, h4, p, span, a, label {
 
   /* Hero & Headings */
   .hero-stage {
-    padding-top: 72px;
-    min-height: auto;
+    padding-top: 64px;
+    padding-bottom: 32px;
+    min-height: 85vh;
   }
   .hero-bg-image {
     background-position: 72% 100%;
@@ -5459,18 +5470,25 @@ h1, h2, h3, h4, p, span, a, label {
     padding-top: 72px;
   }
   .hero-container {
-    padding: 28px var(--container-px) 24px;
+    padding: 32px var(--container-px) 20px;
+  }
+  .hero-badge {
+    font-size: 10.5px;
+    padding: 6px 14px;
+    margin-bottom: 18px;
   }
   .hero-slide-img {
-    object-position: 70% center;
+    object-position: center center;
   }
   .hero-title {
-    font-size: clamp(26px, 8.5vw, 40px);
-    line-height: 1.15;
+    font-size: clamp(28px, 8.2vw, 40px);
+    line-height: 1.12;
+    margin-bottom: 16px;
   }
   .hero-desc {
     font-size: 15px;
     line-height: 1.6;
+    margin: 0 auto 24px;
   }
   .sv-banner-title,
   .sv-hero-title {
