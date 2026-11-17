@@ -291,16 +291,6 @@ export default function ContactPage() {
                 <p>Reach out directly to our leadership team for immediate technical consultation.</p>
 
                 <div className="contact-side-channels">
-                  <a className="contact-channel-item" href="#contact-form">
-                    <div className="contact-channel-icon">
-                      <Tick />
-                    </div>
-                    <div>
-                      <small>Project Inquiry Form</small>
-                      <b>4-Hour Initial Response Guarantee</b>
-                    </div>
-                  </a>
-
                   <a className="contact-channel-item" href="mailto:mzleodye75@gmail.com">
                     <div className="contact-channel-icon">
                       <WebIcon />
