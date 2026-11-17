@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Arrow, Back, PhoneIcon, WebIcon, MapPinIcon, Tick } from "@/components/Icons";
+import { Arrow, Back, WebIcon, MapPinIcon, Tick } from "@/components/Icons";
 
 const serviceOptions = [
   "AI Solutions",
@@ -30,6 +30,8 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const toggleService = (svc: string) => {
     if (selectedServices.includes(svc)) {
@@ -41,23 +43,41 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setErrorMsg(null);
+    setIsSubmitting(true);
 
-    const subject = encodeURIComponent(`Project RFP from ${formData.name || "Client"} (${formData.company || "Company"})`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nSelected Services: ${selectedServices.join(", ")}\nBudget Range: ${budget}\nEstimated Timeline: ${timeline}\n\nProject Scope & Objectives:\n${formData.message}`
-    );
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          selectedServices,
+          budget,
+          timeline,
+        }),
+      });
 
-    // Open user's email client automatically with prefilled enquiry
-    window.location.href = `mailto:mzleodye75@gmail.com?subject=${subject}&body=${body}`;
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to submit inquiry.");
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="sv-page-wrapper">
       {/* Floating Nav with Dropdown & Mobile Drawer */}
-      <Navbar activePage="contact" ctaText="Call Now" ctaHref="tel:+15027135115" />
+      <Navbar activePage="contact" ctaText="Start a Project" ctaHref="#contact-form" />
 
       {/* ── 1. HERO SECTION ── */}
       <header className="sv-hero-container" style={{ paddingBottom: 60 }}>
@@ -91,7 +111,7 @@ export default function ContactPage() {
         <section className="sec" style={{ paddingTop: 40 }}>
           <div className="contact-main-grid">
             {/* Left: Interactive RFP Form */}
-            <div className="contact-form-card">
+            <div className="contact-form-card" id="contact-form">
               <div className="contact-form-header">
                 <h2>Request a Custom Scope &amp; Estimate</h2>
                 <p>Fill in the details below to receive a scoped architectural proposal and project timeline.</p>
@@ -230,8 +250,30 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button type="submit" className="hero-btn-primary contact-submit-btn">
-                    Submit Project Inquiry &amp; Launch Email <Arrow />
+                  {errorMsg && (
+                    <p
+                      role="alert"
+                      style={{
+                        color: "#b91c1c",
+                        background: "#fef2f2",
+                        border: "1px solid #fecaca",
+                        borderRadius: 10,
+                        padding: "10px 14px",
+                        fontSize: 13.5,
+                        marginBottom: 14,
+                      }}
+                    >
+                      {errorMsg}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="hero-btn-primary contact-submit-btn"
+                    disabled={isSubmitting}
+                    style={isSubmitting ? { opacity: 0.75, cursor: "wait" } : undefined}
+                  >
+                    {isSubmitting ? "Sending Inquiry..." : "Submit Project Inquiry"} <Arrow />
                   </button>
 
                   <p className="contact-form-disclaimer">
@@ -249,13 +291,13 @@ export default function ContactPage() {
                 <p>Reach out directly to our leadership team for immediate technical consultation.</p>
 
                 <div className="contact-side-channels">
-                  <a className="contact-channel-item" href="tel:+15027135115">
+                  <a className="contact-channel-item" href="#contact-form">
                     <div className="contact-channel-icon">
-                      <PhoneIcon />
+                      <Tick />
                     </div>
                     <div>
-                      <small>Direct Phone &amp; WhatsApp</small>
-                      <b>+1 (502) 713-5115</b>
+                      <small>Project Inquiry Form</small>
+                      <b>4-Hour Initial Response Guarantee</b>
                     </div>
                   </a>
 
