@@ -6,7 +6,7 @@ import { services } from "@/components/servicesData";
 import { Arrow, PhoneIcon, Tick, LayersIcon, GlobeNetworkIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Our Services – Custom AI, Enterprise Software, Web & Mobile Engineering | Nexora",
+  title: "Our Services – Custom AI, Enterprise Software, Web & Mobile Engineering | KoderFors",
   description:
     "Explore KoderFors Technologies & Digital Solutions full suite of digital services: Custom AI & Autonomous RAG, Bespoke SaaS & Enterprise Software, Next.js Web Platforms, iOS/Android Mobile Apps, and Figma UI/UX Design.",
 };

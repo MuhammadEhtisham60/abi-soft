@@ -1182,7 +1182,7 @@ export const services: Service[] = [
     faq: [
       ["What file formats and deliverables will I receive?", "You receive full ownership of the master Figma workspace, vector source files (.AI, .EPS, .SVG), production-ready web assets (.PNG, .WebP), brand guidelines PDF, and design token JSON files."],
       ["Can you redesign an existing product or brand?", "Yes. We can perform a targeted UI/UX overhaul or full visual rebrand, auditing existing pain points and preserving established brand equity while modernizing the aesthetic."],
-      ["Can your team also code and build the designs into a live application?", "Yes! Nexora is a full-service digital engineering team. Our developers work directly with our designers to turn approved Figma designs into pixel-perfect Next.js web platforms and mobile apps."],
+      ["Can your team also code and build the designs into a live application?", "Yes! KoderFors is a full-service digital engineering team. Our developers work directly with our designers to turn approved Figma designs into pixel-perfect Next.js web platforms and mobile apps."],
       ["How many design revision rounds are included?", "We work collaboratively in transparent agile milestones. Each design phase includes dedicated feedback rounds to ensure every screen and interaction aligns 100% with your vision."],
     ],
     guarantees: [

@@ -11,8 +11,33 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nexora – Build the Future with Artificial Intelligence",
-  description: "Integrate powerful AI models and automation into your products and workflows.",
+  metadataBase: new URL("https://www.koderfors.com"),
+  title: "KoderFors – Enterprise Software, AI & Digital Solutions",
+  description:
+    "KoderFors engineers scalable cloud platforms, custom web and mobile applications, and intelligent AI automation for businesses worldwide.",
+  openGraph: {
+    title: "KoderFors – Enterprise Software, AI & Digital Solutions",
+    description:
+      "KoderFors engineers scalable cloud platforms, custom web and mobile applications, and intelligent AI automation for businesses worldwide.",
+    url: "https://www.koderfors.com",
+    siteName: "KoderFors",
+    images: [
+      {
+        url: "/images/og-koderfors.png",
+        width: 1200,
+        height: 630,
+        alt: "KoderFors – Enterprise Software, AI & Digital Solutions",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KoderFors – Enterprise Software, AI & Digital Solutions",
+    description:
+      "KoderFors engineers scalable cloud platforms, custom web and mobile applications, and intelligent AI automation for businesses worldwide.",
+    images: ["/images/og-koderfors.png"],
+  },
   other: {
     "color-scheme": "light",
     "supported-color-schemes": "light",

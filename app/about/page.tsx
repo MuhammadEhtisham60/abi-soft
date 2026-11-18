@@ -6,7 +6,7 @@ import DigitalSpireVisual from "@/components/DigitalSpireVisual";
 import { Arrow, Back, MapPinIcon, GlobeNetworkIcon, LayersIcon, PhoneIcon, WebIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "About Us – KoderFors Technologies & Digital Solutions | Nexora",
+  title: "About Us – KoderFors Technologies & Digital Solutions",
   description: "Learn about KoderFors Technologies & Digital Solutions. USA-based engineering team delivering custom AI, enterprise software, modern web platforms, mobile apps, and UI/UX design.",
 };
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
           <p className="sv-hero-tagline">Smarter Technology. Deterministic Scale. Measurable ROI.</p>
           <p className="sv-hero-desc">
-            KoderFors Technologies &amp; Digital Solutions (Nexora) partners with ambitious businesses worldwide to build custom AI workflows, scalable enterprise software, high-converting web applications, native mobile apps, and iconic UI/UX design systems.
+            KoderFors Technologies &amp; Digital Solutions partners with ambitious businesses worldwide to build custom AI workflows, scalable enterprise software, high-converting web applications, native mobile apps, and iconic UI/UX design systems.
           </p>
 
           <div className="sv-hero-actions">
@@ -154,7 +154,7 @@ export default function AboutPage() {
             <div className="svc-pill-badge">
               <span>WHY CHOOSE US</span>
             </div>
-            <h2>Why Forward-Thinking Businesses <em>Partner with Nexora</em></h2>
+            <h2>Why Forward-Thinking Businesses <em>Partner with KoderFors</em></h2>
             <p className="lead">Built on American accountability, technical excellence, and transparent client partnerships.</p>
           </div>
 
