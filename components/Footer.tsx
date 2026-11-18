@@ -67,7 +67,6 @@ export default function Footer() {
         </div>
         <div>
           <h4>Contact &amp; Location</h4>
-          <a href="tel:+15027135115">+1 (502) 713-5115</a>
           <a href="mailto:mzleodye75@gmail.com">mzleodye75@gmail.com</a>
           <p style={{ marginTop: 8, fontSize: 13, color: "#64748b" }}>
             <strong>Umar Darraz</strong>, Founder &amp; CEO<br />

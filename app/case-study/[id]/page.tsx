@@ -257,23 +257,10 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               <Link className="contact-btn-primary" href="/contact">
                 Start Your Project <Arrow />
               </Link>
-              <a className="contact-btn-secondary" href="tel:+15027135115">
-                Call +1 (502) 713-5115
-              </a>
             </div>
           </div>
 
           <div className="contact-info-grid">
-            <a className="contact-info-card" href="tel:+15027135115">
-              <div className="contact-info-icon">
-                <PhoneIcon />
-              </div>
-              <div className="contact-info-text">
-                <small>Direct Line</small>
-                <b>+1 (502) 713-5115</b>
-              </div>
-            </a>
-
             <a className="contact-info-card" href={mail}>
               <div className="contact-info-icon">
                 <WebIcon />

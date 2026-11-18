@@ -89,9 +89,6 @@ export default function ServicesPage() {
             <Link href="/contact" className="hero-btn-primary sv-cta-main">
               Request a Project Quote <Arrow />
             </Link>
-            <a className="hero-btn-secondary sv-cta-phone" href="tel:+15027135115">
-              <PhoneIcon /> Call +1 (502) 713-5115
-            </a>
           </div>
 
           {/* Stats Bar */}
@@ -448,22 +445,6 @@ export default function ServicesPage() {
               >
                 Schedule Technical Discovery <Arrow />
               </Link>
-              <a
-                href="tel:+15027135115"
-                className="hero-btn-secondary"
-                style={{
-                  padding: "14px 28px",
-                  fontSize: "14.5px",
-                  fontWeight: 600,
-                  borderRadius: "50px",
-                  background: "rgba(255, 255, 255, 0.15)",
-                  color: "#ffffff",
-                  borderColor: "rgba(255, 255, 255, 0.3)",
-                  textDecoration: "none",
-                }}
-              >
-                <PhoneIcon /> +1 (502) 713-5115
-              </a>
             </div>
           </div>
         </section>

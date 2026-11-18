@@ -453,23 +453,13 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
                 <a className="contact-btn-primary" href={mail}>
                   Start Your Project <Arrow />
                 </a>
-                <a className="contact-btn-secondary" href="tel:+15027135115">
-                  Call +1 (502) 713-5115
-                </a>
+                <Link className="contact-btn-secondary" href="/contact">
+                  Contact Form
+                </Link>
               </div>
             </div>
 
             <div className="contact-info-grid">
-              <a className="contact-info-card" href="tel:+15027135115">
-                <div className="contact-info-icon">
-                  <PhoneIcon />
-                </div>
-                <div className="contact-info-text">
-                  <small>Direct Line</small>
-                  <b>+1 (502) 713-5115</b>
-                </div>
-              </a>
-
               <a className="contact-info-card" href={mail}>
                 <div className="contact-info-icon">
                   <WebIcon />

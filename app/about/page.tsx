@@ -47,9 +47,6 @@ export default function AboutPage() {
             <Link href="/contact" className="hero-btn-primary sv-cta-main">
               Get in Touch with Us <Arrow />
             </Link>
-            <a className="hero-btn-secondary sv-cta-phone" href="tel:+15027135115">
-              <PhoneIcon /> Call +1 (502) 713-5115
-            </a>
           </div>
 
           {/* Stats Bar */}
@@ -240,23 +237,10 @@ export default function AboutPage() {
                 <Link className="contact-btn-primary" href="/contact">
                   Contact Our Team <Arrow />
                 </Link>
-                <a className="contact-btn-secondary" href="tel:+15027135115">
-                  Call +1 (502) 713-5115
-                </a>
               </div>
             </div>
 
             <div className="contact-info-grid">
-              <a className="contact-info-card" href="tel:+15027135115">
-                <div className="contact-info-icon">
-                  <PhoneIcon />
-                </div>
-                <div className="contact-info-text">
-                  <small>Direct Telephone</small>
-                  <b>+1 (502) 713-5115</b>
-                </div>
-              </a>
-
               <a className="contact-info-card" href="mailto:mzleodye75@gmail.com">
                 <div className="contact-info-icon">
                   <WebIcon />
