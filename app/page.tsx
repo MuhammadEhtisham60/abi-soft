@@ -339,6 +339,8 @@ export default function Home() {
               <img
                 src={slide.image}
                 alt={slide.imageAlt}
+                width={1920}
+                height={1080}
                 className="hero-slide-img"
                 loading="eager"
                 fetchPriority={idx === 0 ? "high" : "auto"}

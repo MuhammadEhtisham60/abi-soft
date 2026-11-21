@@ -262,8 +262,13 @@ export default function ServicesPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={serviceImg}
-                        alt={service.t}
+                        alt={`${service.t} — ${service.p}`.slice(0, 125)}
+                        title={`Explore ${service.t} at KoderFors`}
+                        width={1200}
+                        height={896}
                         className="svc-img-element"
+                        loading="lazy"
+                        decoding="async"
                       />
 
                       {/* Shine / Flash Wave Element */}

@@ -218,8 +218,12 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={serviceImage}
-                    alt={s.t}
+                    alt={`${s.t} — ${s.p}`.slice(0, 125)}
+                    width={1200}
+                    height={896}
                     className="sv-hero-banner-image"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
               </div>

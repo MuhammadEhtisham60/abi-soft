@@ -243,7 +243,9 @@ export default function DigitalSpireVisual() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/digital-spire.webp"
-        alt="Digital Infrastructure Spire"
+        alt="KoderFors global cloud and AI digital infrastructure spire visualization"
+        width={770}
+        height={461}
         className="digital-spire-img"
         loading="lazy"
         decoding="async"

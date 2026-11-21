@@ -27,7 +27,7 @@ const leadershipTeam: TeamMember[] = [
     initials: "UD",
     name: "Umar Darraz",
     role: "Founder & Chief Executive Officer",
-    image: "/images/team/umar-darraz.jpg",
+    image: "/images/team/umar-darraz.webp",
     location: "USA",
     bio: "Visionary technologist and systems architect leading KoderFors Technologies. Umar oversees executive product strategy, client engineering relationships, and deterministic delivery of custom enterprise platforms and AI ecosystems.",
     tags: ["Executive Strategy", "Enterprise Architecture", "AI Systems", "Client Partnerships"],
@@ -38,7 +38,7 @@ const leadershipTeam: TeamMember[] = [
     name: "Abdullah Alvi",
     role: "Software Engineer",
     email: "aalvi1606@gmail.com",
-    image: "/images/team/alex-vance.jpg",
+    image: "/images/team/alex-vance.webp",
     bio: "Specializing in Large Language Model fine-tuning, retrieval-augmented generation (RAG), vector databases, and real-time inference pipelines that solve complex business automation challenges.",
     tags: ["Generative AI", "LangChain / LlamaIndex", "Vector Search", "Python / PyTorch"],
   },
@@ -47,7 +47,7 @@ const leadershipTeam: TeamMember[] = [
     name: "Ehtisham Ul Haq",
     role: "Software Engineer",
     email: "muhammadehtisham618@gmail.com",
-    image: "/images/team/tariq-munir.jpg",
+    image: "/images/team/tariq-munir.webp",
     bio: "Expert in distributed cloud systems, scalable microservices, and serverless architectures. Drives high-concurrency Next.js and Node.js enterprise software with 99.99% uptime guarantees.",
     tags: ["Next.js / React", "Node.js & Go", "AWS / GCP Cloud", "PostgreSQL / Redis"],
   },
@@ -196,8 +196,12 @@ export default function TeamPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={member.image}
-                        alt={member.name}
+                        alt={`${member.name}, ${member.role} at KoderFors`}
+                        width={136}
+                        height={136}
                         className="team-avatar-photo"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   ) : (
