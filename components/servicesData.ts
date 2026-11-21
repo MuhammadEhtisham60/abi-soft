@@ -88,7 +88,7 @@ export const services: Service[] = [
     p: "Smarter Technology. Better Tomorrow.",
     big: true,
     category: "Artificial Intelligence & Autonomous Systems",
-    image: "/images/ai-ser.jpg",
+    image: "/images/ai-ser.webp",
     desc: "We build intelligent AI solutions that automate processes, enhance decision-making and create new opportunities for your business.",
     features: [
       "AI Chatbots & Autonomous Assistants",
@@ -310,7 +310,7 @@ export const services: Service[] = [
     t: "Software Development",
     p: "Custom Solutions for Your Business.",
     category: "Enterprise Software & Cloud Platforms",
-    image: "/images/service-tech-featured.jpg",
+    image: "/images/service-tech-featured.webp",
     desc: "Custom software built around how your business really works: internal tools, customer platforms and integrations that scale as you grow.",
     features: [
       "Bespoke SaaS & Web Applications",
@@ -532,7 +532,7 @@ export const services: Service[] = [
     t: "Website Development",
     p: "Modern Websites. Stronger Brands.",
     category: "Modern Web Engineering & Headless CMS",
-    image: "/images/website-development.jpg",
+    image: "/images/website-development.webp",
     desc: "Fast, modern websites that look sharp on every device and turn visitors into customers.",
     features: [
       "High-Conversion Enterprise Websites",
@@ -754,7 +754,7 @@ export const services: Service[] = [
     t: "App Development",
     p: "Ideas to Powerful Mobile Apps.",
     category: "Mobile Application Engineering (iOS & Android)",
-    image: "/images/app-development.jpg",
+    image: "/images/app-development.webp",
     desc: "From first sketch to the app stores: mobile apps for iOS and Android that people enjoy using.",
     features: [
       "Cross-Platform iOS & Android Apps",
@@ -976,7 +976,7 @@ export const services: Service[] = [
     t: "Graphics & UI/UX Design",
     p: "Creative Designs. Lasting Impressions.",
     category: "Brand Identity, Product Design & UI/UX Systems",
-    image: "/images/ui-design.png",
+    image: "/images/ui-design.webp",
     desc: "Design that makes your brand memorable and your product easy to use, from logos to complete website and app interfaces.",
     features: [
       "Strategic Brand Identity & Logos",

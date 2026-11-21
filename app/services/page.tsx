@@ -136,7 +136,7 @@ export default function ServicesPage() {
           <div className="services-catalog-grid" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
             {services.map((service, index) => {
               const primaryStat = service.heroStats?.[0] || { value: "100%", label: "Client Satisfaction" };
-              const serviceImg = service.image || "/images/service-tech-featured.jpg";
+              const serviceImg = service.image || "/images/service-tech-featured.webp";
 
               return (
                 <article

@@ -21,7 +21,7 @@ const defaultServiceSlides: DestinationItem[] = services.map((s, idx) => ({
   name: s.t,
   subtitle: s.p,
   description: s.desc || s.intro,
-  image: s.image || "/images/service-tech-featured.jpg",
+  image: s.image || "/images/service-tech-featured.webp",
   link: `/services/${s.slug}`,
   badge: s.category || "Enterprise Solution",
 }));

@@ -242,9 +242,11 @@ export default function DigitalSpireVisual() {
       {/* Background Graphic */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/digital-spire.png"
+        src="/images/digital-spire.webp"
         alt="Digital Infrastructure Spire"
         className="digital-spire-img"
+        loading="lazy"
+        decoding="async"
       />
 
       {/* Animated Pulses and Particles Canvas Overlay */}

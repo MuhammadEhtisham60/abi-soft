@@ -57,7 +57,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "Enterprise Accounting ERP Software",
       supportingKeywords: "Double-entry ledger system, multi-destination RFP software, real estate fit-out ERP, Django React enterprise software"
     },
-    image: "/images/service-tech-featured.jpg"
+    image: "/images/service-tech-featured.webp"
   },
   {
     id: "sublime-vip-concierge",
@@ -121,7 +121,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "Legal AI & Document Intelligence Platform",
       supportingKeywords: "Legal RAG software, statutory citation search, AI legal assistant, conversational law tech, Django Vite legal software"
     },
-    image: "/images/ai-ser.jpg"
+    image: "/images/ai-ser.webp"
   },
   {
     id: "ownify-ai-maas",
@@ -153,7 +153,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "Multi-Tenant SaaS Platform",
       supportingKeywords: "Visual website builder SaaS, multi-schema PostgreSQL CMS, custom domain DNS automation, headless CMS builder"
     },
-    image: "/images/website-development.jpg"
+    image: "/images/website-development.webp"
   },
   {
     id: "epstein-files-investigative",
@@ -214,7 +214,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "Luxury Villa Rental Platform",
       supportingKeywords: "Ultra-luxury vacation rental booking, villa reservation management system, Next.js hospitality platform, bespoke estate booking engine"
     },
-    image: "/images/service-tech-featured.jpg"
+    image: "/images/service-tech-featured.webp"
   },
   {
     id: "vibelink-campus-community",
@@ -244,7 +244,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "Campus Student Engagement Platform",
       supportingKeywords: "University club management software, student event approval portal, Firebase education portal, campus community management system"
     },
-    image: "/images/app-development.jpg"
+    image: "/images/app-development.webp"
   },
   {
     id: "bes-hr-payroll-portal",
@@ -274,7 +274,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "Enterprise HRMS & Payroll Software",
       supportingKeywords: "Biometric attendance HRMS, enterprise payroll engine, candidate interview pipeline, React HR portal"
     },
-    image: "/images/service-tech-featured.jpg"
+    image: "/images/service-tech-featured.webp"
   },
   {
     id: "uae-social-welfare-portal",
@@ -304,7 +304,7 @@ export const allProjects: ProjectCaseStudy[] = [
       primaryKeyword: "GovTech Social Welfare Portal",
       supportingKeywords: "UAE PASS authentication, bilingual RTL government portal, financial aid scoring system, citizen case management"
     },
-    image: "/images/ui-design.png"
+    image: "/images/ui-design.webp"
   }
 ];
 

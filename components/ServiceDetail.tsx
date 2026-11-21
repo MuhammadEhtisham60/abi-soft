@@ -170,7 +170,7 @@ export default function ServiceDetail({ service: s }: { service: Service }) {
     return () => ctx.revert();
   }, [s.slug]);
 
-  const serviceImage = s.image || "/images/service-tech-featured.jpg";
+  const serviceImage = s.image || "/images/service-tech-featured.webp";
 
   return (
     <div className="sv-page-wrapper" ref={containerRef}>
