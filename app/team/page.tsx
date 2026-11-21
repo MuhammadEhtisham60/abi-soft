@@ -16,7 +16,7 @@ interface TeamMember {
   role: string;
   email?: string;
   image?: string;
-  location: string;
+  location?: string;
   bio: string;
   tags: string[];
   isFounder?: boolean;
@@ -39,7 +39,6 @@ const leadershipTeam: TeamMember[] = [
     role: "Software Engineer",
     email: "aalvi1606@gmail.com",
     image: "/images/team/alex-vance.jpg",
-    location: "🌐 Global Delivery Hub",
     bio: "Specializing in Large Language Model fine-tuning, retrieval-augmented generation (RAG), vector databases, and real-time inference pipelines that solve complex business automation challenges.",
     tags: ["Generative AI", "LangChain / LlamaIndex", "Vector Search", "Python / PyTorch"],
   },
@@ -49,7 +48,6 @@ const leadershipTeam: TeamMember[] = [
     role: "Software Engineer",
     email: "muhammadehtisham618@gmail.com",
     image: "/images/team/tariq-munir.jpg",
-    location: "🌐 Global Delivery Hub",
     bio: "Expert in distributed cloud systems, scalable microservices, and serverless architectures. Drives high-concurrency Next.js and Node.js enterprise software with 99.99% uptime guarantees.",
     tags: ["Next.js / React", "Node.js & Go", "AWS / GCP Cloud", "PostgreSQL / Redis"],
   },
@@ -210,7 +208,9 @@ export default function TeamPage() {
                   <div className="team-info">
                     <h3>{member.name}</h3>
                     <span className="team-role">{member.role}</span>
-                    <span className="team-location-pill">{member.location}</span>
+                    {member.location && (
+                      <span className="team-location-pill">{member.location}</span>
+                    )}
                     {member.email && (
                       <a
                         href={`mailto:${member.email}`}

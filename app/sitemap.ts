@@ -4,6 +4,8 @@ import { allProjects } from "@/components/projectsData";
 
 const BASE_URL = "https://www.koderfors.com";
 
+export const dynamic = "force-dynamic";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 

@@ -4710,14 +4710,15 @@ html.lenis, html.lenis-smooth {
   padding: 30px 26px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 23, 31, 0.04);
 }
 
 .team-card:hover {
   transform: translateY(-5px);
+  background: #f4f8fb;
   box-shadow: 0 16px 36px rgba(0, 52, 89, 0.12);
-  border-color: #cbd5e1;
+  border-color: rgba(0, 52, 89, 0.25);
 }
 
 .team-card-founder {
@@ -4728,7 +4729,8 @@ html.lenis, html.lenis-smooth {
 }
 
 .team-card-founder:hover {
-  border-color: rgba(0, 52, 89, 0.7);
+  background: linear-gradient(145deg, #002330 0%, #004475 100%);
+  border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 20px 48px rgba(0, 52, 89, 0.32);
 }
 
@@ -4828,7 +4830,8 @@ html.lenis, html.lenis-smooth {
 }
 
 .team-card-founder .team-role {
-  color: #003459;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
 }
 
 .team-location-pill {
