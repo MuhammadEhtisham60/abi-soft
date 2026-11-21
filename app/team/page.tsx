@@ -28,7 +28,7 @@ const leadershipTeam: TeamMember[] = [
     name: "Umar Darraz",
     role: "Founder & Chief Executive Officer",
     image: "/images/team/umar-darraz.jpg",
-    location: "🇺🇸 United States",
+    location: "USA",
     bio: "Visionary technologist and systems architect leading KoderFors Technologies. Umar oversees executive product strategy, client engineering relationships, and deterministic delivery of custom enterprise platforms and AI ecosystems.",
     tags: ["Executive Strategy", "Enterprise Architecture", "AI Systems", "Client Partnerships"],
     isFounder: true,
