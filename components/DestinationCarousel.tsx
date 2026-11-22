@@ -118,7 +118,7 @@ const DestinationCarousel = ({
     <section
       ref={sectionRef}
       className={styles.sectionWrapper}
-      id="showcase-carousel"
+      id="services"
       aria-label="Featured services showcase carousel"
     >
       {/* Section Header */}

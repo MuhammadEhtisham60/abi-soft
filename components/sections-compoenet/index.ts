@@ -1,4 +1,5 @@
 export { default as ServicesSection } from "./ServicesSection";
+export { default as SolutionsSection } from "./SolutionsSection";
 export { default as AboutSection } from "./AboutSection";
 export { default as ProcessSection } from "./ProcessSection";
 export { default as DestinationCarousel } from "../DestinationCarousel";
